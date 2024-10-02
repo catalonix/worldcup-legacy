@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8">
+		<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<meta name="keywords" content="">
+		<!-- Favicon -->
+		<link rel="icon" href="" type="image/x-icon"/>
+		<!-- Title -->
+		<title>상암월드컵경기장</title>
+		<!-- Bootstrap css-->
+		<link href="../assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+		<!-- Icons css-->
+		<link href="../assets/plugins/web-fonts/icons.css" rel="stylesheet"/>
+		<link href="../assets/plugins/web-fonts/font-awesome/font-awesome.min.css" rel="stylesheet">
+		<link href="../assets/plugins/web-fonts/plugin.css" rel="stylesheet"/>
+		<!-- Style css-->
+		<link href="../assets/css/style.css" rel="stylesheet">
+		<link href="../assets/css/skins.css" rel="stylesheet">
+		<!-- Sidemenu css-->
+		<link href="../assets/css/sidemenu/sidemenu.css" rel="stylesheet">
+		<link href="../assets/css/sangam.css" rel="stylesheet">
+		<link href="../assets/css/twentytwenty.css" rel="stylesheet" type="text/css">
+		<style type="text/css">
+			.spider1{
+				font-size: 15px;
+				font-weight: bold;
+				color: blue;
+				fill: white;
+				text-align: center;
+			}
+		</style>
+	</head>
+
+	<body class="main-body leftmenu">
+		<!-- Loader -->
+		<div id="global-loader">
+			<img src="../assets/img/loader.svg" class="loader-img" alt="Loader">
+		</div>
+		<!-- End Loader -->
+		<!-- Page -->
+		<div class="page">
+			<!-- Sidemenu -->
+			<?include "../include/sidebar.php";?>
+			<!-- End Sidemenu -->
+
+			<!-- Main Header-->
+			<?include "../include/header.php";?>
+			<!-- End Main Header-->
+			<!-- Mobile-header -->
+
+			<!-- //Mobile-header -->
+			<!-- Main Content-->
+			<div class="main-content side-content pt-0">
+				<div class="container-fluid main-m-pt">
+					<div class="inner-body">
+						<!-- Page Header -->
+						<div class="page-header">
+							<div>
+								<h2 class="main-content-title text-white tx-24 mg-b-5 font-weight-bold">요약분석 정보</h2>
+								<ol class="breadcrumb">
+									<li class="breadcrumb-item">Home</li>
+									<li class="breadcrumb-item active" aria-current="page">요약분석 정보</li>
+								</ol>
+							</div>
+							<div class="col-sm-12 col-lg-3 col-xl-2 pr-0 pl-0">
+								<select class="form-control" style="background: #22354e;" id="sensorSelect">
+									<option value="02" data-c="C001" data-w="W002">2번 지점</option>
+									<option value="03" data-c="C001" data-w="W002">3번 지점</option>
+									<option value="04" data-c="C001" data-w="W002">4번 지점</option>
+									<option value="05" data-c="C001" data-w="W004">5번 지점</option>
+									<option value="06" data-c="C002" data-w="W004">6번 지점</option>
+									<option value="07" data-c="C002" data-w="W004">7번 지점</option>
+									
+									<option value="10" data-c="C002" data-w="W004">10번 지점</option>
+									<option value="11" data-c="C002" data-w="W004">11번 지점</option>
+									<option value="12" data-c="C001" data-w="W002">12번 지점</option>
+									<option value="13" data-c="C001" data-w="W002">13번 지점</option>
+									<option value="14" data-c="C001" data-w="W002">14번 지점</option>
+									
+									<option value="16" data-c="C001" data-w="W004">16번 지점</option>
+									
+									<option value="18" data-c="C003" data-w="W001">18번 지점</option>
+									<option value="19" data-c="C003" data-w="W001">19번 지점</option>
+									<option value="20" data-c="C003" data-w="W001">20번 지점</option>
+									<option value="21" data-c="C003" data-w="W003">21번 지점</option>
+									
+									<option value="22" data-c="C002" data-w="W003">22번 지점</option>
+									<option value="23" data-c="C002" data-w="W003">23번 지점</option>
+									
+									<option value="26" data-c="C002" data-w="W003">26번 지점</option>
+									<option value="27" data-c="C002" data-w="W003">27번 지점</option>
+									
+									<option value="28" data-c="C003" data-w="W003">28번 지점</option>
+									<option value="29" data-c="C003" data-w="W001">29번 지점</option>
+									<option value="30" data-c="C003" data-w="W001">30번 지점</option>
+									<option value="31" data-c="C003" data-w="W001">31번 지점</option>
+								</select>
+							</div>
+						</div>
+						<!-- End Page Header -->
+						<!--Row-->
+						<div class="row row-sm mt-4">
+							<!-- col -->
+							<div class="col-sm-12 col-md-12 col-lg-12 col-xl-7">
+								<div class="card custom-card overflow-hidden">
+									<div class="card-header border-bottom-0 pb-0">
+										<div>
+											<div class="d-flex-sb">
+												<label class="main-content-label my-auto pt-2 tx-16">식생지수</label>
+											</div>
+										</div>
+									</div>
+									<div class="card-body pt-1">
+										<div class="ndvi-value">
+											<div class="ndvi-now">
+												<h5>현재 식생지수</h5>
+												<div class="now-value">
+													<h4 id="ndvi1">0.611</h4>
+													<span class="situation-success">양호</span>
+												</div>
+											</div>
+											<div class="ndvi-prediction">
+												<h5>예측 식생지수</h5>
+												<div class="prediction-value">
+													<h4 id="ndvi2">0.418</h4>
+													<span class="situation-danger">주의</span>
+												</div>
+											</div>
+										</div>
+										<div class="col-xl-12 col-md-12 col-sm-12 p-0 mb-3">
+											<div class="twentytwenty-wrapper twentytwenty-horizontal">
+												<div class="twentytwenty-container">
+													<img src="http://15.165.143.75/data/WorldCupSeoulEastNDVI/WorldCupSeoulEastNDVI_temp.jpg" class="ndvi-img twentytwenty-before" width="100%" id="ndviIMG" onerror="this.src='../assets/img/noimage.png'">
+													<img src="http://15.165.143.75/data/WorldCupSeoulEastRGB/WorldCupSeoulEastRGB_temp.jpg" class="ndvi-img twentytwenty-after" width="100%" id="ndviIMG2" onerror="this.src='../assets/img/noimage.png'">
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-12 col-md-12 col-lg-12 col-xl-5">
+								<div class="card custom-card overflow-hidden">
+									<div class="card-header border-bottom-0 pb-0">
+										<div>
+											<div class="d-flex-sb">
+												<label class="main-content-label my-auto pt-2 tx-16">상태평가</label>
+											</div>
+										</div>
+									</div>
+									<div class="card-body pt-1">
+										<div class="ndvi-chart" id="spiderChart" style="width: 100%;height: 300px;padding: 0px;">
+
+										</div>
+										<div class="ndvi-info">
+											<div class="state-info">
+												<h4>
+													<span>토양온도</span>
+												</h4>
+												<span class="situation-success" id="stpText">양호</span>
+											</div>
+											<div class="state-info">
+												<h4>
+													<span>토양수분</span>
+												</h4>
+												<span class="situation-success" id="smoText">양호</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- col end -->
+						</div>
+						<!-- Row end -->
+						<!--Row-->
+						<div class="row row-sm">
+							<!-- col -->
+							<div class="col-sm-12 col-md-12 col-lg-12 col-xl-4">
+								<div class="card custom-card overflow-hidden">
+									<div class="card-header border-bottom-0 pb-0 mb-3">
+										<div>
+											<div class="d-flex-sb">
+												<label class="main-content-label my-auto pt-2 tx-16">토양정보</label>
+											</div>
+										</div>
+									</div>
+									<div class="card-body">
+										<div class="robot-data pb-3 mb-4 border-bottom">
+											<div class="robot-data-type">
+												<div class="robot-data-type-title">
+													<div class="robot-data-type-iconbox">
+														<i class="wi wi-thermometer"></i>
+													</div>
+													<div class="robot-data-type-text">
+														<h4>토양온도</h4>
+														<p>Temperature</p>
+													</div>
+												</div>
+												<h5>
+													<span class="situation-temperature-low">낮음</span>
+												</h5>
+												<h4 id="STP">13.5<span>ºC</span></h4>
+											</div>
+										</div>
+										<div class="robot-data pb-3 mb-4 border-bottom">
+											<div class="robot-data-type">
+												<div class="robot-data-type-title">
+													<div class="robot-data-type-iconbox">
+														<i class="wi wi-humidity"></i>
+													</div>
+													<div class="robot-data-type-text">
+														<h4>토양수분</h4>
+														<p>Moisture</p>
+													</div>
+												</div>
+												<h5>
+													<span class="situation-humidity-veryhigh">매우높음</span>
+												</h5>
+												<h4 id="SMO">38.2<span>%</span></h4>
+											</div>
+										</div>
+										<div class="robot-data pb-3 mb-4 border-bottom">
+											<div class="robot-data-type">
+												<div class="robot-data-type-title">
+													<div class="robot-data-type-iconbox">
+														<img src="../assets/img/njourishment-icon.png" style="width: 14px; padding-top: 10px;">
+													</div>
+													<div class="robot-data-type-text">
+														<h4>토양양분</h4>
+														<p>Nourishment</p>
+													</div>
+												</div>
+												<h5>
+													<span class="situation-success">양호</span>
+												</h5>
+												<h4 id="SEC">0.3<span>dS/m</span></h4>
+											</div>
+										</div>
+										<div class="robot-data">
+											<div class="robot-data-type">
+												<div class="robot-data-type-title">
+													<div class="robot-data-type-iconbox">
+														<i class="wi wi-raindrops tx-20"></i>
+													</div>
+													<div class="robot-data-type-text">
+														<h4>PH</h4>
+														<p>수소이온농도</p>
+													</div>
+												</div>
+												<h5>
+													<span class="situation-success" id="phText">양호</span>
+												</h5>
+												<h4 id="PH">5.5<span>ph</span></h4>
+											</div>
+										</div>
+									</div>  
+								</div>
+							</div>
+							<div class="col-sm-12 col-md-12 col-lg-12 col-xl-8"> 
+								<div class="row row-sm">
+									<div class="col-xl-4 col-lg-6 col-6">
+										<div class="card custom-card overflow-hidden">
+											<div class="card-body pt-1 pb-0">
+												<div class="mb-0 value-title">
+													<h6 class="card-value-title mb-0">온도</h6>
+													<h4 class="card-value" id="temp">16.3 <span class="unit">ºC</span></h4>
+												</div>
+												<div class="chart-wrapper">
+													<canvas id="temperature-chart"></canvas>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="col-xl-4 col-lg-6 col-6">
+										<div class="card custom-card overflow-hidden">
+											<div class="card-body pt-1 pb-0">
+												<div class="mb-0 value-title">
+													<h6 class="card-value-title mb-0">습도</h6>
+													<h4 class="card-value" id="humi">45 <span class="unit">%</span></h4>
+												</div>
+												<div class="chart-wrapper">
+													<canvas id="humidity-chart"></canvas>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="col-xl-4 col-lg-6 col-6">
+										<div class="card custom-card overflow-hidden">
+											<div class="card-body pt-1 pb-0">
+												<div class="mb-0 value-title">
+													<h6 class="card-value-title mb-0">풍향/풍속</h6>
+													<h4 class="card-value" id="ws">0.2 <span class="unit">m/s</span><span class="wind-direction ml-2" id="wdText">북북서</span></h4>
+												</div>
+												<div class="chart-wrapper">
+													<canvas id="wind-chart"></canvas>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="col-xl-4 col-lg-6 col-6">
+										<div class="card custom-card overflow-hidden">
+											<div class="card-body pt-1 pb-0">
+												<div class="mb-0 value-title">
+													<h6 class="card-value-title mb-0">광명</h6>
+													<h4 class="card-value" id="light">0</h4>
+												</div>
+												<div class="chart-wrapper">
+													<canvas id="light-chart"></canvas>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="col-xl-4 col-lg-6 col-6">
+										<div class="card custom-card overflow-hidden">
+											<div class="card-body pt-1 pb-0">
+												<div class="mb-0 value-title">
+													<h6 class="card-value-title mb-0">미세먼지</h6>
+													<h4 class="card-value" id="pm10">6 
+													<span class="unit">㎍/㎥</span>
+													<span class="pm-good pm-state ml-1" id="pm10Text">좋음</span>
+													</h4>
+												</div>
+												<div class="chart-wrapper">
+													<canvas id="pm10-chart"></canvas>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="col-xl-4 col-lg-6 col-6">
+										<div class="card custom-card overflow-hidden">
+											<div class="card-body pt-1 pb-0">
+												<div class="mb-0 value-title">
+													<h6 class="card-value-title mb-0">초미세먼지</h6>
+													<h4 class="card-value" id="pm25">36 
+													<span class="unit">㎍/㎥</span>
+													<span class="pm-bad pm-state ml-1" id="pm25Text">나쁨</span>
+													</h4>
+												</div>
+												<div class="chart-wrapper">
+													<canvas id="pm2-chart"></canvas>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="row row-sm">
+									<div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+										<div class="card custom-card overflow-hidden">
+											<div class="card-body pt-1 pb-0">
+												<div class="mb-0 value-title">
+													<h6 class="card-value-title mb-0">이산화탄소</h6>
+													<h4 class="card-value" id="co2">40.1 <span class="unit">ppm</span></h4>
+												</div>
+												<div class="chart-wrapper">
+													<canvas id="carbon-chart"></canvas>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- col end -->
+						</div>
+						<!-- Row end -->
+					</div>
+				</div>
+			</div>
+			<!-- End Main Content-->
+			<!-- Main Footer-->
+			<div class="main-footer text-center">
+				<div class="container">
+					<div class="row row-sm">
+						<div class="col-md-12">
+							<span class="text-white">Copyright © 2023 <a style="color: #80b9ed;">상암월드컵경기장</a></span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--End Footer-->
+		</div>
+		<!-- End Page -->
+
+		<!-- Back-to-top -->
+		<a href="#top" id="back-to-top"><i class="fe fe-arrow-up"></i></a>
+
+		<!-- Jquery js-->
+		<script src="../assets/plugins/jquery/jquery.min.js"></script>
+
+		<!-- Bootstrap js-->
+		<script src="../assets/plugins/bootstrap/js/popper.min.js"></script>
+		<script src="../assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+
+		<!-- Peity js-->
+		<script src="../assets/plugins/peity/jquery.peity.min.js"></script>
+
+		<!-- Select2 js-->
+		<script src="../assets/plugins/select2/js/select2.min.js"></script>
+		<!-- Internal Chart.Bundle js-->
+		<script src="../assets/plugins/chart.js/Chart.bundle.min.js"></script>
+		<!-- Internal Jquery.maskedinput js-->
+		<script src="../assets/plugins/jquery.maskedinput/jquery.maskedinput.js"></script>
+		<!-- Sidemenu js -->
+		<script src="../assets/plugins/sidemenu/sidemenu.js"></script>
+		<!-- Internal Dashboard js-->
+		<script src="../assets/js/crypto-exchange.js"></script>
+		<!-- Internal Form-elements js-->
+		<script src="../assets/js/form-elements.js"></script>
+		<!-- Sticky js -->
+		<script src="../assets/js/sticky.js"></script>
+		<!-- twentytwenty -->
+		<script src="../assets/js/jquery.event.move.js"></script>
+		<script src="../assets/js/jquery.twentytwenty.js"></script>
+		<!-- Custom js -->
+		<script src="../assets/js/custom.js"></script>
+		
+		<script src="https://code.highcharts.com/highcharts.js"></script>
+		<script src="https://code.highcharts.com/highcharts-more.js"></script>
+		<script>
+		
+			function Chg_wdirk($wdir){
+				//16방
+				$wdirk = "";
+				
+				$wdir = $wdir*1;
+				
+				if (0 <= $wdir && $wdir <= 11.25){
+					$wdirk = "북";
+				}else if (11.25 < $wdir && $wdir <= 33.75){
+					$wdirk = "북북동";
+				}else if (33.75 < $wdir && $wdir <= 56.25){ 
+					$wdirk = "북동";
+				}else if (56.25 < $wdir && $wdir <= 78.75){ 
+					$wdirk = "동북동";
+				}else if (78.75 < $wdir && $wdir <= 101.25){ 
+					$wdirk = "동";
+				}else if (101.25 < $wdir && $wdir <= 123.75){ 
+					$wdirk = "동남동";
+				}else if (123.75 < $wdir && $wdir <= 146.25){ 
+					$wdirk = "남동";
+				}else if (146.25 < $wdir && $wdir <= 168.75){ 
+					$wdirk = "남남동";
+				}else if (168.75 < $wdir && $wdir <= 191.25){ 
+					$wdirk = "남";
+				}else if (191.25 < $wdir && $wdir <= 213.75){ 
+					$wdirk = "남남서";
+				}else if (213.75 < $wdir && $wdir <= 236.25){ 
+					$wdirk = "남서";
+				}else if (236.25 < $wdir && $wdir <= 258.75){ 
+					$wdirk = "서남서";
+				}else if (258.75 < $wdir && $wdir <= 281.25){ 
+					$wdirk = "서";
+				}else if (281.25 < $wdir && $wdir <= 303.75){ 
+					$wdirk = "서북서";
+				}else if (303.75 < $wdir && $wdir <= 326.25){ 
+					$wdirk = "북서";
+				}else if (326.25 < $wdir && $wdir <= 348.75){ 
+					$wdirk = "북북서";
+				}else if (348.75 < $wdir){ 
+					$wdirk = "북";
+				}else{
+					$wdirk = '-';
+				}
+	
+				return $wdirk;
+	
+			}
+			
+			function getPm10Grade(value,id){
+				
+				value = value*1
+				
+				if(value<=30){
+					$(id).text("좋음");
+					$(id).attr('class','pm-good pm-state ml-1')
+				}else if(value<=80){
+					$(id).text("보통");
+					$(id).attr('class','pm-usually pm-state ml-1')
+				}else if(value<=150){
+					$(id).text("나쁨");
+					$(id).attr('class','pm-bad pm-state ml-1')
+				}else{
+					$(id).text("매우나쁨");
+					$(id).attr('class','pm-very-bad pm-state ml-1')
+				}
+			}
+
+			function getPm25Grade(value,id){
+				
+				value = value*1
+				
+				if(value<=15){
+					$(id).text("좋음");
+					$(id).attr('class','pm-good pm-state ml-1')
+				}else if(value<=35){
+					$(id).text("보통");
+					$(id).attr('class','pm-usually pm-state ml-1')
+				}else if(value<=75){
+					$(id).text("나쁨");
+					$(id).attr('class','pm-bad pm-state ml-1')
+				}else{
+					$(id).text("매우나쁨");
+					$(id).attr('class','pm-very-bad pm-state ml-1')
+				}
+			}
+		
+			$(document).ready(function(){
+				$(".twentytwenty-container[data-orientation!='vertical']").twentytwenty({default_offset_pct: 0.5});
+				$(".twentytwenty-container[data-orientation='vertical']").twentytwenty({default_offset_pct: 0.5, orientation: 'vertical'});
+				$("#sensorBtn-1").click(function(){
+					$("#sensorDate-1").toggle();
+					$("#infoBox").toggle();
+				});
+				
+				$("#sensorSelect").on('change',function(){
+					location.href = "./summary.html?sensor="+$(this).val();
+				})
+				
+				$('#sensorSelect').val('<?=$_GET["sensor"]?>');
+				
+				if(''=='<?=$_GET["sensor"]?>'){
+					$('#sensorSelect').val('02')
+				}
+				
+				function loadData(){
+					var spot = $('#sensorSelect').val();
+					var camera = $('#sensorSelect option:selected').data("c");
+					var weather = $('#sensorSelect option:selected').data("w");
+					
+					console.log(spot+camera+weather)
+					
+					var param = {
+						spot : spot,
+						camera : camera,
+						weather : weather
+					}
+					
+					$.ajax({
+						url : "../php/getSummary.php",
+						data : param,
+						method : "POST",
+						success : function(result){
+							console.log(result);
+							var c = result.camera;
+							var r = result.spot;
+							var w = result.weather;
+							var rate = result.rate;
+							
+							let current = "";
+							$.each(w,function(index,item){
+								current = item;
+							})
+							
+							//console.log(current)
+							$('#temp').html(current.TEMP+` <span class="unit">ºC</span>`);
+							$('#humi').html(current.HUMI+` <span class="unit">%</span>`);
+							$('#ws').html(current.WS+` <span class="unit">m/s</span><span class="wind-direction ml-2" id="wdText">${Chg_wdirk(current.WD)}</span>`);
+							$('#light').text(current.LIGHT);
+							$('#pm10').html(current.PM10+` <span class="unit">㎍/㎥</span><span class="pm-good pm-state ml-1" id="pm10Text">좋음</span>`);
+							
+							$('#pm25').html(current.PM25+` <span class="unit">㎍/㎥</span><span class="pm-good pm-state ml-1" id="pm25Text">좋음</span>`);
+							
+							getPm10Grade(current.PM10,'#pm10Text')
+							getPm25Grade(current.PM10,'#pm25Text')
+							
+							$('#co2').html(current.CO2+` <span class="unit">ppm</span>`);
+							
+							$('#STP').html(`${r.STP}<span>ºC</span>`);
+							$('#SMO').html(`${r.SMO}<span>%</span>`);
+							$('#SEC').html(`${r.SEC}<span>dS/m</span>`);
+							$('#PH').html(`-<span>ph</span>`);
+							
+							let stpGrade = "";
+							let smoGrade = "";
+							
+							$.each(rate,function(index,item){
+								if(item.VALUE_NAME=='temp' && r.STP*1 >= item.UNDER*1 && r.STP*1 <= item.OVER*1){
+									stpGrade = item.STEP;
+								}
+								if(item.VALUE_NAME=='humi' && r.SMO*1 >= item.UNDER*1 && r.SMO*1 <= item.OVER*1){
+									smoGrade = item.STEP;
+								}
+							})
+							
+							console.log(smoGrade+","+stpGrade);
+							
+							if(smoGrade){
+								$('#SMO').parent().find('h5 span').removeClass('situation-humidity-veryhigh')
+								if(smoGrade==1){
+									$('#SMO').parent().find('h5 span').addClass("situation-humidity-verylow");
+									$('#SMO').parent().find('h5 span').text("매우낮음")
+								}
+								if(smoGrade==2){
+									$('#SMO').parent().find('h5 span').addClass("situation-humidity-low");
+									$('#SMO').parent().find('h5 span').text("낮음")
+								}
+								if(smoGrade==3){
+									$('#SMO').parent().find('h5 span').addClass("situation-humidity-middle");
+									$('#SMO').parent().find('h5 span').text("양호")
+								}
+								if(smoGrade==4){
+									$('#SMO').parent().find('h5 span').addClass("situation-humidity-high");
+									$('#SMO').parent().find('h5 span').text("높음")
+								}
+								if(smoGrade==5){
+									$('#SMO').parent().find('h5 span').addClass("situation-humidity-veryhigh");
+									$('#SMO').parent().find('h5 span').text("매우높음")
+								}
+							}
+							
+							if(stpGrade){
+								$('#STP').parent().find('h5 span').removeClass('situation-temperature-low')
+								if(stpGrade==1){
+									$('#STP').parent().find('h5 span').addClass("situation-temperature-verylow");
+									$('#STP').parent().find('h5 span').text("매우낮음")
+								}
+								if(stpGrade==2){
+									$('#STP').parent().find('h5 span').addClass("situation-temperature-low");
+									$('#STP').parent().find('h5 span').text("낮음")
+								}
+								if(stpGrade==3){
+									$('#STP').parent().find('h5 span').addClass("situation-temperature-middle");
+									$('#STP').parent().find('h5 span').text("양호")
+								}
+								if(stpGrade==4){
+									$('#STP').parent().find('h5 span').addClass("situation-temperature-high");
+									$('#STP').parent().find('h5 span').text("높음")
+								}
+								if(stpGrade==5){
+									$('#STP').parent().find('h5 span').addClass("situation-temperature-veryhigh");
+									$('#STP').parent().find('h5 span').text("매우높음")
+								}
+							}
+							
+							if(c){
+								$('#ndvi1').text(c.NDVI);
+								$('#ndvi2').text('-');
+								//$('#ndvi1').parent().find('span');
+							}else{
+								$('#ndvi1').text('-');
+								$('#ndvi2').text('-');
+								$('#ndvi1').parent().find('span').remove();
+								$('#ndvi2').parent().find('span').remove();
+							}
+						}
+					})
+				}
+				
+				loadData()
+				
+				function spiderChart(data){
+					
+					console.log(data)
+					
+					Highcharts.chart('spiderChart', {
+
+					    chart: {
+					        polar: true,
+					        backgroundColor: 'rgba(255, 255, 255, 0)',
+					        type: 'area'
+					    },
+
+					    accessibility: {
+					        description: '.'
+					    },
+
+					    title: {
+					        text: '.',
+					        x: -80
+					    },
+
+					    pane: {
+					        size: '100%'
+					    },
+					    
+					    credits : false,
+
+					    xAxis: {
+					        categories: [
+					        	'<span class="spider1">온도<br>'/*+data.TEMP+*/+'</span>', 
+					        	'<span class="spider1">습도<br>'/*+data.HUMI+*/+'</span>', 
+					        	'<span class="spider1">PH<br>'/*+data.PH+*/+'</span>', 
+					        	'<span class="spider1">토양수분<br>'/*+data.SMO+*/+'</span>',
+					        	'<span class="spider1">NDVI<br>'/*+data.NDVI+*/+'</span>'],
+					        tickmarkPlacement: 'on',
+					        lineWidth: 0
+					    },
+
+					    yAxis: {
+					        gridLineInterpolation: 'polygon',
+					        lineWidth: 0,
+					        min: 0,
+					        max: 100,
+					        labels: {
+					          style: {
+					            color: 'white'
+					          }
+					        }
+					    },
+
+					    tooltip: {
+					        shared: true,
+					        pointFormat: '<span style="color:{series.color};">{series.name}<b>{point.y:,.0f}</b><br/>',
+					        backgroundColor:'black'
+					    },
+
+					    legend: {
+					        align: 'right',
+					        verticalAlign: 'middle',
+					        layout: 'vertical'
+					    },
+
+					    series: [{
+					    	showInLegend: false,
+					        name: 'Score:',
+					        data: [data.TEMP, data.HUMI, data.PH, data.SMO, data.NDVI],
+					        pointPlacement: 'on',
+					        fillOpacity : 0.3,
+					        color: '#1c62c3',
+					        lineWidth:2
+					    }],
+
+					    responsive: {
+					        rules: [{
+					            condition: {
+					                maxWidth: 500
+					            },
+					            chartOptions: {
+					                legend: {
+					                    align: 'center',
+					                    verticalAlign: 'bottom',
+					                    layout: 'horizontal'
+					                },
+					                pane: {
+					                    size: '85%'
+					                }
+					            }
+					        }]
+					    }
+
+					});
+				}
+				
+				var chartdata = {};
+				
+				chartdata.TEMP = Math.floor(Math.random() * 100);
+				chartdata.HUMI = Math.floor(Math.random() * 100);
+				chartdata.PH = Math.floor(Math.random() * 100);
+				chartdata.SMO = Math.floor(Math.random() * 100);
+				chartdata.NDVI = Math.floor(Math.random() * 100);
+				
+				spiderChart(chartdata);
+			});
+		</script>
+	</body>
+</html>

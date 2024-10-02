@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8">
+		<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<meta name="keywords" content="">
+		<!-- Favicon -->
+		<link rel="icon" href="" type="image/x-icon"/>
+		<!-- Title -->
+		<title>상암월드컵경기장</title>
+		<!-- Bootstrap css-->
+		<link href="../assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+		<!-- Icons css-->
+		<link href="../assets/plugins/web-fonts/icons.css" rel="stylesheet"/>
+		<link href="../assets/plugins/web-fonts/font-awesome/font-awesome.min.css" rel="stylesheet">
+		<link href="../assets/plugins/web-fonts/plugin.css" rel="stylesheet"/>
+		<!-- Style css-->
+		<link href="../assets/css/style.css" rel="stylesheet">
+		<link href="../assets/css/skins.css" rel="stylesheet">
+		<!-- Sidemenu css-->
+		<link href="../assets/css/sidemenu/sidemenu.css" rel="stylesheet">
+		<link href="../assets/css/sangam.css" rel="stylesheet">
+		<link href="../assets/css/twentytwenty.css" rel="stylesheet" type="text/css">
+		<!-- Select2 css -->
+		<link href="../assets/plugins/select2/css/select2.min.css" rel="stylesheet">
+		<!--Bootstrap-datepicker css-->
+		<link rel="stylesheet" href="../assets/plugins/bootstrap-datepicker/bootstrap-datepicker.css">
+		<link href="../assets/plugins/spectrum-colorpicker/spectrum.css" rel="stylesheet">
+		<!-- Internal Datetimepicker-slider css -->
+		<link href="../assets/plugins/amazeui-datetimepicker/css/amazeui.datetimepicker.css" rel="stylesheet">
+		<!-- Internal DataTables css-->
+		<link href="../assets/plugins/datatable/dataTables.bootstrap4.min.css" rel="stylesheet" />
+		<link href="../assets/plugins/datatable/responsivebootstrap4.min.css" rel="stylesheet" />
+		<link href="../assets/plugins/datatable/fileexport/buttons.bootstrap4.min.css" rel="stylesheet" />
+	</head>
+
+	<body class="main-body leftmenu">
+		<!-- Loader -->
+		<div id="global-loader">
+			<img src="../assets/img/loader.svg" class="loader-img" alt="Loader">
+		</div>
+		<!-- End Loader -->
+		<!-- Page -->
+		<div class="page">
+			<!-- Sidemenu -->
+			<?include "../include/sidebar.php";?>
+			<!-- End Sidemenu -->
+
+			<!-- Main Header-->
+			<?include "../include/header.php";?>
+			<!-- End Main Header-->
+			<!-- Mobile-header -->
+
+			<!-- //Mobile-header -->
+			<!-- Main Content-->
+			<div class="main-content side-content pt-0">
+				<div class="container-fluid main-m-pt">
+					<div class="inner-body">
+						<!-- Page Header -->
+						<div class="page-header">
+							<div>
+								<h2 class="main-content-title text-white tx-24 mg-b-5 font-weight-bold">원격작동 정보</h2>
+								<ol class="breadcrumb">
+									<li class="breadcrumb-item">Home</li>
+									<li class="breadcrumb-item active" aria-current="page">원격작동 정보</li>
+								</ol>
+							</div>
+						</div>
+						<!-- End Page Header -->
+						<!--Row-->
+						<div class="row row-sm mt-4">
+							<!-- col -->
+							<div class="col-sm-12 col-md-12 col-lg-12 col-xl-7">
+								<div class="card custom-card overflow-hidden">
+									<div class="card-header border-bottom-0 pb-0 mb-3">
+										<div>
+											<div class="stadium-header">
+												<label class="main-content-label my-auto pt-2 pb-2 tx-16">원격작동 현황</label>
+												<div class="card-header-right">
+													<div class="stadium-legend">
+														<div class="legend-normal">
+															<div></div>
+															<span>작동중</span>
+														</div>
+														<div class="legend-weird">
+															<div></div>
+															<span>정지</span>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="card-body">
+										<div class="stadium-remote-map position-relative">
+											<img src="../assets/img/stadium-remote.png">
+											<ul class="nav nav-tabs nav-tabs-solid nav-justified border-0">
+												<li class="nav-item mr-2 robot-tab">
+													<a href="#airblower-tab-1" class="remote-tab-link wd-100p active" data-toggle="tab" id="FAN01">
+														<div class="remote-situation tab-working"></div>
+														<span>토양로봇</span>
+													</a>
+												</li>
+												<li class="nav-item mr-2 airblower-tab1">
+													<a href="#airblower-tab-1" class="remote-tab-link wd-100p mr-2" data-toggle="tab" id="FAN02">
+														<div class="remote-situation tab-stop"></div>
+														<span>송풍기 1</span>
+													</a>
+													<a href="#airblower-tab-1" class="remote-tab-link wd-100p" data-toggle="tab" id="FAN03">
+														<div class="remote-situation tab-stop"></div>
+														<span>송풍기 2</span>
+													</a>
+												</li>
+												<li class="nav-item mr-2 airblower-tab2">
+													<a href="#airblower-tab-1" class="remote-tab-link wd-100p mr-2" data-toggle="tab" id="FAN04">
+														<div class="remote-situation tab-working"></div>
+														<span>송풍기 3</span>
+													</a>
+													<a href="#airblower-tab-1" class="remote-tab-link wd-100p" data-toggle="tab" id="FAN05">
+														<div class="remote-situation tab-working"></div>
+														<span>송풍기 4</span>
+													</a>
+												</li>
+												<li class="nav-item mr-2 airblower-tab3">
+													<a href="#airblower-tab-1" class="remote-tab-link wd-100p mr-2" data-toggle="tab" id="FAN06">
+														<div class="remote-situation tab-working"></div>
+														<span>송풍기 5</span>
+													</a>
+													<a href="#airblower-tab-1" class="remote-tab-link wd-100p" data-toggle="tab" id="FAN07">
+														<div class="remote-situation tab-working"></div>
+														<span>송풍기 6</span>
+													</a>
+												</li>
+												<li class="nav-item mr-2 airblower-tab4">
+													<a href="#airblower-tab-1" class="remote-tab-link wd-100p mr-2" data-toggle="tab" id="FAN08">
+														<div class="remote-situation tab-working"></div>
+														<span>송풍기 7</span>
+													</a>
+													<a href="#airblower-tab-1" class="remote-tab-link wd-100p" data-toggle="tab" id="FAN10">
+														<div class="remote-situation tab-stop"></div>
+														<span>송풍기 8</span>
+													</a>
+												</li>
+												<li class="nav-item mr-2 irrigation-tab">
+													<a href="#airblower-tab-1" class="remote-tab-link wd-100p" data-toggle="tab" id="FAN09">
+														<div class="remote-situation tab-working"></div>
+														<span>관수</span>
+													</a>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-12 col-md-12 col-lg-12 col-xl-5">
+								<div class="card custom-card overflow-hidden">
+									<div class="card-header border-bottom-0 pb-0">
+										<div>
+											<div class="d-flex-sb">
+												<label class="main-content-label my-auto pt-2 pb-2 tx-16">원격작동 상세정보</label>
+											</div>
+										</div>
+									</div>
+									<div class="card-body">
+										<div class="tab-content mb-3">
+											<div class="tab-pane fade active show" id="airblower-tab-1">
+												<div class="remote-info">
+													<div class="remote-title">
+														<div class="title-icon-box mr-2">
+															<img src="../assets/img/airblower-icon.png">
+														</div>
+														<h2 id="remoteName">송풍기 1</h2>
+														<div class="remote-situation-data">
+															<span class="condition-normal"></span>
+															<h4>작동중</h4>
+														</div>
+													</div>
+													<h4>
+														<span class="recent-time">최근 가동 : 2022.11.14 22:13</span>
+														<span>│</span>
+														<span class="reservation-time">예약 가동 : 2022.11.14 22:25</span>
+													</h4>
+												</div>
+												<div class="remote-time">
+													<div class="remote-time-info">
+														<span>작동간격</span>
+														<h4 id="interval">12시간</h4>
+													</div>
+													<div class="remote-time-info">
+														<span>작동시간</span>
+														<h4 id="time">5분</h4>
+													</div>
+													<div class="remote-time-info">
+														<span>작동상태</span>
+														<h4 id="state" class="off">OFF</h4>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+								<div class="card custom-card overflow-hidden">
+									<div class="card-header border-bottom-0 pb-0">
+										<div>
+											<div class="d-flex-sb2 border-bottom">
+												<label class="main-content-label my-auto pt-2 pb-4 tx-16">작동현황 리스트</label>
+												<div class="add-modal-btn">
+													<button class="trigger"><i class="fe fe-settings mr-2"style="vertical-align: middle;"></i>원격작동 설정</button>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="card-body">
+										<div class="table-responsive">
+											<table class="table text-nowrap text-md-nowrap table-bordered mg-b-0" id="stateTable">
+												<thead>
+													<tr class="text-center">
+														<th>구분</th>
+														<th>장비명</th>
+														<th>작동 현황</th>
+														<th>다음 작동 예약일시</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr class="text-center trigger2" data-fanid="FAN01">
+														<td>1</td>
+														<td>토양로봇</td>
+														<td><span class="working-box working">작동중</span></td>
+														<td>2022.12.15 22:00</td>
+													</tr>
+													<tr class="text-center" data-fanid="FAN09">
+														<td>2</td>
+														<td>관수</td>
+														<td><span class="working-box working">작동중</span></td>
+														<td>2022.12.15 22:00</td>
+													</tr>
+													<tr class="text-center" data-fanid="FAN02">
+														<td>3</td>
+														<td>송풍기 1</td>
+														<td><span class="working-box stop">정지</span></td>
+														<td>2022.12.15 22:00</td>
+													</tr>
+													<tr class="text-center" data-fanid="FAN03">
+														<td>4</td>
+														<td>송풍기 2</td>
+														<td><span class="working-box stop">정지</span></td>
+														<td>2022.12.15 22:00</td>
+													</tr>
+													<tr class="text-center" data-fanid="FAN04">
+														<td>5</td>
+														<td>송풍기 3</td>
+														<td><span class="working-box working">작동중</span></td>
+														<td>2022.12.15 22:00</td>
+													</tr>
+													<tr class="text-center" data-fanid="FAN05">
+														<td>6</td>
+														<td>송풍기 4</td>
+														<td><span class="working-box working">작동중</span></td>
+														<td>2022.12.15 22:00</td>
+													</tr>
+													<tr class="text-center" data-fanid="FAN06">
+														<td>7</td>
+														<td>송풍기 5</td>
+														<td><span class="working-box working">작동중</span></td>
+														<td>2022.12.15 22:00</td>
+													</tr>
+													<tr class="text-center" data-fanid="FAN07">
+														<td>8</td>
+														<td>송풍기 6</td>
+														<td><span class="working-box stop">정지</span></td>
+														<td>2022.12.15 22:00</td>
+													</tr>
+													<tr class="text-center" data-fanid="FAN08">
+														<td>9</td>
+														<td>송풍기 7</td>
+														<td><span class="working-box working">작동중</span></td>
+														<td>2022.12.15 22:00</td>
+													</tr>
+													<tr class="text-center" data-fanid="FAN10">
+														<td>10</td>
+														<td>송풍기 8</td>
+														<td><span class="working-box stop">정지</span></td>
+														<td>2022.12.15 22:00</td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- col end -->
+						</div>
+						<!-- Row end -->
+					</div>
+				</div>
+			</div>
+			<!-- End Main Content-->
+			<!-- modal content -->
+			<div class="modal">
+				<div class="modal-content wd-50p">
+					<div class="modal-header">
+						<h3>원격작동 설정</h3>
+						<span class="close-button">×</span>
+					</div>
+					<div class="modal-body">
+						<h5 class="modal-info remote-table-header">
+							<span>원하시는 장비에 원격작동 설정을 해주세요.</span>
+							<label class="ckbox">
+								<input type="checkbox">
+								<span>모두 정지</span>
+							</label>
+						</h5>
+						<form action="../php/modifyRemote.php" method="post" onsubmit="return confirm('작동 설정을 변경하시겠습니까?')">
+						<div class="modal-table remote-table" id="remoteTable">
+							<table class="m-b-30 scrolltable">
+								<thead>
+									<tr>
+										<th class="border-r">목록</th>
+										<th class="border-r">작동 간격</th>
+										<th class="border-r">가동 시간</th>
+										<th class="border-r">최근 작동 일시</th>
+										<th class="border-r">다음 작동 일시</th>
+										<th class="border-r">작동 제어</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr class="text-center" data-fanid="FAN01">
+										<td>토양로봇</td>
+										<td>
+											<div class="table-input">
+												<input type="number" name="workInterval[]" value="" class="p-0">
+												<span>시간</span>
+											</div>
+										</td>
+										<td>
+											<div class="table-input">
+												<input type="number" name="workTime[]" value="" class="wd-50p p-0">
+												<span>분</span>
+											</div>
+										</td>
+										<td>2022.11.14 22:20</td>
+										<td>2022.11.14 22:20<input type="hidden" name="nextOper[]" value=""></td>
+										<td>
+											<div class="table-input">
+												<div class="main-toggle main-toggle-success on">
+													<span></span>
+													<input type="hidden" name="nowUse[]" value="">
+												</div>
+											</div>
+										</td>
+									</tr>
+									<tr class="text-center" data-fanid="FAN09">
+										<td>관수</td>
+										<td>
+											<div class="table-input">
+												<input type="number" name="workInterval[]" value="" class="p-0">
+												<span>시간</span>
+											</div>
+										</td>
+										<td>
+											<div class="table-input">
+												<input type="number" name="workTime[]" value="" class="wd-50p p-0">
+												<span>분</span>
+											</div>
+										</td>
+										<td>2022.11.14 22:20</td>
+										<td>2022.11.14 22:20<input type="hidden" name="nextOper[]" value=""></td>
+										<td>
+											<div class="table-input">
+												<div class="main-toggle main-toggle-success on">
+													<span></span>
+												</div>
+											</div>
+										</td>
+									</tr>
+									<tr class="text-center" data-fanid="FAN02">
+										<td>송풍기 1</td>
+										<td>
+											<div class="table-input">
+												<input type="number" name="workInterval[]" value="" class="p-0">
+												<span>시간</span>
+											</div>
+										</td>
+										<td>
+											<div class="table-input">
+												<input type="number" name="workTime[]" value="" class="wd-50p p-0">
+												<span>분</span>
+											</div>
+										</td>
+										<td>2022.11.14 22:20</td>
+										<td>2022.11.14 22:20<input type="hidden" name="nextOper[]" value=""></td>
+										<td>
+											<div class="table-input">
+												<div class="main-toggle main-toggle-success">
+													<span></span>
+												</div>
+											</div>
+										</td>
+									</tr>
+									<tr class="text-center" data-fanid="FAN03">
+										<td>송풍기 2</td>
+										<td>
+											<div class="table-input">
+												<input type="number" name="workInterval[]" value="" class="p-0">
+												<span>시간</span>
+											</div>
+										</td>
+										<td>
+											<div class="table-input">
+												<input type="number" name="workTime[]" value="" class="wd-50p p-0">
+												<span>분</span>
+											</div>
+										</td>
+										<td>2022.11.14 22:20</td>
+										<td>2022.11.14 22:20<input type="hidden" name="nextOper[]" value=""></td>
+										<td>
+											<div class="table-input">
+												<div class="main-toggle main-toggle-success">
+													<span></span>
+												</div>
+											</div>
+										</td>
+									</tr>
+									<tr class="text-center" data-fanid="FAN04">
+										<td>송풍기 3</td>
+										<td>
+											<div class="table-input">
+												<input type="number" name="workInterval[]" value="" class="p-0">
+												<span>시간</span>
+											</div>
+										</td>
+										<td>
+											<div class="table-input">
+												<input type="number" name="workTime[]" value="" class="wd-50p p-0">
+												<span>분</span>
+											</div>
+										</td>
+										<td>2022.11.14 22:20</td>
+										<td>2022.11.14 22:20<input type="hidden" name="nextOper[]" value=""></td>
+										<td>
+											<div class="table-input">
+												<div class="main-toggle main-toggle-success on">
+													<span></span>
+												</div>
+											</div>
+										</td>
+									</tr>
+									<tr class="text-center" data-fanid="FAN05">
+										<td>송풍기 4</td>
+										<td>
+											<div class="table-input">
+												<input type="number" name="workInterval[]" value="" class="p-0">
+												<span>시간</span>
+											</div>
+										</td>
+										<td>
+											<div class="table-input">
+												<input type="number" name="workTime[]" value="" class="wd-50p p-0">
+												<span>분</span>
+											</div>
+										</td>
+										<td>2022.11.14 22:20</td>
+										<td>2022.11.14 22:20<input type="hidden" name="nextOper[]" value=""></td>
+										<td>
+											<div class="table-input">
+												<div class="main-toggle main-toggle-success">
+													<span></span>
+												</div>
+											</div>
+										</td>
+									</tr>
+									<tr class="text-center" data-fanid="FAN06">
+										<td>송풍기 5</td>
+										<td>
+											<div class="table-input">
+												<input type="number" name="workInterval[]" value="" class="p-0">
+												<span>시간</span>
+											</div>
+										</td>
+										<td>
+											<div class="table-input">
+												<input type="number" name="workTime[]" value="" class="wd-50p p-0">
+												<span>분</span>
+											</div>
+										</td>
+										<td>2022.11.14 22:20</td>
+										<td>2022.11.14 22:20<input type="hidden" name="nextOper[]" value=""></td>
+										<td>
+											<div class="table-input">
+												<div class="main-toggle main-toggle-success on">
+													<span></span>
+												</div>
+											</div>
+										</td>
+									</tr>
+									<tr class="text-center" data-fanid="FAN07">
+										<td>송풍기 6</td>
+										<td>
+											<div class="table-input">
+												<input type="number" name="workInterval[]" value="" class="p-0">
+												<span>시간</span>
+											</div>
+										</td>
+										<td>
+											<div class="table-input">
+												<input type="number" name="workTime[]" value="" class="wd-50p p-0">
+												<span>분</span>
+											</div>
+										</td>
+										<td>2022.11.14 22:20</td>
+										<td>2022.11.14 22:20<input type="hidden" name="nextOper[]" value=""></td>
+										<td>
+											<div class="table-input">
+												<div class="main-toggle main-toggle-success on">
+													<span></span>
+												</div>
+											</div>
+										</td>
+									</tr>
+									<tr class="text-center" data-fanid="FAN08">
+										<td>송풍기 7</td>
+										<td>
+											<div class="table-input">
+												<input type="number" name="workInterval[]" value="" class="p-0">
+												<span>시간</span>
+											</div>
+										</td>
+										<td>
+											<div class="table-input">
+												<input type="number" name="workTime[]" value="" class="wd-50p p-0">
+												<span>분</span>
+											</div>
+										</td>
+										<td>2022.11.14 22:20</td>
+										<td>2022.11.14 22:20<input type="hidden" name="nextOper[]" value=""></td>
+										<td>
+											<div class="table-input">
+												<div class="main-toggle main-toggle-success on">
+													<span></span>
+												</div>
+											</div>
+										</td>
+									</tr>
+									<tr class="text-center" data-fanid="FAN10">
+										<td>송풍기 8</td>
+										<td>
+											<div class="table-input">
+												<input type="number" name="workInterval[]" value="" class="p-0">
+												<span>시간</span>
+											</div>
+										</td>
+										<td>
+											<div class="table-input">
+												<input type="number" name="workTime[]" value="" class="wd-50p p-0">
+												<span>분</span>
+											</div>
+										</td>
+										<td>2022.11.14 22:20</td>
+										<td>2022.11.14 22:20<input type="hidden" name="nextOper[]" value=""></td>
+										<td>
+											<div class="table-input">
+												<div class="main-toggle main-toggle-success on">
+													<span></span>
+												</div>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="modal-btn">
+							<button type="submit">저장</button>
+							<button type="button" class="btn-bg3 cancel-button">취소</button>
+						</div>
+						</form>
+					</div>
+				</div>
+			</div>
+			<!-- /modal content -->
+			<!-- Main Footer-->
+			<div class="main-footer text-center">
+				<div class="container">
+					<div class="row row-sm">
+						<div class="col-md-12">
+							<span class="text-white">Copyright © 2023 <a style="color: #80b9ed;">상암월드컵경기장</a></span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--End Footer-->
+		</div>
+		<!-- End Page -->
+
+		<!-- Back-to-top -->
+		<a href="#top" id="back-to-top"><i class="fe fe-arrow-up"></i></a>
+
+		<!-- Jquery js-->
+		<script src="../assets/plugins/jquery/jquery.min.js"></script>
+
+		<!-- Bootstrap js-->
+		<script src="../assets/plugins/bootstrap/js/popper.min.js"></script>
+		<script src="../assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+
+		<!-- Peity js-->
+		<script src="../assets/plugins/peity/jquery.peity.min.js"></script>
+		<!-- Internal Jquery-Ui js-->
+		<script src="../assets/plugins/jquery-ui/ui/widgets/datepicker.js"></script>
+		<!-- Select2 js-->
+		<script src="../assets/plugins/select2/js/select2.min.js"></script>
+		<!-- Internal Chart.Bundle js-->
+		<script src="../assets/plugins/chart.js/Chart.bundle.min.js"></script>
+		<!-- Internal Jquery.maskedinput js-->
+		<script src="../assets/plugins/jquery.maskedinput/jquery.maskedinput.js"></script>
+		<!-- Sidemenu js -->
+		<script src="../assets/plugins/sidemenu/sidemenu.js"></script>
+
+		<!-- Internal Specturm-colorpicker js-->
+		<script src="../assets/plugins/spectrum-colorpicker/spectrum.js"></script>
+		<!-- Select2 js-->
+		<script src="../assets/plugins/select2/js/select2.min.js"></script>
+		<script src="../assets/js/select2.js"></script>
+		<!--Bootstrap-datepicker js-->
+		<script src="../assets/plugins/bootstrap-datepicker/bootstrap-datepicker.js"></script>
+		<!-- Internal jquery-simple-datetimepicker js -->
+		<script src="../assets/plugins/amazeui-datetimepicker/js/amazeui.datetimepicker.min.js"></script>
+
+		<!-- Internal Data Table js -->
+		<script src="../assets/plugins/datatable/jquery.dataTables.min.js"></script>
+		<script src="../assets/plugins/datatable/dataTables.bootstrap4.min.js"></script>
+		<script src="../assets/plugins/datatable/dataTables.responsive.min.js"></script>
+		<script src="../assets/plugins/datatable/fileexport/dataTables.buttons.min.js"></script>
+		<script src="../assets/plugins/datatable/fileexport/buttons.bootstrap4.min.js"></script>
+		<script src="../assets/js/table-data.js"></script>
+		<!-- Internal Dashboard js-->
+		<script src="../assets/js/crypto-exchange.js"></script>
+		<!-- Internal Form-elements js-->
+		<script src="../assets/js/form-elements.js"></script>
+		<!-- Sticky js -->
+		<script src="../assets/js/sticky.js"></script>
+		<!-- twentytwenty -->
+		<script src="../assets/js/jquery.event.move.js"></script>
+		<script src="../assets/js/jquery.twentytwenty.js"></script>
+		<!-- Custom js -->
+		<script src="../assets/js/custom.js"></script>
+		<script>
+		
+		function getFanState(fanId){
+			
+			var param = {
+				url : "https://seoul-api.fieldon.io/api/states/"+fanId,
+				auth : "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiIzYjhiYWY3NmFjYjE0ZjM1YTgwYmU4YTZjODRjNDI2YiIsImlhdCI6MTY3MDU3OTQwMCwiZXhwIjoxOTg1OTM5NDAwfQ.OuC-DCFJ4pXOPap_zh2j0zVGqC04X9TEQTnRPzsu1uQ"
+			}
+			
+			$.ajax({
+			    type: "POST",
+			    url: "../php/curl.php",
+			    data : param,
+			    dataType : "json",
+			    async : false,
+			    success: function (res) {
+			        console.log(res)
+			        var fanId = res.attributes.friendly_name;
+			        
+			        $('#'+fanId+" .remote-situation").removeClass("tab-working")
+			        $('#'+fanId+" .remote-situation").removeClass("tab-stop")
+			        
+			        if(res.state=='on'){
+			        	$('#'+fanId+" .remote-situation").addClass("tab-working")
+			        	$('#stateTable [data-fanid="'+fanId+'"] .working-box').text("작동중");
+			        	$('#stateTable [data-fanid="'+fanId+'"] .working-box').attr("class","working-box working");
+			        }else{
+			        	$('#'+fanId+" .remote-situation").addClass("tab-stop")
+			        	$('#stateTable [data-fanid="'+fanId+'"] .working-box').text("정지");
+			        	$('#stateTable [data-fanid="'+fanId+'"] .working-box').attr("class","working-box stop");
+			        	
+			        	$('#remoteTable tbody tr[data-fanid="'+fanId+'"] .main-toggle').removeClass('on')
+			        }
+			    	//console.log(res.state);
+			    	var last = res.last_changed.substring(0,16).replace('T',' ');
+			    	$('#remoteTable tbody tr[data-fanid="'+fanId+'"] td:eq(3)').html(last+`<input type="hidden" name="currentOper[]" value="${last}">`)
+			    }
+			});
+		}
+		
+		function updateFanState(fanId){
+			var param = {
+				url : "https://seoul-api.fieldon.io/api/states/"+fanId,
+				auth : "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiIzYjhiYWY3NmFjYjE0ZjM1YTgwYmU4YTZjODRjNDI2YiIsImlhdCI6MTY3MDU3OTQwMCwiZXhwIjoxOTg1OTM5NDAwfQ.OuC-DCFJ4pXOPap_zh2j0zVGqC04X9TEQTnRPzsu1uQ"
+			}
+			/*
+			$.ajax({
+			    type: "POST",
+			    url: "../php/curl.php",
+			    data : param,
+			    dataType : "json",
+			    async : false,
+			    success: function (res) {
+			        console.log(res)
+			    	//console.log(res.state);
+			    }
+			});*/
+		}
+		
+		$(document).ready(function(){
+			$(".twentytwenty-container[data-orientation!='vertical']").twentytwenty({default_offset_pct: 0.5});
+			$(".twentytwenty-container[data-orientation='vertical']").twentytwenty({default_offset_pct: 0.5, orientation: 'vertical'});
+			$("#sensorBtn-1").click(function(){
+				$("#sensorDate-1").toggle();
+				$("#infoBox").toggle();
+			});
+			
+			$("#addContact").on("click", function() {  
+				$("#more-contact").append("<div class='form-group'><input type='text' class='form-control' id='' placeholder=''/></div>");  
+			});  
+			$("#removeContact").on("click", function() {  
+				$("#more-contact").children().last().remove();  
+			});  
+			
+			var modal = document.querySelector(".modal");
+			var trigger = document.querySelector(".trigger");
+			var closeButton = document.querySelector(".close-button");
+			var cancelButton = document.querySelector(".cancel-button");
+	
+			function toggleModal() {
+				modal.classList.toggle("show-modal");
+			}
+	
+			function windowOnClick(event) {
+				if (event.target === modal) {
+					toggleModal();
+				}
+			}
+			
+		  	function validateNumber(input) {
+			    if (input.value < 0) {
+			      input.value = 0;
+			    }
+		  	}
+		  	
+		  	function nextCalc(input){
+		  		var interval = input.value;
+		  		
+		  		var current = $(input).closest('tr').find('td:eq(3)').text()+":00";
+		  				  		
+		  		var next = calculateTime(current,interval*60);
+		  		
+		  		$(input).closest('tr').find('td:eq(4)').html(next+`<input type="hidden" name="nextOper[]" value="${next}">`)
+		  	}
+		  	
+		  	function calculateTime(timeString, firstPlace) {
+		  	  // 입력된 시간 문자열을 Date 객체로 변환
+		  	  const time = new Date(timeString);
+
+		  	  // 1등 시간에 대한 밀리초 값 계산
+			 const firstPlaceTime = new Date(time);
+			  firstPlaceTime.setHours(firstPlaceTime.getHours() + Math.floor(firstPlace / 60));
+			  firstPlaceTime.setMinutes(firstPlaceTime.getMinutes() + (firstPlace % 60));
+
+		  	  // 결과값을 "yyyy-MM-dd HH:mm" 형식의 문자열로 변환
+		  	  const formatTime = (date) => {
+		  	    const year = date.getFullYear();
+		  	    const month = String(date.getMonth() + 1).padStart(2, '0');
+		  	    const day = String(date.getDate()).padStart(2, '0');
+		  	    const hours = String(date.getHours()).padStart(2, '0');
+		  	    const minutes = String(date.getMinutes()).padStart(2, '0');
+		  	    return `${year}-${month}-${day} ${hours}:${minutes}`;
+		  	  };
+
+		  	  // 결과값 반환
+		  	  return formatTime(firstPlaceTime);
+		  	}
+		  	
+		  	function getRemoteInfo(){
+		  		$.ajax({
+		  			url : "../php/getRemoteInfo.php",
+		  			success : function(result){
+		  				console.log(result)
+		  				$.each(result,function(index,item){
+		  					
+		  					$(`#remoteTable [data-fanid="${item.REMOTE_CODE}"]`).append(`<input type="hidden" name="remoteCode[]" value="${item.REMOTE_CODE}">`);
+		  					
+		  					$(`#remoteTable [data-fanid="${item.REMOTE_CODE}"]`).find('input[name="workInterval[]"]').val(item.WORK_INTERVAL)
+		  					$(`#remoteTable [data-fanid="${item.REMOTE_CODE}"]`).find('input[name="workTime[]"]').val(item.WORK_TIME)
+		  					
+		  					var next = `${item.NEXT_OPER}<input type="hidden" name="nextOper[]" value="${item.NEXT_OPER}">`;
+		  					$(`#remoteTable [data-fanid="${item.REMOTE_CODE}"] input[name="nextOper[]"]`).parent().html(next);
+		  					
+		  					if(item.NOW_USE==1){
+		  						$(`#remoteTable [data-fanid="${item.REMOTE_CODE}"] .main-toggle-success`).addClass('on')
+		  					}
+		  					
+		  					$(`#stateTable [data-fanid="${item.REMOTE_CODE}"] td:eq(3)`).text(item.NEXT_OPER);
+		  				})
+		  			}
+		  		})
+		  	}
+			
+			$('#remoteTable tbody tr .main-toggle').on('click',function(){
+				var fanid = $(this).closest('tr').data('fanid')
+				updateFanState(fanid)
+			})
+	
+			trigger.addEventListener("click", toggleModal);
+			closeButton.addEventListener("click", toggleModal);
+			window.addEventListener("click", windowOnClick);
+			cancelButton.addEventListener("click", toggleModal);
+			
+			getFanState("switch.fan01");
+			getFanState("switch.fan02");
+			getFanState("switch.fan03");
+			getFanState("switch.fan04");
+			getFanState("switch.fan05");
+			getFanState("switch.fan06");
+			getFanState("switch.fan07");
+			getFanState("switch.fan08");
+			getFanState("switch.fan09");
+			getFanState("switch.fan10");
+			/*getFanState("binary_sensor.fan01");
+			getFanState("binary_sensor.fan02");
+			getFanState("binary_sensor.fan03");
+			getFanState("binary_sensor.fan04");
+			getFanState("binary_sensor.fan05");
+			getFanState("binary_sensor.fan06");
+			getFanState("binary_sensor.fan07");
+			getFanState("binary_sensor.fan08");
+			getFanState("binary_sensor.fan09");
+			getFanState("binary_sensor.fan10");*/
+			getRemoteInfo();
+			
+		  	$('input[name="workInterval[]"]').on('input', function() {
+		    	validateNumber(this);
+		    	nextCalc(this)
+		  	});
+		  	
+			$('.stadium-remote-map .remote-tab-link').on('click',function(){
+				var remoteCode = $(this).attr('id');
+				$.ajax({
+					url : "../php/getRemoteOne.php",
+					data : "remoteCode="+remoteCode,
+					success : function(result){
+						console.log(result)
+						$('#airblower-tab-1 #interval').text(result.WORK_INTERVAL+"시간");
+						$('#airblower-tab-1 #time').text(result.WORK_INTERVAL+"분");
+						
+						$('.recent-time').text("최근 가동 : "+result.CURRENT_OPER);
+						$('.reservation-time').text("예약 가동 :"+result.NEXT_OPER);
+						
+						$('#remoteName').text(result.REMOTE_NAME)
+						
+						//../assets/img/robot-icon.png
+						
+						//../assets/img/watering-icon.png
+						
+						//../assets/img/airblower-icon.png
+						if(remoteCode=='FAN01'){
+							$('.title-icon-box img').attr('src','../assets/img/robot-icon.png')
+						}else if(remoteCode=='FAN09'){
+							$('.title-icon-box img').attr('src','../assets/img/watering-icon.png')
+						}else{
+							$('.title-icon-box img').attr('src','../assets/img/airblower-icon.png')
+						}
+					}
+				})
+			})
+		});
+		</script>
+	</body>
+</html>

@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8">
+		<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<meta name="keywords" content="">
+		<!-- Favicon -->
+		<link rel="icon" href="" type="image/x-icon"/>
+		<!-- Title -->
+		<title>상암월드컵경기장</title>
+		<!-- Bootstrap css-->
+		<link href="../assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+		<!-- Icons css-->
+		<link href="../assets/plugins/web-fonts/icons.css" rel="stylesheet"/>
+		<link href="../assets/plugins/web-fonts/font-awesome/font-awesome.min.css" rel="stylesheet">
+		<link href="../assets/plugins/web-fonts/plugin.css" rel="stylesheet"/>
+		<!-- Style css-->
+		<link href="../assets/css/style.css" rel="stylesheet">
+		<link href="../assets/css/skins.css" rel="stylesheet">
+		<!-- Sidemenu css-->
+		<link href="../assets/css/sidemenu/sidemenu.css" rel="stylesheet">
+		<link href="../assets/css/sangam.css" rel="stylesheet">
+		<link href="../assets/css/twentytwenty.css" rel="stylesheet" type="text/css">
+
+		<style>
+			@media (min-width: 1200px){
+				.col-xl-3 {
+					flex: 0 0 50%;
+					max-width: 50%;
+				}
+			}
+			@media (min-width: 1500px){
+				.col-xl-3 {
+					flex: 0 0 25%;
+					max-width: 25%;
+				}
+			}
+		</style>
+	</head>
+
+	<body class="main-body leftmenu">
+		<!-- Loader -->
+		<div id="global-loader">
+			<img src="../assets/img/loader.svg" class="loader-img" alt="Loader">
+		</div>
+		<!-- End Loader -->
+		<!-- Page -->
+		<div class="page">
+			<!-- Sidemenu -->
+			<?include "../include/sidebar.php";?>
+			<!-- End Sidemenu -->
+
+			<!-- Main Header-->
+			<?include "../include/header.php";?>
+			<!-- End Main Header-->
+			<!-- Mobile-header -->
+
+			<!-- //Mobile-header -->
+			<!-- Main Content-->
+			<div class="main-content side-content pt-0">
+				<div class="container-fluid main-m-pt">
+					<div class="inner-body">
+						<!-- Page Header -->
+						<div class="page-header">
+							<div>
+								<h2 class="main-content-title text-white tx-24 mg-b-5 font-weight-bold">통합모니터링 요약(장비)</h2>
+								<ol class="breadcrumb">
+									<li class="breadcrumb-item">Home</li>
+									<li class="breadcrumb-item active" aria-current="page">통합모니터링 요약(장비)</li>
+								</ol>
+							</div>
+						</div>
+						<!-- End Page Header -->
+						<!--Row-->
+						<div class="row row-sm mt-4">
+							<!-- col -->
+							<div class="col-sm-12 col-md-12 col-lg-12 col-xl-6">
+								<div class="card custom-card overflow-hidden">
+									<div class="card-header border-bottom-0 pb-0 mb-2">
+										<div>
+											<div class="d-flex-sb">
+												<label class="main-content-label my-auto pt-2 tx-16">NDVI카메라</label>
+												<div class="title-icon-box">
+													<img src="../assets/img/camera-icon.png">
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="card-body">
+										<div class="card-content card-content-list-height">
+											<div class="card-condition-list" id="C001">
+												<div class="condition-list-title">
+													<span class="condition-weird"></span>
+													<h4>동측 카메라</h4>
+												</div>
+												<p class="progress-step">수리중</p>
+												<div class="condition-text-box situation-danger">
+													<span>OFFLINE</span>
+												</div>
+											</div>
+											<div class="card-condition-list" id="C002">
+												<div class="condition-list-title">
+													<span class="condition-normal"></span>
+													<h4>남측 카메라</h4>
+												</div>
+												<p class="progress-step">작동중</p>
+												<div class="condition-text-box situation-success">
+													<span>정상</span>
+												</div>
+											</div>
+											<div class="card-condition-list" id="C003">
+												<div class="condition-list-title">
+													<span class="condition-normal"></span>
+													<h4>서측 카메라</h4>
+												</div>
+												<p class="progress-step">작동중</p>
+												<div class="condition-text-box situation-success">
+													<span>정상</span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-12 col-md-12 col-lg-12 col-xl-6">
+								<div class="card custom-card overflow-hidden">
+									<div class="card-header border-bottom-0 pb-0 mb-2">
+										<div>
+											<div class="d-flex-sb">
+												<label class="main-content-label my-auto pt-2 tx-16">기상센서</label>
+												<div class="title-icon-box">
+													<img src="../assets/img/sensor-icon.png">
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="card-body">
+										<div class="card-content card-content-list-height">
+											<div class="card-condition-list" id="W004">
+												<div class="condition-list-title">
+													<span class="condition-normal"></span>
+													<h4>SE기상센서</h4>
+												</div>
+												<p class="progress-step">작동중</p>
+												<div class="condition-text-box situation-success">
+													<span>정상</span>
+												</div>
+											</div>
+											<div class="card-condition-list" id="W002">
+												<div class="condition-list-title">
+													<span class="condition-weird"></span>
+													<h4>NW기상센서</h4>
+												</div>
+												<p class="progress-step">수리중</p>
+												<div class="condition-text-box situation-danger">
+													<span>OFFLINE</span>
+												</div>
+											</div>
+											<div class="card-condition-list" id="W001">
+												<div class="condition-list-title">
+													<span class="condition-normal"></span>
+													<h4>SW기상센서</h4>
+												</div>
+												<p class="progress-step">작동중</p>
+												<div class="condition-text-box situation-success">
+													<span>정상</span>
+												</div>
+											</div>
+											<div class="card-condition-list" id="W003">
+												<div class="condition-list-title">
+													<span class="condition-none"></span>
+													<h4>NE기상센서</h4>
+												</div>
+												<p class="progress-step">수집중</p>
+												<div class="condition-text-box situation-success">
+													<span>정상</span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-12 col-md-12 col-lg-12 col-xl-6">
+								<div class="card custom-card overflow-hidden">
+									<div class="card-header border-bottom-0 pb-0 mb-2">
+										<div>
+											<div class="d-flex-sb">
+												<label class="main-content-label my-auto pt-2 tx-16">토양로봇</label>
+												<div class="title-icon-box">
+													<img src="../assets/img/robot-icon.png" style="width: 14px;">
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="card-body">
+										<div class="card-content card-content-list-height">
+											<div class="robot-situation">
+												<h5>현재 상태 : </h5>
+												<div class="robot-situation-data">
+													<span class="condition-normal"></span>
+													<h4>작동중</h4>
+												</div>
+											</div>
+											<div class="robot-data mb-3">
+												<div class="robot-data-type">
+													<div class="robot-data-type-title">
+														<div class="robot-data-type-iconbox">
+															<i class="wi wi-thermometer"></i>
+														</div>
+														<div class="robot-data-type-text">
+															<h4>토양온도</h4>
+															<p>Temperature</p>
+														</div>
+													</div>
+													<h5>
+														<span class="situation-temperature-low">낮음</span>
+													</h5>
+													<h4 id="STP">13.5<span>ºC</span></h4>
+												</div>
+											</div>
+											<div class="robot-data">
+												<div class="robot-data-type">
+													<div class="robot-data-type-title">
+														<div class="robot-data-type-iconbox">
+															<i class="wi wi-humidity"></i>
+														</div>
+														<div class="robot-data-type-text">
+															<h4>토양습도</h4>
+															<p>Humidity</p>
+														</div>
+													</div>
+													<h5>
+														<span class="situation-humidity-low">낮음</span>
+													</h5>
+													<h4 id="SMO">38<span>%</span></h4>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-12 col-md-12 col-lg-12 col-xl-6" id="stateTable">
+								<div class="card custom-card overflow-hidden">
+									<div class="card-header border-bottom-0 pb-0 mb-2">
+										<div>
+											<div class="d-flex-sb">
+												<label class="main-content-label my-auto pt-2 tx-16">송풍기</label>
+												<div class="title-icon-box">
+													<img src="../assets/img/airblower-icon.png">
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="card-body">
+										<div class="card-content card-content-list-height">
+											<div class="card-condition-list" data-fanid="FAN01">
+												<div class="condition-list-title">
+													<span class="condition-normal"></span>
+													<h4>송풍기-1</h4>
+												</div>
+												<p class="progress-step">ON / 5분간격</p>
+												<div class="condition-text-box situation-success">
+													<span>정상</span>
+												</div>
+											</div>
+											<div class="card-condition-list" data-fanid="FAN02">
+												<div class="condition-list-title">
+													<span class="condition-weird"></span>
+													<h4>송풍기-2</h4>
+												</div>
+												<p class="progress-step">OFF / -</p>
+												<div class="condition-text-box situation-danger">
+													<span>OFFLINE</span>
+												</div>
+											</div>
+											<div class="card-condition-list" data-fanid="FAN03">
+												<div class="condition-list-title">
+													<span class="condition-normal"></span>
+													<h4>송풍기-3</h4>
+												</div>
+												<p class="progress-step">ON / 10분간격</p>
+												<div class="condition-text-box situation-success">
+													<span>정상</span>
+												</div>
+											</div>
+											<div class="card-condition-list" data-fanid="FAN04">
+												<div class="condition-list-title">
+													<span class="condition-normal"></span>
+													<h4>송풍기-4</h4>
+												</div>
+												<p class="progress-step">ON / 5분간격</p>
+												<div class="condition-text-box situation-success">
+													<span>정상</span>
+												</div>
+											</div>
+											<div class="card-condition-list" data-fanid="FAN05">
+												<div class="condition-list-title">
+													<span class="condition-normal"></span>
+													<h4>송풍기-5</h4>
+												</div>
+												<p class="progress-step">ON / 5분간격</p>
+												<div class="condition-text-box situation-success">
+													<span>정상</span>
+												</div>
+											</div>
+											<div class="card-condition-list" data-fanid="FAN06">
+												<div class="condition-list-title">
+													<span class="condition-normal"></span>
+													<h4>송풍기-6</h4>
+												</div>
+												<p class="progress-step">ON / 5분간격</p>
+												<div class="condition-text-box situation-success">
+													<span>정상</span>
+												</div>
+											</div>
+											<div class="card-condition-list" data-fanid="FAN07">
+												<div class="condition-list-title">
+													<span class="condition-normal"></span>
+													<h4>송풍기-7</h4>
+												</div>
+												<p class="progress-step">ON / 5분간격</p>
+												<div class="condition-text-box situation-success">
+													<span>정상</span>
+												</div>
+											</div>
+											<div class="card-condition-list" data-fanid="FAN08">
+												<div class="condition-list-title">
+													<span class="condition-normal"></span>
+													<h4>송풍기-8</h4>
+												</div>
+												<p class="progress-step">ON / 5분간격</p>
+												<div class="condition-text-box situation-success">
+													<span>정상</span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- col end -->
+						</div>
+						<!-- Row end -->
+					</div>
+				</div>
+			</div>
+			<!-- End Main Content-->
+			<!-- modal content -->
+			<div class="modal">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h3>기호범례</h3>
+						<span class="close-button">×</span>
+					</div>
+					<div class="modal-body">
+						<div class="modal-table">
+							<div class="airmet-legend">
+								<table class="table-hovered m-b-30">
+									<colgroup>
+										<col width="40%">
+										<col width="30%">
+										<col width="30%">
+									</colgroup>
+									<thead>
+										<tr>
+											<th class="border-r">범례</th>
+											<th class="border-r">기호</th>
+											<th class="border-r">구역</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr class="text-center">
+											<td>천둥번개</td>
+											<td><img src="../assets/img/airmet-legend-1.png" alt="airmet-legend-1" width="30px"></td>
+											<td><img src="../assets/img/airmet-legend-1-1.png" alt="airmet-legend-1-1" width="30px"></td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- /modal content -->
+			<!-- Main Footer-->
+			<div class="main-footer text-center">
+				<div class="container">
+					<div class="row row-sm">
+						<div class="col-md-12">
+							<span class="text-white">Copyright © 2023 <a style="color: #80b9ed;">상암월드컵경기장</a></span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--End Footer-->
+		</div>
+		<!-- End Page -->
+
+		<!-- Back-to-top -->
+		<a href="#top" id="back-to-top"><i class="fe fe-arrow-up"></i></a>
+
+		<!-- Jquery js-->
+		<script src="../assets/plugins/jquery/jquery.min.js"></script>
+
+		<!-- Bootstrap js-->
+		<script src="../assets/plugins/bootstrap/js/popper.min.js"></script>
+		<script src="../assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+
+		<!-- Peity js-->
+		<script src="../assets/plugins/peity/jquery.peity.min.js"></script>
+
+		<!-- Select2 js-->
+		<script src="../assets/plugins/select2/js/select2.min.js"></script>
+		<!-- Internal Chart.Bundle js-->
+		<script src="../assets/plugins/chart.js/Chart.bundle.min.js"></script>
+		<!-- Internal Jquery.maskedinput js-->
+		<script src="../assets/plugins/jquery.maskedinput/jquery.maskedinput.js"></script>
+		<!-- Sidemenu js -->
+		<script src="../assets/plugins/sidemenu/sidemenu.js"></script>
+		<!-- Internal Dashboard js-->
+		<script src="../assets/js/crypto-exchange.js"></script>
+		<!-- Internal Form-elements js-->
+		<script src="../assets/js/form-elements.js"></script>
+		<!-- Sticky js -->
+		<script src="../assets/js/sticky.js"></script>
+		<!-- twentytwenty -->
+		<script src="../assets/js/jquery.event.move.js"></script>
+		<script src="../assets/js/jquery.twentytwenty.js"></script>
+		<!-- Custom js -->
+		<script src="../assets/js/custom.js"></script>
+		<script>
+			var modal = document.querySelector(".modal");
+			var trigger = document.querySelector(".trigger");
+			var closeButton = document.querySelector(".close-button");
+	
+			function toggleModal() {
+				modal.classList.toggle("show-modal");
+			}
+	
+			function windowOnClick(event) {
+				if (event.target === modal) {
+					toggleModal();
+				}
+			}
+			
+			function getRobotAvg(){
+								
+				$.ajax({
+					url : "../php/getRobotAvg.php",
+					method : "POST",
+					async : false,
+					success : function(result){
+						console.log(result)
+						$('#SMO').html(`${result.avg.SMO}<span>%</span>`);
+						$('#STP').html(`${result.avg.STP}<span>ºC</span>`);
+						
+						var rate = result.rate;
+						let stpGrade = "";
+						let smoGrade = "";
+						
+						$.each(rate,function(index,item){
+							if(item.VALUE_NAME=='temp' && result.avg.STP*1 >= item.UNDER*1 && result.avg.STP*1 <= item.OVER*1){
+								stpGrade = item.STEP;
+							}
+							if(item.VALUE_NAME=='humi' && result.avg.SMO*1 >= item.UNDER*1 && result.avg.SMO*1 <= item.OVER*1){
+								smoGrade = item.STEP;
+							}
+						})
+						
+						if(smoGrade){
+							if(smoGrade==1){
+								$('#SMO').parent().find('h5 span').attr('class',"situation-humidity-verylow");
+								$('#SMO').parent().find('h5 span').text("매우낮음")
+							}
+							if(smoGrade==2){
+								$('#SMO').parent().find('h5 span').attr('class',"situation-humidity-low");
+								$('#SMO').parent().find('h5 span').text("낮음")
+							}
+							if(smoGrade==3){
+								$('#SMO').parent().find('h5 span').attr('class',"situation-humidity-middle");
+								$('#SMO').parent().find('h5 span').text("양호")
+							}
+							if(smoGrade==4){
+								$('#SMO').parent().find('h5 span').attr('class',"situation-humidity-high");
+								$('#SMO').parent().find('h5 span').text("높음")
+							}
+							if(smoGrade==5){
+								$('#SMO').parent().find('h5 span').attr('class',"situation-humidity-veryhigh");
+								$('#SMO').parent().find('h5 span').text("매우높음")
+							}
+						}
+						
+						if(stpGrade){
+							if(stpGrade==1){
+								$('#STP').parent().find('h5 span').attr('class',"situation-temperature-verylow");
+								$('#STP').parent().find('h5 span').text("매우낮음")
+							}
+							if(stpGrade==2){
+								$('#STP').parent().find('h5 span').attr('class',"situation-temperature-low");
+								$('#STP').parent().find('h5 span').text("낮음")
+							}
+							if(stpGrade==3){
+								$('#STP').parent().find('h5 span').attr('class',"situation-temperature-middle");
+								$('#STP').parent().find('h5 span').text("양호")
+							}
+							if(stpGrade==4){
+								$('#STP').parent().find('h5 span').attr('class',"situation-temperature-high");
+								$('#STP').parent().find('h5 span').text("높음")
+							}
+							if(stpGrade==5){
+								$('#STP').parent().find('h5 span').attr('class',"situation-temperature-veryhigh");
+								$('#STP').parent().find('h5 span').text("매우높음")
+							}
+						}
+					}
+				})
+			}
+			
+			//카메라(3댜), 기상센서(4대)의 상태를 가져온다.
+			function getSensorState(){
+				
+				$.ajax({
+					url : "../php/getSensorState.php",
+					success : function(result){
+						console.log(result)
+						
+						let success = result.success;
+						let error = result.error;
+						
+						for(var i=0;i<error.length;i++){
+							$(`#${error[i].SENSOR_CODE} .condition-text-box span`).text("OFFLINE")
+							$(`#${error[i].SENSOR_CODE} .condition-text-box`).attr('class','condition-text-box situation-danger');
+							$(`#${error[i].SENSOR_CODE} .progress-step`).text("수리중")
+							$(`#${error[i].SENSOR_CODE} .condition-list-title span`).attr('class','condition-weird');
+							//$(`#${error[i].SENSOR_CODE} .condition-text-box span`).
+							if(error[i].SENSOR_CODE=='R001'){
+								$('.robot-situation-data span').attr('class','condition-weird');
+								$('.robot-situation-data h4').text('OFFLINE')
+							}
+						}
+						
+						for(var i=0;i<success.length;i++){
+							$(`#${success[i].SENSOR_CODE} .condition-text-box span`).text("정상")
+							$(`#${success[i].SENSOR_CODE} .condition-text-box`).attr('class','condition-text-box situation-success');
+							$(`#${success[i].SENSOR_CODE} .progress-step`).text("작동중")
+							$(`#${success[i].SENSOR_CODE} .condition-list-title span`).attr('class','condition-normal');
+							if(success[i].SENSOR_CODE=='R001'){
+								$('.robot-situation-data span').attr('class','condition-normal');
+								$('.robot-situation-data h4').text('작동중')
+							}
+						}
+					}
+				})
+			}
+			
+			function getFanState(fanId){
+				
+				var param = {
+					url : "https://seoul-api.fieldon.io/api/states/"+fanId,
+					auth : "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiIzYjhiYWY3NmFjYjE0ZjM1YTgwYmU4YTZjODRjNDI2YiIsImlhdCI6MTY3MDU3OTQwMCwiZXhwIjoxOTg1OTM5NDAwfQ.OuC-DCFJ4pXOPap_zh2j0zVGqC04X9TEQTnRPzsu1uQ"
+				}
+				
+				$.ajax({
+				    type: "POST",
+				    url: "../php/curl.php",
+				    data : param,
+				    dataType : "json",
+				    async : false,
+				    success: function (res) {
+				        console.log(res)
+				        var fanId = res.attributes.friendly_name;
+				        
+				        if(res.state=='on'){
+				        	$('#stateTable [data-fanid="'+fanId+'"] .progress-step').text("ON");
+				        	$('#stateTable [data-fanid="'+fanId+'"] .condition-list-title span').attr('class','condition-normal');
+				        	$('#stateTable [data-fanid="'+fanId+'"] .condition-text-box').attr('class','condition-text-box situation-success');
+				        	$('#stateTable [data-fanid="'+fanId+'"] .condition-text-box span').text("정상")
+				        }else{
+				        	$('#stateTable [data-fanid="'+fanId+'"] .progress-step').text("OFF / "+res.state.toUpperCase());
+				        	$('#stateTable [data-fanid="'+fanId+'"] .condition-list-title span').attr('class','condition-weird');
+				        	$('#stateTable [data-fanid="'+fanId+'"] .condition-text-box').attr('class','condition-text-box situation-danger');
+				        	$('#stateTable [data-fanid="'+fanId+'"] .condition-text-box span').text("OFFLINE")
+				        }
+				    	//console.log(res.state);
+				    }
+				});
+			}
+			
+			getRobotAvg();
+			getSensorState();
+			
+			getFanState("switch.fan01");
+			getFanState("switch.fan02");
+			getFanState("switch.fan03");
+			getFanState("switch.fan04");
+			getFanState("switch.fan05");
+			getFanState("switch.fan06");
+			getFanState("switch.fan07");
+			getFanState("switch.fan08");
+			getFanState("switch.fan09");
+			getFanState("switch.fan10");
+
+			trigger.addEventListener("click", toggleModal);
+			closeButton.addEventListener("click", toggleModal);
+			window.addEventListener("click", windowOnClick);
+			
+			$(document).ready(function(){
+				$(".twentytwenty-container[data-orientation!='vertical']").twentytwenty({default_offset_pct: 0.5});
+				$(".twentytwenty-container[data-orientation='vertical']").twentytwenty({default_offset_pct: 0.5, orientation: 'vertical'});
+				$("#sensorBtn-1").click(function(){
+					$("#sensorDate-1").toggle();
+					$("#infoBox").toggle();
+				});
+			});
+		</script>
+	</body>
+</html>

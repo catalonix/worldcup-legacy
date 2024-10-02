@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8">
+		<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<meta name="keywords" content="">
+		<!-- Favicon -->
+		<link rel="icon" href="" type="image/x-icon"/>
+		<!-- Title -->
+		<title>상암월드컵경기장</title>
+		<!-- Bootstrap css-->
+		<link href="../assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+		<!-- Icons css-->
+		<link href="../assets/plugins/web-fonts/icons.css" rel="stylesheet"/>
+		<link href="../assets/plugins/web-fonts/font-awesome/font-awesome.min.css" rel="stylesheet">
+		<link href="../assets/plugins/web-fonts/plugin.css" rel="stylesheet"/>
+		<!-- Style css-->
+		<link href="../assets/css/style.css" rel="stylesheet">
+		<link href="../assets/css/skins.css" rel="stylesheet">
+		<!-- Sidemenu css-->
+		<link href="../assets/css/sidemenu/sidemenu.css" rel="stylesheet">
+		<link href="../assets/css/sangam.css" rel="stylesheet">
+		<link href="../assets/css/twentytwenty.css" rel="stylesheet" type="text/css">
+		<!-- Select2 css -->
+		<link href="../assets/plugins/select2/css/select2.min.css" rel="stylesheet">
+		<!--Bootstrap-datepicker css-->
+		<link rel="stylesheet" href="../assets/plugins/bootstrap-datepicker/bootstrap-datepicker.css">
+		<link href="../assets/plugins/spectrum-colorpicker/spectrum.css" rel="stylesheet">
+		<!-- Internal Datetimepicker-slider css -->
+		<link href="../assets/plugins/amazeui-datetimepicker/css/amazeui.datetimepicker.css" rel="stylesheet">
+		<!-- Internal DataTables css-->
+		<link href="../assets/plugins/datatable/dataTables.bootstrap4.min.css" rel="stylesheet" />
+		<link href="../assets/plugins/datatable/responsivebootstrap4.min.css" rel="stylesheet" />
+		<link href="../assets/plugins/datatable/fileexport/buttons.bootstrap4.min.css" rel="stylesheet" />
+		<style>
+		.add-modal-btn > button:nth-child(1) {
+		    background: #ff5163;
+		    color: #fff;
+		}
+		.add-modal-btn > button:nth-child(2) {
+		    background: #3b76e1;
+		    color: #fff;
+		}
+		</style>
+	</head>
+
+	<body class="main-body leftmenu">
+		<!-- Loader -->
+		<div id="global-loader">
+			<img src="../assets/img/loader.svg" class="loader-img" alt="Loader">
+		</div>
+		<!-- End Loader -->
+		<!-- Page -->
+		<div class="page">
+			<!-- Sidemenu -->
+			<?include "../include/sidebar.php";?>
+			<!-- End Sidemenu -->
+
+			<!-- Main Header-->
+			<?include "../include/header.php";?>
+			<!-- End Main Header-->
+			<!-- Mobile-header -->
+			<div class="mobile-main-header">
+				<div class="mb-1 navbar navbar-expand-lg  nav nav-item  navbar-nav-right responsive-navbar navbar-dark">
+					<div class="navbar-collapse collapse" id="navbarSupportedContent-4">
+						<div class="order-lg-2 ml-auto mobile-weather-info">
+							<div class="pm-info dropdown mt-3 mb-3">
+								<div class="pm-situation">
+									<h5>미세먼지</h5>
+									<span class="pm-good">좋음</span>
+								</div>
+								<div class="pm-situation">
+									<h5>초미세먼지</h5>
+									<span class="pm-bad">나쁨</span>
+								</div>
+							</div>
+							<div class="climate-box dropdown">
+								<div class="climate-temperatures">
+									<i class="wi wi-thermometer"></i>
+									<h5 class="mb-0">기온 : <span>2ºC</span></h5>
+								</div>
+								<div class="climate-precipitation">
+									<i class="wi wi-rain"></i>
+									<h5 class="mb-0">강수량 : <span>1mm</span></h5>
+								</div>
+								<div class="climate-humidity">
+									<i class="wi wi-humidity"></i>
+									<h5 class="mb-0">습도 : <span>2%</span></h5>
+								</div>
+								<div class="climate-wind">
+									<i class="wi wi-strong-wind"></i>
+									<h5 class="mb-0">풍속 : <span>0.2m/s</span></h5>
+									<span>북북서</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- //Mobile-header -->
+			<!-- Main Content-->
+			<div class="main-content side-content pt-0">
+				<div class="container-fluid main-m-pt">
+					<div class="inner-body">
+						<!-- Page Header -->
+						<div class="page-header">
+							<div>
+								<h2 class="main-content-title text-white tx-24 mg-b-5 font-weight-bold">작업내역 목록</h2>
+								<ol class="breadcrumb">
+									<li class="breadcrumb-item">Home</li>
+									<li class="breadcrumb-item active" aria-current="page">작업내역 목록</li>
+								</ol>
+							</div>
+						</div>
+						<!-- End Page Header -->
+						<!--Row-->
+						<div class="row row-sm mt-4">
+							<!-- col -->
+							<div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+								<div class="card custom-card overflow-hidden">
+									<div class="card-header border-bottom-0 pb-0">
+										<div>
+											<div class="d-flex-sb border-bottom">
+												<label class="main-content-label my-auto pt-2 pb-3 tx-16">작업내역 리스트 수정</label>
+											</div>
+										</div>
+									</div>
+									<div class="card-body">
+										<form action="../php/modifyTask.php" id="modifyForm" method="POST" onsubmit="return confirm('작업을 수정하시겠습니까?')">
+										<input type="hidden" name="workNo" />
+										<div class="row row-sm">
+											<div class="form-group col-md-12 mb-4">
+												<div class="row row-sm">
+													<div class="col-md-2">
+														<label class="form-label pt-2">작업유형</label>
+													</div>
+													<div class="col-md-10">
+														<select class="form-control" name="workType">
+															<option value="관수">관수</option>
+														</select>
+													</div>
+												</div>
+											</div>
+											<div class="form-group col-md-12 mb-4">
+												<div class="row row-sm">
+													<div class="col-md-2">
+														<label class="form-label pt-2">작업명</label>
+													</div>
+													<div class="col-md-10">
+														<input type="text" class="form-control" placeholder="" name="workName">
+													</div>
+												</div>
+											</div>
+											<div class="form-group col-md-12 mb-4">
+												<div class="row row-sm">
+													<div class="col-md-2">
+														<label class="form-label pt-2">작성자</label>
+													</div>
+													<div class="col-md-10">
+														<input type="text" class="form-control" placeholder="" name="userId" readonly="readonly">
+													</div>
+												</div>
+											</div>
+											<div class="form-group col-md-12 mb-4">
+												<div class="row row-sm">
+													<div class="col-md-2">
+														<label class="form-label pt-2">작업일자</label>
+													</div>
+													<div class="col-md-10">
+														<div class="input-group">
+															<div class="input-group-prepend">
+																<div class="input-group-text">
+																	<i class="fe fe-calendar lh--9 op-6"></i>
+																</div>
+															</div>
+															<input class="form-control fc-datepicker" placeholder="시작일" type="text" name="workDate">
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="form-group col-md-12">
+												<div class="row row-sm">
+													<div class="col-md-2">
+														<label class="form-label pt-2">작업리스트</label>
+													</div>
+													<div class="col-md-10">
+														<div class="form-group">
+															<input type="text" class="form-control" id="" placeholder="" name="workList[]">
+														</div>
+														<div id="more-contact"></div>
+														<div class="input-add-btn mb-0">
+															<button id="addContact" type="button" class="mr-2"><i class="ti-plus"></i></button> 
+															<button id="removeContact" type="button"><i class="ti-minus"></i></button>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="add-modal-btn mt-3 modal-btn-border">
+											<button id="deleteTask" type="button" style="margin-right: auto;">삭제</button>
+											<button type="submit">수정</button>
+											<button type="button" onclick="location.href='work-history.html';">취소</button>
+										</div>
+										</form>
+									</div>
+								</div>
+							</div>
+							<!-- col end -->
+						</div>
+						<!-- Row end -->
+					</div>
+				</div>
+			</div>
+			<!-- End Main Content-->
+			<!-- modal content -->
+
+			<!-- /modal content -->
+			<!-- Main Footer-->
+			<div class="main-footer text-center">
+				<div class="container">
+					<div class="row row-sm">
+						<div class="col-md-12">
+							<span class="text-white">Copyright © 2023 <a style="color: #80b9ed;">상암월드컵경기장</a></span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--End Footer-->
+		</div>
+		<!-- End Page -->
+
+		<!-- Back-to-top -->
+		<a href="#top" id="back-to-top"><i class="fe fe-arrow-up"></i></a>
+
+		<!-- Jquery js-->
+		<script src="../assets/plugins/jquery/jquery.min.js"></script>
+
+		<!-- Bootstrap js-->
+		<script src="../assets/plugins/bootstrap/js/popper.min.js"></script>
+		<script src="../assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+
+		<!-- Peity js-->
+		<script src="../assets/plugins/peity/jquery.peity.min.js"></script>
+		<!-- Internal Jquery-Ui js-->
+		<script src="../assets/plugins/jquery-ui/ui/widgets/datepicker.js"></script>
+		<!-- Select2 js-->
+		<script src="../assets/plugins/select2/js/select2.min.js"></script>
+		<!-- Internal Chart.Bundle js-->
+		<script src="../assets/plugins/chart.js/Chart.bundle.min.js"></script>
+		<!-- Internal Jquery.maskedinput js-->
+		<script src="../assets/plugins/jquery.maskedinput/jquery.maskedinput.js"></script>
+		<!-- Sidemenu js -->
+		<script src="../assets/plugins/sidemenu/sidemenu.js"></script>
+
+		<!-- Internal Specturm-colorpicker js-->
+		<script src="../assets/plugins/spectrum-colorpicker/spectrum.js"></script>
+		<!-- Select2 js-->
+		<script src="../assets/plugins/select2/js/select2.min.js"></script>
+		<script src="../assets/js/select2.js"></script>
+		<!--Bootstrap-datepicker js-->
+		<script src="../assets/plugins/bootstrap-datepicker/bootstrap-datepicker.js"></script>
+		<!-- Internal jquery-simple-datetimepicker js -->
+		<script src="../assets/plugins/amazeui-datetimepicker/js/amazeui.datetimepicker.min.js"></script>
+
+		<!-- Internal Data Table js -->
+		<script src="../assets/plugins/datatable/jquery.dataTables.min.js"></script>
+		<script src="../assets/plugins/datatable/dataTables.bootstrap4.min.js"></script>
+		<script src="../assets/plugins/datatable/dataTables.responsive.min.js"></script>
+		<script src="../assets/plugins/datatable/fileexport/dataTables.buttons.min.js"></script>
+		<script src="../assets/plugins/datatable/fileexport/buttons.bootstrap4.min.js"></script>
+		<script src="../assets/js/table-data.js"></script>
+		<!-- Internal Dashboard js-->
+		<script src="../assets/js/crypto-exchange.js"></script>
+		<!-- Internal Form-elements js-->
+		<script src="../assets/js/form-elements.js"></script>
+		<!-- Sticky js -->
+		<script src="../assets/js/sticky.js"></script>
+		<!-- twentytwenty -->
+		<script src="../assets/js/jquery.event.move.js"></script>
+		<script src="../assets/js/jquery.twentytwenty.js"></script>
+		<!-- Custom js -->
+		<script src="../assets/js/custom.js"></script>
+		<script>
+			$(document).ready(function() {  
+				$(".twentytwenty-container[data-orientation!='vertical']").twentytwenty({default_offset_pct: 0.5});
+				$(".twentytwenty-container[data-orientation='vertical']").twentytwenty({default_offset_pct: 0.5, orientation: 'vertical'});
+
+				$("#sensorBtn-1").click(function(){
+					$("#sensorDate-1").toggle();
+					$("#infoBox").toggle();
+				});
+				
+				$("#addContact").on("click", function() {  
+					$("#more-contact").append("<div class='form-group'><input type='text' name='workList[]' class='form-control' id='' placeholder=''/></div>");  
+				});  
+				$("#removeContact").on("click", function() {  
+					$("#more-contact").children().last().remove();  
+				});  
+				
+				function workInfo(){
+					$.ajax({
+						url : "../php/workInfo.php",
+						method : "POST",
+						data : "workNo=<?=$_POST['workNo']?>",
+						success : function(result){
+							//console.log(result)
+							$('#modifyForm [name="workNo"]').val(result.WORK_NO)
+							$('#modifyForm [name="workName"]').val(result.WORK_NAME)
+							$('#modifyForm [name="workType"]').val(result.WORK_TYPE)
+							$('#modifyForm [name="userId"]').val(result.USER_ID)
+							$('#modifyForm [name="workDate"]').val(result.WORK_DATE)
+							
+							var workList = result.WORK_LIST.split(';')
+							
+							$.each(workList,function(index,item){
+								
+								if(!item){
+									return true
+								}
+								
+								if(index==0){
+									$('#modifyForm [name="workList[]"]').val(item)
+								}else{
+									$("#more-contact").append(`<div class='form-group'><input type='text' name='workList[]' class='form-control' value='${item}'/></div>`);
+								}
+							})
+							//$('#modifyForm [name="workList[]"]').val(result.WORK_LIST)
+
+						}
+					})
+				}
+				
+				workInfo();
+				
+				$('#deleteTask').on('click',function(){
+					
+					var chk = confirm("작업을 삭제하시겠습니까?");
+					
+					if(!chk){
+						return
+					}
+					
+					var form = document.createElement('form');
+	        		var objs;
+	        		objs = document.createElement('input');
+	        		objs.setAttribute('type', 'hidden');
+	        		objs.setAttribute('name', 'workNo');
+	        		objs.setAttribute('value', $('#modifyForm [name="workNo"]').val());
+	        		form.appendChild(objs);
+	        		form.setAttribute('method', 'post');
+	        		form.setAttribute('action', "../php/deleteTask.php");
+	        		
+	        		document.body.appendChild(form);
+	        		form.submit();
+				})
+			});  
+		</script>
+	</body>
+</html>

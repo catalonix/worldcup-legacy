@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8">
+		<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<meta name="keywords" content="">
+		<!-- Favicon -->
+		<link rel="icon" href="" type="image/x-icon"/>
+		<!-- Title -->
+		<title>상암월드컵경기장</title>
+		<!-- Bootstrap css-->
+		<link href="../assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+		<!-- Icons css-->
+		<link href="../assets/plugins/web-fonts/icons.css" rel="stylesheet"/>
+		<link href="../assets/plugins/web-fonts/font-awesome/font-awesome.min.css" rel="stylesheet">
+		<link href="../assets/plugins/web-fonts/plugin.css" rel="stylesheet"/>
+		<!-- Style css-->
+		<link href="../assets/css/style.css" rel="stylesheet">
+		<link href="../assets/css/skins.css" rel="stylesheet">
+		<!-- Sidemenu css-->
+		<link href="../assets/css/sidemenu/sidemenu.css" rel="stylesheet">
+		<link href="../assets/css/sangam.css" rel="stylesheet">
+		<link href="../assets/css/twentytwenty.css" rel="stylesheet" type="text/css">
+		<!-- Select2 css -->
+		<link href="../assets/plugins/select2/css/select2.min.css" rel="stylesheet">
+		<!--Bootstrap-datepicker css-->
+		<link rel="stylesheet" href="../assets/plugins/bootstrap-datepicker/bootstrap-datepicker.css">
+		<link href="../assets/plugins/spectrum-colorpicker/spectrum.css" rel="stylesheet">
+		<!-- Internal Datetimepicker-slider css -->
+		<link href="../assets/plugins/amazeui-datetimepicker/css/amazeui.datetimepicker.css" rel="stylesheet">
+		<!-- Internal DataTables css-->
+		<link href="../assets/plugins/datatable/dataTables.bootstrap4.min.css" rel="stylesheet" />
+		<link href="../assets/plugins/datatable/responsivebootstrap4.min.css" rel="stylesheet" />
+		<link href="../assets/plugins/datatable/fileexport/buttons.bootstrap4.min.css" rel="stylesheet" />
+	</head>
+
+	<body class="main-body leftmenu">
+		<!-- Loader -->
+		<div id="global-loader">
+			<img src="../assets/img/loader.svg" class="loader-img" alt="Loader">
+		</div>
+		<!-- End Loader -->
+		<!-- Page -->
+		<div class="page">
+			<!-- Sidemenu -->
+			<?include "../include/sidebar.php";?>
+			<!-- End Sidemenu -->
+
+			<!-- Main Header-->
+			<?include "../include/header.php";?>
+			<!-- End Main Header-->
+			<!-- Mobile-header -->
+
+			<!-- //Mobile-header -->
+			<!-- Main Content-->
+			<div class="main-content side-content pt-0">
+				<div class="container-fluid main-m-pt">
+					<div class="inner-body">
+						<!-- Page Header -->
+						<div class="page-header">
+							<div>
+								<h2 class="main-content-title text-white tx-24 mg-b-5 font-weight-bold">작업내역 목록</h2>
+								<ol class="breadcrumb">
+									<li class="breadcrumb-item">Home</li>
+									<li class="breadcrumb-item active" aria-current="page">작업내역 목록</li>
+								</ol>
+							</div>
+						</div>
+						<!-- End Page Header -->
+						<!--Row-->
+						<div class="row row-sm mt-4">
+							<!-- col -->
+							<div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+								<div class="card custom-card overflow-hidden">
+									<div class="card-header border-bottom-0 pb-0">
+										<div>
+											<div class="d-flex-sb border-bottom">
+												<label class="main-content-label my-auto pt-2 pb-2 tx-16">상세검색</label>
+											</div>
+										</div>
+									</div>
+									<div class="card-body">
+										<div class="row row-sm">
+											<div class="col-sm-12 col-lg-3 col-xl-2 mb-2">
+												<select class="form-control">
+													<option value="">관수</option>
+												</select>
+											</div>
+											<div class="col-6 col-sm-6 col-lg-4 col-xl-2 margin-responsive">
+												<div>
+													<div class="input-group">
+														<div class="input-group-prepend">
+															<div class="input-group-text">
+																<i class="fe fe-calendar lh--9 op-6"></i>
+															</div>
+														</div>
+														<input class="form-control fc-datepicker" placeholder="시작일" type="text" id="startDate">
+													</div>
+												</div>
+											</div>
+											<div class="col-6 col-sm-6 col-lg-4 col-xl-2 margin-responsive">
+												<div>
+													<div class="input-group">
+														<div class="input-group-prepend">
+															<div class="input-group-text">
+																<i class="fe fe-calendar lh--9 op-6"></i>
+															</div>
+														</div>
+														<input class="form-control fc-datepicker" placeholder="종료일" type="text" id="endDate">
+													</div>
+												</div>
+											</div>
+											<div class="col-12 col-sm-12 col-lg-12 col-xl-6 work-sibmit">
+												<button class="btn ripple btn-bg pd-x-20" type="button" id="searchBtn">
+													<i class="fe fe-search mr-2" style="vertical-align: inherit;"></i>조회하기
+												</button>
+												<button class="btn ripple btn-link pd-x-20 ml-2" type="button"  onclick="location.href='calendar.html';"><i class="ti-calendar mr-2"style="vertical-align: middle;"></i>캘린더보기</button>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+								<div class="card custom-card overflow-hidden">
+									<div class="card-header border-bottom-0 pb-0">
+										<div>
+											<div class="d-flex-sb2 border-bottom">
+												<label class="main-content-label my-auto pt-2 pb-4 tx-16">작업정보</label>
+												<div class="add-modal-btn">
+													<button class="trigger"><i class="fe fe-plus-square mr-2"style="vertical-align: middle;"></i>리스트추가</button>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="card-body">
+										<div class="table-responsive">
+											<table class="table text-nowrap text-md-nowrap table-bordered table-hovered mg-b-0 text-center" id="taskTable" style="width: 100%">
+												<thead>
+													<tr class="text-center">
+														<th>번호</th>
+														<th>작업 유형</th>
+														<th>작업명</th>
+														<th>작업리스트</th>
+														<th>작성자</th>
+														<th>작업일자</th>
+													</tr>
+												</thead>
+												<tbody>
+
+												</tbody>
+											</table>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- col end -->
+						</div>
+						<!-- Row end -->
+					</div>
+				</div>
+			</div>
+			<!-- End Main Content-->
+			<!-- modal content -->
+			<div class="modal">
+				<div class="modal-content wd-40p">
+					<div class="modal-header">
+						<h3>리스트 추가</h3>
+						<span class="close-button">×</span>
+					</div>
+					<div class="modal-body">
+						<form id="taskForm">
+						<div class="row row-sm modal-scroll list-scroll">
+							<div class="col-md-12">
+								<div class="form-group mb-1">
+									<p class="mg-b-10 modal-input-label">작업 유형</p>
+									<select class="form-control" name="workType">
+										<option value="관수">관수</option>
+										<!--<option value="NDVI 카메라">NDVI 카메라</option>
+										<option value="기상센서">기상센서</option>-->
+									</select>
+								</div>
+							</div>
+							<div class="col-md-12">
+								<div class="form-group mb-1">
+									<p class="mg-b-10 modal-input-label">작업명</p>
+									<input type="text" class="form-control" name="workName">
+								</div>
+							</div>
+							<div class="col-md-12">
+								<div class="form-group mb-1">
+									<p class="mg-b-10 modal-input-label">작업일자</p>
+									<div class="input-group">
+										<div class="input-group-prepend">
+											<div class="input-group-text">
+												<i class="fe fe-calendar lh--9 op-6"></i>
+											</div>
+										</div>
+										<input class="form-control fc-datepicker" placeholder="시작일" type="text" name="workDate">
+									</div>
+								</div>
+							</div>
+							<div class="col-md-12">
+								<div class="form-group">
+									<p class="mg-b-10 modal-input-label">작업 리스트</p>
+									<input type="text" class="form-control" name="workList[]" id="workList">
+								</div>
+								<div id="more-contact"></div>
+							</div>
+						</div>
+						<div class="input-add-btn">
+							<button id="addContact" type="button" class="mr-2"><i class="ti-plus"></i></button> 
+							<button id="removeContact" type="button"><i class="ti-minus"></i></button>
+						</div>
+						<div class="add-modal-btn mt-3 modal-btn-border">
+							<button type="button" id="insertWaterTask">등록</button>
+							<button type="button" class="cancel-button">취소</button>
+						</div>
+						</form>
+					</div>
+				</div>
+			</div>
+			<!-- /modal content -->
+			<!-- Main Footer-->
+			<div class="main-footer text-center">
+				<div class="container">
+					<div class="row row-sm">
+						<div class="col-md-12">
+							<span class="text-white">Copyright © 2023 <a style="color: #80b9ed;">상암월드컵경기장</a></span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--End Footer-->
+		</div>
+		<!-- End Page -->
+
+		<!-- Back-to-top -->
+		<a href="#top" id="back-to-top"><i class="fe fe-arrow-up"></i></a>
+
+		<!-- Jquery js-->
+		<script src="../assets/plugins/jquery/jquery.min.js"></script>
+
+		<!-- Bootstrap js-->
+		<script src="../assets/plugins/bootstrap/js/popper.min.js"></script>
+		<script src="../assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+
+		<!-- Peity js-->
+		<script src="../assets/plugins/peity/jquery.peity.min.js"></script>
+		<!-- Internal Jquery-Ui js-->
+		<script src="../assets/plugins/jquery-ui/ui/widgets/datepicker.js"></script>
+		<!-- Select2 js-->
+		<script src="../assets/plugins/select2/js/select2.min.js"></script>
+		<!-- Internal Chart.Bundle js-->
+		<script src="../assets/plugins/chart.js/Chart.bundle.min.js"></script>
+		<!-- Internal Jquery.maskedinput js-->
+		<script src="../assets/plugins/jquery.maskedinput/jquery.maskedinput.js"></script>
+		<!-- Sidemenu js -->
+		<script src="../assets/plugins/sidemenu/sidemenu.js"></script>
+
+		<!-- Internal Specturm-colorpicker js-->
+		<script src="../assets/plugins/spectrum-colorpicker/spectrum.js"></script>
+		<!-- Select2 js-->
+		<script src="../assets/plugins/select2/js/select2.min.js"></script>
+		<script src="../assets/js/select2.js"></script>
+		<!--Bootstrap-datepicker js-->
+		<script src="../assets/plugins/bootstrap-datepicker/bootstrap-datepicker.js"></script>
+		<!-- Internal jquery-simple-datetimepicker js -->
+		<script src="../assets/plugins/amazeui-datetimepicker/js/amazeui.datetimepicker.min.js"></script>
+
+		<!-- Internal Data Table js -->
+		<script src="../assets/plugins/datatable/jquery.dataTables.min.js"></script>
+		<script src="../assets/plugins/datatable/dataTables.bootstrap4.min.js"></script>
+		<script src="../assets/plugins/datatable/dataTables.responsive.min.js"></script>
+		<script src="../assets/plugins/datatable/fileexport/dataTables.buttons.min.js"></script>
+		<script src="../assets/plugins/datatable/fileexport/buttons.bootstrap4.min.js"></script>
+		<script src="../assets/js/table-data.js"></script>
+		<!-- Internal Dashboard js-->
+		<script src="../assets/js/crypto-exchange.js"></script>
+		<!-- Internal Form-elements js-->
+		<script src="../assets/js/form-elements.js"></script>
+		<!-- Sticky js -->
+		<script src="../assets/js/sticky.js"></script>
+		<!-- twentytwenty -->
+		<script src="../assets/js/jquery.event.move.js"></script>
+		<script src="../assets/js/jquery.twentytwenty.js"></script>
+		<!-- Custom js -->
+		<script src="../assets/js/custom.js"></script>
+		<script>
+			$(document).ready(function() {  
+				$(".twentytwenty-container[data-orientation!='vertical']").twentytwenty({default_offset_pct: 0.5});
+				$(".twentytwenty-container[data-orientation='vertical']").twentytwenty({default_offset_pct: 0.5, orientation: 'vertical'});
+
+				$("#sensorBtn-1").click(function(){
+					$("#sensorDate-1").toggle();
+					$("#infoBox").toggle();
+				});
+				
+				$("#addContact").on("click", function() {  
+					$("#more-contact").append("<div class='form-group'><input type='text' class='form-control' name='workList[]'/></div>");  
+				});  
+				$("#removeContact").on("click", function() {  
+					$("#more-contact").children().last().remove();  
+				});  
+				
+				var modal = document.querySelector(".modal");
+				var closeButton = document.querySelector(".close-button");
+				var cancelButton = document.querySelector(".cancel-button");
+		
+				function toggleModal() {
+					modal.classList.toggle("show-modal");
+				}
+		
+				function windowOnClick(event) {
+					if (event.target === modal) {
+						toggleModal();
+					}
+				}
+		
+				closeButton.addEventListener("click", toggleModal);
+				window.addEventListener("click", windowOnClick);
+				cancelButton.addEventListener("click", toggleModal);
+
+				
+				$(document).on('click','.trigger',function(){
+					toggleModal()
+				})
+				
+				var dataTable = null;
+				
+				function insertWaterTask(){
+					var param = $('#taskForm').serialize();
+					
+					$.ajax({
+						url : "../php/insertWaterTask.php",
+						data : param,
+						method : "POST",
+						success : function(){
+							getWaterTask()
+							toggleModal();
+						}
+					})
+				}
+				
+				function getWaterTask(){
+					
+					var param = {
+						startDate : $('#startDate').val(),
+						endDate : $('#endDate').val()
+					}
+					
+					if(dataTable!=null){
+						dataTable.clear();
+						dataTable.destroy();
+					}
+					
+					$.ajax({
+						url : "../php/getWaterTask.php",
+						method : "POST",
+						data : param,
+						success : function(result){
+							console.log(result);
+							
+							$.each(result,function(index,item){
+								item.WORK_LIST = item.WORK_LIST.replace(/\;/gi,'<br>')
+							})
+							
+							
+							var dataHead = [{"data" : "WORK_NO"},{"data" : "WORK_TYPE"},{"data" : "WORK_NAME"},{"data" : "WORK_LIST"},{"data" : "USER_ID"},{"data" : "WORK_DATE"}];
+							
+							dataTable = $('#taskTable').DataTable({
+					            "language": {
+					                //url: "../global_assets/js/plugins/tables/datatables/localization_kor.min.json",
+				        			searchPlaceholder: '검색...',
+				        			sSearch: '',
+				        			lengthMenu: '_MENU_ 출력수',
+					            },
+								//"dom": 'Blfrtip',
+								"data": result,
+						        "columns": dataHead,
+						        "deferRender": true,
+						        //"aaSorting": ["USER_ID"],
+						        "scrollX": true,
+						        createdRow: function (row, data, index) {
+						        	//$(row).attr("data-toggle" ,"modal").attr("data-target" ,"#new-Test").css("cursor","pointer");
+						        	row.onclick = function (e){
+						        		var form = document.createElement('form');
+						        		var objs;
+						        		objs = document.createElement('input');
+						        		objs.setAttribute('type', 'hidden');
+						        		objs.setAttribute('name', 'workNo');
+						        		objs.setAttribute('value', data.WORK_NO);
+						        		form.appendChild(objs);
+						        		form.setAttribute('method', 'post');
+						        		form.setAttribute('action', "./work-history-modify.html");
+						        		
+						        		document.body.appendChild(form);
+						        		form.submit();
+						        	}
+						        }
+							})
+						}
+					})
+				}
+				
+				getWaterTask();
+				
+				$('#insertWaterTask').on('click',function(){
+					if($('#workName').val()=='' || $('#workDate').val()=='' || $('#workList').val()==''){
+						alert("내용이 유효하지 않습니다.")
+						return;
+					}
+					
+					let check = confirm("작업을 등록하시겠습니까?");
+					if(check){
+						insertWaterTask();
+					}
+				})
+				
+				$('#searchBtn').on('click',function(){
+					getWaterTask();
+				})
+			});  
+		</script>
+	</body>
+</html>
