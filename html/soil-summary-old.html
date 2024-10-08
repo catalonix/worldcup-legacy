@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+<meta name="description" content="">
+<meta name="author" content="">
+<meta name="keywords" content="">
+<!-- Favicon -->
+<link rel="icon" href="" type="image/x-icon" />
+<!-- Title -->
+<title>상암월드컵경기장</title>
+<!-- Bootstrap css-->
+<link href="../assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+<!-- Icons css-->
+<link href="../assets/plugins/web-fonts/icons.css" rel="stylesheet" />
+<link href="../assets/plugins/web-fonts/font-awesome/font-awesome.min.css" rel="stylesheet">
+<link href="../assets/plugins/web-fonts/plugin.css" rel="stylesheet" />
+<!-- Style css-->
+<link href="../assets/css/style.css" rel="stylesheet">
+<link href="../assets/css/skins.css" rel="stylesheet">
+<!-- Sidemenu css-->
+<link href="../assets/css/sidemenu/sidemenu.css" rel="stylesheet">
+<link href="../assets/css/sangam.css" rel="stylesheet">
+<link href="../assets/css/twentytwenty.css" rel="stylesheet" type="text/css">
+	<style>
+		@media screen and (max-width: 600px) {
+			.card-body {
+				padding-top: 0px;
+			}
+			.soli-data {
+				margin-bottom: 0px !important;
+			}
+			.pd-x-20 {
+				padding-left: 10px;
+				padding-right: 10px;
+			}
+		}
+	</style>
+</head>
+
+<body class="main-body leftmenu">
+	<!-- Loader -->
+	<div id="global-loader">
+		<img src="../assets/img/loaderesult.svg" class="loader-img" alt="Loader">
+	</div>
+	<!-- End Loader -->
+	<!-- Page -->
+	<div class="page">
+		<!-- Sidemenu -->
+		<?include "../include/sidebar.php";?>
+		<!-- End Sidemenu -->
+
+		<!-- Main Header-->
+		<?include "../include/header.php";?>
+		<!-- End Main Header-->
+		<!-- Main Content-->
+		<div class="main-content side-content pt-0">
+			<div class="container-fluid main-m-pt">
+				<div class="inner-body">
+					<!-- Page Header -->
+					<div class="page-header">
+						<div>
+							<h2 class="main-content-title text-white tx-24 mg-b-5 font-weight-bold">토양관측 정보</h2>
+							<ol class="breadcrumb">
+								<li class="breadcrumb-item">Home</li>
+								<li class="breadcrumb-item active" aria-current="page">요약분석 정보</li>
+								<li class="breadcrumb-item active" aria-current="page">토양관측 정보</li>
+							</ol>
+						</div>
+					</div>
+					<!-- End Page Header -->
+					<!--Row-->
+					<div class="row row-sm mt-4">
+						<!-- col -->
+						<div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+							<div class="card custom-card overflow-hidden">
+								<div class="card-header border-bottom-0 pb-0">
+									<div>
+										<div class="d-flex-sb border-bottom">
+											<label class="main-content-label my-auto pt-2 pb-2 tx-16">상세검색</label>
+										</div>
+									</div>
+								</div>
+								<div class="card-body">
+									<div class="row row-sm">
+										<div class="col-7 col-sm-12 col-lg-3 col-xl-2 margin-responsive">
+											<select class="form-control" id="loc">				
+												<option value="02">1번 스팟</option>
+												<option value="03">2번 스팟</option>
+												<option value="04">3번 스팟</option>
+												<option value="05">4번 스팟</option>
+												<option value="06">5번 스팟</option>
+												<option value="07">6번 스팟</option>
+												<option value="10">7번 스팟</option>
+												<option value="11">8번 스팟</option>
+												<option value="12">9번 스팟</option>
+												<option value="13">10번 스팟</option>
+												<option value="14">11번 스팟</option>
+												<option value="16">12번 스팟</option>
+												<option value="18">13번 스팟</option>
+												<option value="19">14번 스팟</option>
+												<option value="20">15번 스팟</option>
+												<option value="21">16번 스팟</option>
+												<option value="22">17번 스팟</option>
+												<option value="23">18번 스팟</option>
+												<option value="26">19번 스팟</option>
+												<option value="27">20번 스팟</option>
+												<option value="28">21번 스팟</option>
+												<option value="29">22번 스팟</option>
+												<option value="30">23번 스팟</option>
+												<option value="31">24번 스팟</option>
+											</select>
+										</div>
+										<div class="col-5 col-sm-12 col-lg-12 col-xl-6 observation-submit">
+											<button type="button" class="btn ripple btn-bg pd-x-20" id="searchBtn">
+												<i class="fe fe-search mr-2" style="vertical-align: inherit;"></i>조회하기
+											</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- col end -->
+					</div>
+					<!-- Row end -->
+					<!--Row-->
+					<div class="row row-sm">
+						<!-- col -->
+						<div class="col-sm-12 col-md-12 col-lg-6 col-xl-4">
+							<div class="card custom-card overflow-hidden">
+								<div class="card-header border-bottom-0 pb-0 mb-3">
+									<div>
+										<div class="d-flex-sb">
+											<label class="main-content-label my-auto tx-16">토양온도</label>
+											<div class="title-icon-box">
+												<i class="wi wi-thermometer"></i>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="card-body">
+									<div class="robot-data">
+										<div class="robot-data-type d-flex-sb-c">
+											<h4 class="soli-data" id="STP">
+												13.5<span>ºC</span>
+											</h4>
+											<h5>
+												<span class="situation-temperature-low">낮음</span>
+											</h5>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-12 col-md-12 col-lg-6 col-xl-4">
+							<div class="card custom-card overflow-hidden">
+								<div class="card-header border-bottom-0 pb-0 mb-3">
+									<div>
+										<div class="d-flex-sb">
+											<label class="main-content-label my-auto tx-16">토양수분</label>
+											<div class="title-icon-box">
+												<i class="wi wi-humidity"></i>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- 200230308 아이콘 수정 -->
+								<div class="card-body">
+									<div class="robot-data">
+										<div class="robot-data-type d-flex-sb-c">
+											<h4 class="soli-data" id="SMO">
+												15.3<span>%</span>
+											</h4>
+											<h5>
+												<span class="situation-humidity-veryhigh">매우높음</span>
+											</h5>
+										</div>
+									</div>
+								</div>
+								<!-- /200230308 아이콘 수정 -->
+							</div>
+						</div>
+						<div class="col-sm-12 col-md-12 col-lg-6 col-xl-4">
+							<div class="card custom-card overflow-hidden">
+								<div class="card-header border-bottom-0 pb-0 mb-3">
+									<div>
+										<div class="d-flex-sb">
+											<label class="main-content-label my-auto tx-16">토양양분</label>
+											<div class="title-icon-box">
+												<img src="../assets/img/njourishment-icon.png" style="width: 14px;">
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- 200230308 아이콘 수정 -->
+								<div class="card-body">
+									<div class="robot-data">
+										<div class="robot-data-type d-flex-sb-c">
+											<h4 class="soli-data" id="SEC">
+												0.3<span>dS/m</span>
+											</h4>
+											<h5>
+												<span class="situation-success">-</span>
+											</h5>
+										</div>
+									</div>
+								</div>
+								<!-- /200230308 아이콘 수정 -->
+							</div>
+						</div>
+						<!--
+						<div class="col-sm-12 col-md-12 col-lg-6 col-xl-3">
+							<div class="card custom-card overflow-hidden">
+								<div class="card-header border-bottom-0 pb-0 mb-3">
+									<div>
+										<div class="d-flex-sb">
+											<label class="main-content-label my-auto tx-16">측정일시</label>
+											<div class="title-icon-box">
+												<i class="wi wi-raindrops tx-20"></i>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="card-body">
+									<div class="robot-data">
+										<div class="robot-data-type d-flex-sb-c">
+											<h4 class="soli-data" id="PH">
+												5.5<span>ph</span>
+											</h4>
+											<h5>
+												<span class="situation-success">-</span>
+											</h5>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						-->
+						<!-- col end -->
+					</div>
+					<!-- Row end -->
+				</div>
+			</div>
+		</div>
+		<!-- End Main Content-->
+		<!-- Main Footer-->
+		<div class="main-footer text-center">
+			<div class="container">
+				<div class="row row-sm">
+					<div class="col-md-12">
+						<span class="text-white">Copyright © 2023 <a style="color: #80b9ed;">상암월드컵경기장</a></span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--End Footer-->
+	</div>
+	<!-- End Page -->
+
+	<!-- Back-to-top -->
+	<a href="#top" id="back-to-top"><i class="fe fe-arrow-up"></i></a>
+
+	<!-- Jquery js-->
+	<script src="../assets/plugins/jquery/jquery.min.js"></script>
+
+	<!-- Bootstrap js-->
+	<script src="../assets/plugins/bootstrap/js/popperesult.min.js"></script>
+	<script src="../assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+
+	<!-- Peity js-->
+	<script src="../assets/plugins/peity/jquery.peity.min.js"></script>
+
+	<!-- Select2 js-->
+	<script src="../assets/plugins/select2/js/select2.min.js"></script>
+	<!-- Internal Chart.Bundle js-->
+	<script src="../assets/plugins/chart.js/Chart.bundle.min.js"></script>
+	<!-- Internal Jquery.maskedinput js-->
+	<script src="../assets/plugins/jquery.maskedinput/jquery.maskedinput.js"></script>
+	<!-- Sidemenu js -->
+	<script src="../assets/plugins/sidemenu/sidemenu.js"></script>
+	<!-- Internal Dashboard js-->
+	<script src="../assets/js/crypto-exchange.js"></script>
+	<!-- Internal Form-elements js-->
+	<script src="../assets/js/form-elements.js"></script>
+	<!-- Sticky js -->
+	<script src="../assets/js/sticky.js"></script>
+	<!-- twentytwenty -->
+	<script src="../assets/js/jquery.event.move.js"></script>
+	<script src="../assets/js/jquery.twentytwenty.js"></script>
+	<script>
+	$(function() {
+	    $(".twentytwenty-container[data-orientation!='vertical']")
+		    .twentytwenty({
+			default_offset_pct : 0.5
+		});
+	    $(".twentytwenty-container[data-orientation='vertical']")
+		    .twentytwenty({
+			default_offset_pct : 0.5,
+			orientation : 'vertical'
+		});
+	    
+	    $('#searchBtn').on('click',function(){
+			let loc = $('#loc').val();
+			$.ajax({
+				url : "../php/getSoilSummary.php",
+				data : "loc="+loc,
+				method : "POST",
+				success : function(result){
+				    
+				    let rate = result.rate;
+					let result = result.spot;
+				    
+				    if(!result.PH){
+						result.PH = 0;
+				    }
+				    $('.soli-data:eq(0)').html(`${(result.STP*1).toFixed(1)}<span>ºC</span>`)
+				    $('.soli-data:eq(1)').html(`${(result.SMO*1).toFixed(1)}<span>%</span>`)
+				    $('.soli-data:eq(2)').html(`${(result.SEC*1).toFixed(2)}<span>dS/m</span>`)
+				    $('.soli-data:eq(3)').html(`${result.MINS}<span></span>`)
+				    
+					let stpGrade = "";
+					let smoGrade = "";
+					
+					$.each(rate,function(index,item){
+						if(item.VALUE_NAME=='temp' && result.STP*1 >= item.UNDER*1 && result.STP*1 <= item.OVER*1){
+							stpGrade = item.STEP;
+						}
+						if(item.VALUE_NAME=='humi' && result.SMO*1 >= item.UNDER*1 && result.SMO*1 <= item.OVER*1){
+							smoGrade = item.STEP;
+						}
+					})
+					
+					console.log(smoGrade+","+stpGrade);
+					
+					if(smoGrade){
+						if(smoGrade==1){
+							$('#SMO').parent().find('h5 span').attr('class',"situation-humidity-verylow");
+							$('#SMO').parent().find('h5 span').text("매우낮음")
+						}
+						if(smoGrade==2){
+							$('#SMO').parent().find('h5 span').attr('class',"situation-humidity-low");
+							$('#SMO').parent().find('h5 span').text("낮음")
+						}
+						if(smoGrade==3){
+							$('#SMO').parent().find('h5 span').attr('class',"situation-humidity-middle");
+							$('#SMO').parent().find('h5 span').text("양호")
+						}
+						if(smoGrade==4){
+							$('#SMO').parent().find('h5 span').attr('class',"situation-humidity-high");
+							$('#SMO').parent().find('h5 span').text("높음")
+						}
+						if(smoGrade==5){
+							$('#SMO').parent().find('h5 span').attr('class',"situation-humidity-veryhigh");
+							$('#SMO').parent().find('h5 span').text("매우높음")
+						}
+					}
+					
+					if(stpGrade){
+						if(stpGrade==1){
+							$('#STP').parent().find('h5 span').attr('class',"situation-temperature-verylow");
+							$('#STP').parent().find('h5 span').text("매우낮음")
+						}
+						if(stpGrade==2){
+							$('#STP').parent().find('h5 span').attr('class',"situation-temperature-low");
+							$('#STP').parent().find('h5 span').text("낮음")
+						}
+						if(stpGrade==3){
+							$('#STP').parent().find('h5 span').attr('class',"situation-temperature-middle");
+							$('#STP').parent().find('h5 span').text("양호")
+						}
+						if(stpGrade==4){
+							$('#STP').parent().find('h5 span').attr('class',"situation-temperature-high");
+							$('#STP').parent().find('h5 span').text("높음")
+						}
+						if(stpGrade==5){
+							$('#STP').parent().find('h5 span').attr('class',"situation-temperature-veryhigh");
+							$('#STP').parent().find('h5 span').text("매우높음")
+						}
+					}
+				}
+			})
+	    })
+
+		if('<?=$_GET["locNo"]?>'){
+			$('#loc').val('<?=$_GET["locNo"]?>');
+		}
+	    
+	    $('#searchBtn').click();
+	});
+    </script>
+	<!-- Custom js -->
+	<script src="../assets/js/custom.js"></script>
+</body>
+</html>

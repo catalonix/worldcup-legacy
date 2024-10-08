@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="keywords" content="">
+    <!-- Favicon -->
+    <link rel="icon" href="" type="image/x-icon" />
+    <!-- Title -->
+    <title>상암월드컵경기장</title>
+    <!-- Bootstrap css-->
+    <link href="../assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Icons css-->
+    <link href="../assets/plugins/web-fonts/icons.css" rel="stylesheet" />
+    <link href="../assets/plugins/web-fonts/font-awesome/font-awesome.min.css" rel="stylesheet">
+    <link href="../assets/plugins/web-fonts/plugin.css" rel="stylesheet" />
+    <!-- Style css-->
+    <link href="../assets/css/style.css" rel="stylesheet">
+    <link href="../assets/css/skins.css" rel="stylesheet">
+    <!-- Sidemenu css-->
+    <link href="../assets/css/sidemenu/sidemenu.css" rel="stylesheet">
+    <link href="../assets/css/sangam.css" rel="stylesheet">
+    <link href="../assets/css/twentytwenty.css" rel="stylesheet" type="text/css">
+    <style>
+        @media screen and (max-width: 600px) {
+            .card-body {
+                padding-top: 0px;
+            }
+            .soli-data {
+                margin-bottom: 0px !important;
+            }
+            .pd-x-20 {
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body class="main-body leftmenu">
+<!-- Loader -->
+<div id="global-loader">
+    <img src="../assets/img/loaderesult.svg" class="loader-img" alt="Loader">
+</div>
+<!-- End Loader -->
+<!-- Page -->
+<div class="page">
+    <!-- Sidemenu -->
+    <?include "../include/sidebar.php";?>
+    <!-- End Sidemenu -->
+
+    <!-- Main Header-->
+    <?include "../include/header.php";?>
+    <!-- End Main Header-->
+    <!-- Main Content-->
+    <div class="main-content side-content pt-0">
+        <div class="container-fluid main-m-pt">
+            <div class="inner-body">
+                <!-- Page Header -->
+                <div class="page-header">
+                    <div>
+                        <h2 class="main-content-title text-white tx-24 mg-b-5 font-weight-bold">토양관측정보</h2>
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item">Home</li>
+                            <li class="breadcrumb-item active" aria-current="page">토양관측정보</li>
+                        </ol>
+                    </div>
+                </div>
+                <!-- End Page Header -->
+                <!--Row-->
+                <div class="row row-sm mt-4">
+                    <!-- col -->
+                    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                        <div class="card custom-card overflow-hidden">
+                            <div class="card-header border-bottom-0 pb-0">
+                                <div>
+                                    <div class="stadium-header">
+                                        <label class="main-content-label my-auto pt-2 tx-16">경기장 장비현황
+                                            <h5 class="card-data">측정일시 : <span id="tmFc">2023.01.09 10:23</span></h5>
+                                        </label>
+                                        <div class="card-header-right">
+                                            <div class="stadium-legend">
+                                                <div class="legend-normal">
+                                                    <div></div>
+                                                    <span>정상작동</span>
+                                                </div>
+                                                <div class="legend-weird">
+                                                    <div></div>
+                                                    <span>이상</span>
+                                                </div>
+                                                <div class="legend-none">
+                                                    <div></div>
+                                                    <span>데이터없음</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body pt-1">
+                                <div class="stadium-img stadium-map">
+                                    <img src="../assets/img/stadium.png" alt="stadium">
+                                    <div class="equipment-location">
+
+                                    </div>
+                                    <div class="stadium-sensor sensor-top">
+                                        <div class="sensor-row">
+                                            <div class="sensor-info" data-loc="31" >
+                                                <div class="sensor-info-row mb-2">
+                                                    <div class="sensor-humidity humidity-verylow">
+                                                        <h5>습도</h5>
+                                                        <h4>13%</h4>
+                                                    </div>
+                                                    <div class="sensor-temperature temperature-low">
+                                                        <h5>온도</h5>
+                                                        <h4>16ºC</h4>
+                                                    </div>
+                                                </div>
+                                                <div class="sensor-info-row">
+                                                    <div class="sensor-ec">
+                                                        <h5>EC</h5>
+                                                        <h4>0.2</h4>
+                                                    </div>
+                                                    <div class="sensor-ph">
+                                                        <h5>일시</h5>
+                                                        <h4>5.1</h4>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="sensor-info" data-loc="30" >
+                                                <div class="sensor-info-row mb-2">
+                                                    <div class="sensor-humidity humidity-verylow">
+                                                        <h5>습도</h5>
+                                                        <h4>13%</h4>
+                                                    </div>
+                                                    <div class="sensor-temperature temperature-low">
+                                                        <h5>온도</h5>
+                                                        <h4>16ºC</h4>
+                                                    </div>
+                                                </div>
+                                                <div class="sensor-info-row">
+                                                    <div class="sensor-ec">
+                                                        <h5>EC</h5>
+                                                        <h4>0.2</h4>
+                                                    </div>
+                                                    <div class="sensor-ph">
+                                                        <h5>일시</h5>
+                                                        <h4>5.1</h4>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="sensor-info" data-loc="29" >
+                                                <div class="sensor-info-row mb-2">
+                                                    <div class="sensor-humidity humidity-verylow">
+                                                        <h5>습도</h5>
+                                                        <h4>13%</h4>
+                                                    </div>
+                                                    <div class="sensor-temperature temperature-low">
+                                                        <h5>온도</h5>
+                                                        <h4>16ºC</h4>
+                                                    </div>
+                                                </div>
+                                                <div class="sensor-info-row">
+                                                    <div class="sensor-ec">
+                                                        <h5>EC</h5>
+                                                        <h4>0.2</h4>
+                                                    </div>
+                                                    <div class="sensor-ph">
+                                                        <h5>일시</h5>
+                                                        <h4>5.1</h4>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="sensor-info" data-loc="28" >
+                                                <div class="sensor-info-row mb-2">
+                                                    <div class="sensor-humidity humidity-verylow">
+                                                        <h5>습도</h5>
+                                                        <h4>13%</h4>
+                                                    </div>
+                                                    <div class="sensor-temperature temperature-low">
+                                                        <h5>온도</h5>
+                                                        <h4>16ºC</h4>
+                                                    </div>
+                                                </div>
+                                                <div class="sensor-info-row">
+                                                    <div class="sensor-ec">
+                                                        <h5>EC</h5>
+                                                        <h4>0.2</h4>
+                                                    </div>
+                                                    <div class="sensor-ph">
+                                                        <h5>일시</h5>
+                                                        <h4>5.1</h4>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="sensor-info" data-loc="27" >
+                                                <div class="sensor-info-row mb-2">
+                                                    <div class="sensor-humidity humidity-verylow">
+                                                        <h5>습도</h5>
+                                                        <h4>13%</h4>
+                                                    </div>
+                                                    <div class="sensor-temperature temperature-low">
+                                                        <h5>온도</h5>
+                                                        <h4>16ºC</h4>
+                                                    </div>
+                                                </div>
+                                                <div class="sensor-info-row">
+                                                    <div class="sensor-ec">
+                                                        <h5>EC</h5>
+                                                        <h4>0.2</h4>
+                                                    </div>
+                                                    <div class="sensor-ph">
+                                                        <h5>일시</h5>
+                                                        <h4>5.1</h4>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="sensor-info" data-loc="26" >
+                                                <div class="sensor-info-row mb-2">
+                                                    <div class="sensor-humidity humidity-verylow">
+                                                        <h5>습도</h5>
+                                                        <h4>13%</h4>
+                                                    </div>
+                                                    <div class="sensor-temperature temperature-low">
+                                                        <h5>온도</h5>
+                                                        <h4>16ºC</h4>
+                                                    </div>
+                                                </div>
+                                                <div class="sensor-info-row">
+                                                    <div class="sensor-ec">
+                                                        <h5>EC</h5>
+                                                        <h4>0.2</h4>
+                                                    </div>
+                                                    <div class="sensor-ph">
+                                                        <h5>일시</h5>
+                                                        <h4>5.1</h4>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="sensor-row">
+                                            <div class="sensor-info" data-loc="18" >
+                                                <div class="sensor-info-row mb-2">
+                                                    <div class="sensor-humidity humidity-verylow">
+                                                        <h5>습도</h5>
+                                                        <h4>13%</h4>
+                                                    </div>
+                                                    <div class="sensor-temperature temperature-low">
+                                                        <h5>온도</h5>
+                                                        <h4>16ºC</h4>
+                                                    </div>
+                                                </div>
+                                                <div class="sensor-info-row">
+                                                    <div class="sensor-ec">
+                                                        <h5>EC</h5>
+                                                        <h4>0.2</h4>
+                                                    </div>
+                                                    <div class="sensor-ph">
+                                                        <h5>일시</h5>
+                                                        <h4>5.1</h4>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="sensor-info" data-loc="19" >
+                                                <div class="sensor-info-row mb-2">
+                                                    <div class="sensor-humidity humidity-verylow">
+                                                        <h5>습도</h5>
+                                                        <h4>13%</h4>
+                                                    </div>
+                                                    <div class="sensor-temperature temperature-low">
+                                                        <h5>온도</h5>
+                                                        <h4>16ºC</h4>
+                                                    </div>
+                                                </div>
+                                                <div class="sensor-info-row">
+                                                    <div class="sensor-ec">
+                                                        <h5>EC</h5>
+                                                        <h4>0.2</h4>
+                                                    </div>
+                                                    <div class="sensor-ph">
+                                                        <h5>일시</h5>
+                                                        <h4>5.1</h4>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="sensor-info" data-loc="20" >
+                                                <div class="sensor-info-row mb-2">
+                                                    <div class="sensor-humidity humidity-verylow">
+                                                        <h5>습도</h5>
+                                                        <h4>13%</h4>
+                                                    </div>
+                                                    <div class="sensor-temperature temperature-low">
+                                                        <h5>온도</h5>
+                                                        <h4>16ºC</h4>
+                                                    </div>
+                                                </div>
+                                                <div class="sensor-info-row">
+                                                    <div class="sensor-ec">
+                                                        <h5>EC</h5>
+                                                        <h4>0.2</h4>
+                                                    </div>
+                                                    <div class="sensor-ph">
+                                                        <h5>일시</h5>
+                                                        <h4>5.1</h4>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="sensor-info" data-loc="21" >
+                                                <div class="sensor-info-row mb-2">
+                                                    <div class="sensor-humidity humidity-verylow">
+                                                        <h5>습도</h5>
+                                                        <h4>13%</h4>
+                                                    </div>
+                                                    <div class="sensor-temperature temperature-low">
+                                                        <h5>온도</h5>
+                                                        <h4>16ºC</h4>
+                                                    </div>
+                                                </div>
+                                                <div class="sensor-info-row">
+                                                    <div class="sensor-ec">
+                                                        <h5>EC</h5>
+                                                        <h4>0.2</h4>
+                                                    </div>
+                                                    <div class="sensor-ph">
+                                                        <h5>일시</h5>
+                                                        <h4>5.1</h4>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="sensor-info" data-loc="22" >
+                                                <div class="sensor-info-row mb-2">
+                                                    <div class="sensor-humidity humidity-verylow">
+                                                        <h5>습도</h5>
+                                                        <h4>13%</h4>
+                                                    </div>
+                                                    <div class="sensor-temperature temperature-low">
+                                                        <h5>온도</h5>
+                                                        <h4>16ºC</h4>
+                                                    </div>
+                                                </div>
+                                                <div class="sensor-info-row">
+                                                    <div class="sensor-ec">
+                                                        <h5>EC</h5>
+                                                        <h4>0.2</h4>
+                                                    </div>
+                                                    <div class="sensor-ph">
+                                                        <h5>일시</h5>
+                                                        <h4>5.1</h4>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="sensor-info" data-loc="23" >
+                                                <div class="sensor-info-row mb-2">
+                                                    <div class="sensor-humidity humidity-verylow">
+                                                        <h5>습도</h5>
+                                                        <h4>13%</h4>
+                                                    </div>
+                                                    <div class="sensor-temperature temperature-low">
+                                                        <h5>온도</h5>
+                                                        <h4>16ºC</h4>
+                                                    </div>
+                                                </div>
+                                                <div class="sensor-info-row">
+                                                    <div class="sensor-ec">
+                                                        <h5>EC</h5>
+                                                        <h4>0.2</h4>
+                                                    </div>
+                                                    <div class="sensor-ph">
+                                                        <h5>일시</h5>
+                                                        <h4>5.1</h4>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="stadium-sensor sensor-bottom">
+                                        <div class="sensor-row">
+                                            <div class="sensor-info" data-loc="14" >
+                                                <div class="sensor-info-row mb-2">
+                                                    <div class="sensor-humidity humidity-verylow">
+                                                        <h5>습도</h5>
+                                                        <h4>13%</h4>
+                                                    </div>
+                                                    <div class="sensor-temperature temperature-low">
+                                                        <h5>온도</h5>
+                                                        <h4>16ºC</h4>
+                                                    </div>
+                                                </div>
+                                                <div class="sensor-info-row">
+                                                    <div class="sensor-ec">
+                                                        <h5>EC</h5>
+                                                        <h4>0.2</h4>
+                                                    </div>
+                                                    <div class="sensor-ph">
+                                                        <h5>일시</h5>
+                                                        <h4>5.1</h4>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="sensor-info" data-loc="13" >
+                                                <div class="sensor-info-row mb-2">
+                                                    <div class="sensor-humidity humidity-verylow">
+                                                        <h5>습도</h5>
+                                                        <h4>13%</h4>
+                                                    </div>
+                                                    <div class="sensor-temperature temperature-low">
+                                                        <h5>온도</h5>
+                                                        <h4>16ºC</h4>
+                                                    </div>
+                                                </div>
+                                                <div class="sensor-info-row">
+                                                    <div class="sensor-ec">
+                                                        <h5>EC</h5>
+                                                        <h4>0.2</h4>
+                                                    </div>
+                                                    <div class="sensor-ph">
+                                                        <h5>일시</h5>
+                                                        <h4>5.1</h4>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="sensor-info" data-loc="12" >
+                                                <div class="sensor-info-row mb-2">
+                                                    <div class="sensor-humidity humidity-verylow">
+                                                        <h5>습도</h5>
+                                                        <h4>13%</h4>
+                                                    </div>
+                                                    <div class="sensor-temperature temperature-low">
+                                                        <h5>온도</h5>
+                                                        <h4>16ºC</h4>
+                                                    </div>
+                                                </div>
+                                                <div class="sensor-info-row">
+                                                    <div class="sensor-ec">
+                                                        <h5>EC</h5>
+                                                        <h4>0.2</h4>
+                                                    </div>
+                                                    <div class="sensor-ph">
+                                                        <h5>일시</h5>
+                                                        <h4>5.1</h4>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="sensor-info" data-loc="16" >
+                                                <div class="sensor-info-row mb-2">
+                                                    <div class="sensor-humidity humidity-verylow">
+                                                        <h5>습도</h5>
+                                                        <h4>13%</h4>
+                                                    </div>
+                                                    <div class="sensor-temperature temperature-low">
+                                                        <h5>온도</h5>
+                                                        <h4>16ºC</h4>
+                                                    </div>
+                                                </div>
+                                                <div class="sensor-info-row">
+                                                    <div class="sensor-ec">
+                                                        <h5>EC</h5>
+                                                        <h4>0.2</h4>
+                                                    </div>
+                                                    <div class="sensor-ph">
+                                                        <h5>일시</h5>
+                                                        <h4>5.1</h4>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="sensor-info" data-loc="11" >
+                                                <div class="sensor-info-row mb-2">
+                                                    <div class="sensor-humidity humidity-verylow">
+                                                        <h5>습도</h5>
+                                                        <h4>13%</h4>
+                                                    </div>
+                                                    <div class="sensor-temperature temperature-low">
+                                                        <h5>온도</h5>
+                                                        <h4>16ºC</h4>
+                                                    </div>
+                                                </div>
+                                                <div class="sensor-info-row">
+                                                    <div class="sensor-ec">
+                                                        <h5>EC</h5>
+                                                        <h4>0.2</h4>
+                                                    </div>
+                                                    <div class="sensor-ph">
+                                                        <h5>일시</h5>
+                                                        <h4>5.1</h4>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="sensor-info" data-loc="10" >
+                                                <div class="sensor-info-row mb-2">
+                                                    <div class="sensor-humidity humidity-verylow">
+                                                        <h5>습도</h5>
+                                                        <h4>13%</h4>
+                                                    </div>
+                                                    <div class="sensor-temperature temperature-low">
+                                                        <h5>온도</h5>
+                                                        <h4>16ºC</h4>
+                                                    </div>
+                                                </div>
+                                                <div class="sensor-info-row">
+                                                    <div class="sensor-ec">
+                                                        <h5>EC</h5>
+                                                        <h4>0.2</h4>
+                                                    </div>
+                                                    <div class="sensor-ph">
+                                                        <h5>일시</h5>
+                                                        <h4>5.1</h4>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="sensor-row">
+                                            <div class="sensor-info" data-loc="02" >
+                                                <div class="sensor-info-row mb-2">
+                                                    <div class="sensor-humidity humidity-verylow">
+                                                        <h5>습도</h5>
+                                                        <h4>13%</h4>
+                                                    </div>
+                                                    <div class="sensor-temperature temperature-low">
+                                                        <h5>온도</h5>
+                                                        <h4>16ºC</h4>
+                                                    </div>
+                                                </div>
+                                                <div class="sensor-info-row">
+                                                    <div class="sensor-ec">
+                                                        <h5>EC</h5>
+                                                        <h4>0.2</h4>
+                                                    </div>
+                                                    <div class="sensor-ph">
+                                                        <h5>일시</h5>
+                                                        <h4>5.1</h4>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="sensor-info" data-loc="03" >
+                                                <div class="sensor-info-row mb-2">
+                                                    <div class="sensor-humidity humidity-verylow">
+                                                        <h5>습도</h5>
+                                                        <h4>13%</h4>
+                                                    </div>
+                                                    <div class="sensor-temperature temperature-low">
+                                                        <h5>온도</h5>
+                                                        <h4>16ºC</h4>
+                                                    </div>
+                                                </div>
+                                                <div class="sensor-info-row">
+                                                    <div class="sensor-ec">
+                                                        <h5>EC</h5>
+                                                        <h4>0.2</h4>
+                                                    </div>
+                                                    <div class="sensor-ph">
+                                                        <h5>일시</h5>
+                                                        <h4>5.1</h4>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="sensor-info" data-loc="04" >
+                                                <div class="sensor-info-row mb-2">
+                                                    <div class="sensor-humidity humidity-verylow">
+                                                        <h5>습도</h5>
+                                                        <h4>13%</h4>
+                                                    </div>
+                                                    <div class="sensor-temperature temperature-low">
+                                                        <h5>온도</h5>
+                                                        <h4>16ºC</h4>
+                                                    </div>
+                                                </div>
+                                                <div class="sensor-info-row">
+                                                    <div class="sensor-ec">
+                                                        <h5>EC</h5>
+                                                        <h4>0.2</h4>
+                                                    </div>
+                                                    <div class="sensor-ph">
+                                                        <h5>일시</h5>
+                                                        <h4>5.1</h4>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="sensor-info" data-loc="05" >
+                                                <div class="sensor-info-row mb-2">
+                                                    <div class="sensor-humidity humidity-verylow">
+                                                        <h5>습도</h5>
+                                                        <h4>13%</h4>
+                                                    </div>
+                                                    <div class="sensor-temperature temperature-low">
+                                                        <h5>온도</h5>
+                                                        <h4>16ºC</h4>
+                                                    </div>
+                                                </div>
+                                                <div class="sensor-info-row">
+                                                    <div class="sensor-ec">
+                                                        <h5>EC</h5>
+                                                        <h4>0.2</h4>
+                                                    </div>
+                                                    <div class="sensor-ph">
+                                                        <h5>일시</h5>
+                                                        <h4>5.1</h4>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="sensor-info" data-loc="06" >
+                                                <div class="sensor-info-row mb-2">
+                                                    <div class="sensor-humidity humidity-verylow">
+                                                        <h5>습도</h5>
+                                                        <h4>13%</h4>
+                                                    </div>
+                                                    <div class="sensor-temperature temperature-low">
+                                                        <h5>온도</h5>
+                                                        <h4>16ºC</h4>
+                                                    </div>
+                                                </div>
+                                                <div class="sensor-info-row">
+                                                    <div class="sensor-ec">
+                                                        <h5>EC</h5>
+                                                        <h4>0.2</h4>
+                                                    </div>
+                                                    <div class="sensor-ph">
+                                                        <h5>일시</h5>
+                                                        <h4>5.1</h4>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="sensor-info" data-loc="07" >
+                                                <div class="sensor-info-row mb-2">
+                                                    <div class="sensor-humidity humidity-verylow">
+                                                        <h5>습도</h5>
+                                                        <h4>13%</h4>
+                                                    </div>
+                                                    <div class="sensor-temperature temperature-low">
+                                                        <h5>온도</h5>
+                                                        <h4>16ºC</h4>
+                                                    </div>
+                                                </div>
+                                                <div class="sensor-info-row">
+                                                    <div class="sensor-ec">
+                                                        <h5>EC</h5>
+                                                        <h4>0.2</h4>
+                                                    </div>
+                                                    <div class="sensor-ph">
+                                                        <h5>일시</h5>
+                                                        <h4>5.1</h4>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="stadium-watering">
+                                        <div class="stadium-watering-row flex-bottom">
+
+                                        </div>
+                                    </div>
+                                    <div class="stadium-sensor-m sensor-top-m">
+                                        <div class="sensor-row">
+                                            <div class="sensor-location">
+                                                <div class="sensor-btn" data-loc="31">
+                                                    <div class="sensor-data">
+                                                        <div class="sensor-humidity-data humidity-verylow"></div>
+                                                        <div class="sensor-temperature-data temperature-low"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="sensor-location">
+                                                <div class="sensor-btn" data-loc="30"></div>
+                                            </div>
+                                            <div class="sensor-location">
+                                                <div class="sensor-btn" data-loc="29"></div>
+                                            </div>
+                                            <div class="sensor-location">
+                                                <div class="sensor-btn" data-loc="28"></div>
+                                            </div>
+                                            <div class="sensor-location">
+                                                <div class="sensor-btn" data-loc="27"></div>
+                                            </div>
+                                            <div class="sensor-location">
+                                                <div class="sensor-btn" data-loc="26"></div>
+                                            </div>
+                                        </div>
+                                        <div class="sensor-row">
+                                            <div class="sensor-location">
+                                                <div class="sensor-btn" data-loc="18"></div>
+                                            </div>
+                                            <div class="sensor-location">
+                                                <div class="sensor-btn" data-loc="19"></div>
+                                            </div>
+                                            <div class="sensor-location">
+                                                <div class="sensor-btn" data-loc="20"></div>
+                                            </div>
+                                            <div class="sensor-location">
+                                                <div class="sensor-btn" data-loc="21"></div>
+                                            </div>
+                                            <div class="sensor-location">
+                                                <div class="sensor-btn" data-loc="22"></div>
+                                            </div>
+                                            <div class="sensor-location">
+                                                <div class="sensor-btn" data-loc="23"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="stadium-sensor-m sensor-bottom-m">
+                                        <div class="sensor-row">
+                                            <div class="sensor-location">
+                                                <div class="sensor-btn" data-loc="14"></div>
+                                            </div>
+                                            <div class="sensor-location">
+                                                <div class="sensor-btn" data-loc="13"></div>
+                                            </div>
+                                            <div class="sensor-location">
+                                                <div class="sensor-btn" data-loc="12"></div>
+                                            </div>
+                                            <div class="sensor-location">
+                                                <div class="sensor-btn" data-loc="16"></div>
+                                            </div>
+                                            <div class="sensor-location">
+                                                <div class="sensor-btn" data-loc="11"></div>
+                                            </div>
+                                            <div class="sensor-location">
+                                                <div class="sensor-btn" data-loc="10"></div>
+                                            </div>
+                                        </div>
+                                        <div class="sensor-row">
+                                            <div class="sensor-location">
+                                                <div class="sensor-btn" data-loc="02"></div>
+                                            </div>
+                                            <div class="sensor-location">
+                                                <div class="sensor-btn" data-loc="03"></div>
+                                            </div>
+                                            <div class="sensor-location">
+                                                <div class="sensor-btn" data-loc="04"></div>
+                                            </div>
+                                            <div class="sensor-location">
+                                                <div class="sensor-btn" data-loc="05"></div>
+                                            </div>
+                                            <div class="sensor-location">
+                                                <div class="sensor-btn" data-loc="06"></div>
+                                            </div>
+                                            <div class="sensor-location">
+                                                <div class="sensor-btn" data-loc="07"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- col end -->
+                </div>
+                <!-- Row end -->
+                <!--Row-->
+            </div>
+        </div>
+    </div>
+    <!-- End Main Content-->
+    <!-- Main Footer-->
+    <div class="main-footer text-center">
+        <div class="container">
+            <div class="row row-sm">
+                <div class="col-md-12">
+                    <span class="text-white">Copyright © 2023 <a style="color: #80b9ed;">상암월드컵경기장</a></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--End Footer-->
+</div>
+<!-- End Page -->
+
+<!-- Back-to-top -->
+<a href="#top" id="back-to-top"><i class="fe fe-arrow-up"></i></a>
+
+<!-- Jquery js-->
+<script src="../assets/plugins/jquery/jquery.min.js"></script>
+
+<!-- Bootstrap js-->
+<script src="../assets/plugins/bootstrap/js/popperesult.min.js"></script>
+<script src="../assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+
+<!-- Peity js-->
+<script src="../assets/plugins/peity/jquery.peity.min.js"></script>
+
+<!-- Select2 js-->
+<script src="../assets/plugins/select2/js/select2.min.js"></script>
+<!-- Internal Chart.Bundle js-->
+<script src="../assets/plugins/chart.js/Chart.bundle.min.js"></script>
+<!-- Internal Jquery.maskedinput js-->
+<script src="../assets/plugins/jquery.maskedinput/jquery.maskedinput.js"></script>
+<!-- Sidemenu js -->
+<script src="../assets/plugins/sidemenu/sidemenu.js"></script>
+<!-- Internal Dashboard js-->
+<script src="../assets/js/crypto-exchange.js"></script>
+<!-- Internal Form-elements js-->
+<script src="../assets/js/form-elements.js"></script>
+<!-- Sticky js -->
+<script src="../assets/js/sticky.js"></script>
+<!-- twentytwenty -->
+<script src="../assets/js/jquery.event.move.js"></script>
+<script src="../assets/js/jquery.twentytwenty.js"></script>
+<script>
+    function nvl(data){
+        if(!data){
+            return "-";
+        }else{
+            return data;
+        }
+    }
+
+    function mobileInfo(SMO,STP,SEC,PH,num){
+
+
+        if(num=='07' || num=='10' || num=='23' || num=='26'){
+            num = -45;
+        }else if(num=='06' || num=='11' || num=='22' || num=='27'){
+            num = -15;
+        }else{
+            num = 25;
+        }
+
+        const info = `<div class="sensor-info-box infoBox" style="left:${num}px">
+								<div class="info-header">
+									<h4>토양정보</h4>
+									<button onClick="location.href ='soil-summary.html'"><i class="fe fe-more-vertical"></i>
+									</button>
+								</div>
+								<div class="info-body">
+									<ul>
+										<li>
+											<span>토양습도</span>
+											<span>${(SMO*1).toFixed(1)}%</span>
+										</li>
+										<li>
+											<span>토양온도</span>
+											<span>${(STP*1).toFixed(1)}ºC</span>
+										</li>
+										<li>
+											<span>EC</span>
+											<span>${(SEC*1).toFixed(2)}</span>
+										</li>
+										<li>
+											<span>일시</span>
+											<span>${PH}</span>
+										</li>
+									</ul>
+								</div>
+							</div>`
+        return info;
+    }
+    //서버에서 로봇별 최신 데이터를 가져온다.
+
+    let currentData = null;
+    function getRobotData(){
+
+        $.ajax({
+            url : "../php/getRobotData.php",
+            success : function(result){
+
+                if(currentData==JSON.stringify(result)){
+                    console.log("갱신 없음")
+                }else {
+                    console.log("데이터 갱신")
+                    for (let i = 0; i < result.length; i++) {
+
+                        let loc = result[i].LOC_NO.replace('spot', '');
+
+                        if (result[i].SMO > 100) {
+                            result[i].SMO = 100
+                        }
+
+                        if (result[i].STP > 100) {
+                            result[i].STP = 100
+                        }
+
+                        if (result[i].SEC > 100) {
+                            result[i].SEC = 100
+                        }
+
+                        $('.sensor-info[data-loc="' + loc + '"] .sensor-humidity h4').text((result[i].SMO * 1).toFixed(1) + '%')
+                        $('.sensor-info[data-loc="' + loc + '"] .sensor-temperature h4').text((result[i].STP * 1).toFixed(1) + 'ºC')
+                        $('.sensor-info[data-loc="' + loc + '"] .sensor-ec h4').text((result[i].SEC * 1).toFixed(2))
+                        $('.sensor-info[data-loc="' + loc + '"] .sensor-ph h4').text(nvl(result[i].MINS))
+
+                        const mobileHtml = mobileInfo(result[i].SMO, result[i].STP, result[i].SEC, nvl(result[i].MINS), loc)
+
+                        $('.sensor-btn[data-loc="' + loc + '"]').after(mobileHtml);
+                    }
+                }
+
+                $('#tmFc').text(result[0].TM_FC);
+
+                currentData = JSON.stringify(result)
+            },
+            complete : function(){
+                setGrade()
+            }
+        })
+    }
+
+    //카메라(3댜), 기상센서(4대)의 상태를 가져온다.
+    function getSensorState(){
+
+        $.ajax({
+            url : "../php/getSensorState.php",
+            success : function(result){
+                console.log(result)
+
+                let success = result.success;
+                let error = result.error;
+
+                for(var i=0;i<error.length;i++){
+                    $('.equipment-location a[data-sensor="'+error[i].SENSOR_CODE+'"]').parent().parent().find('.condition-icon').removeClass('condition-normal')
+                    $('.equipment-location a[data-sensor="'+error[i].SENSOR_CODE+'"]').parent().parent().find('.condition-icon').addClass('condition-weird')
+                }
+
+                for(var i=0;i<success.length;i++){
+                    $('.equipment-location a[data-sensor="'+success[i].SENSOR_CODE+'"]').parent().parent().find('.condition-icon').removeClass('condition-weird')
+                    $('.equipment-location a[data-sensor="'+success[i].SENSOR_CODE+'"]').parent().parent().find('.condition-icon').addClass('condition-normal')
+                }
+            }
+        })
+    }
+
+    function setGrade(){
+        $.ajax({
+            url : "../php/getRatingValue.php",
+            success : function(result){
+                //console.log(result)
+
+                for(var i=0;i<result.length;i++){
+                    var name = result[i].VALUE_NAME;
+                    var step = result[i].STEP;
+                    var under = result[i].UNDER;
+                    var over = result[i].OVER;
+
+                    var val_name = name+step
+
+                    $('.sensor-info .sensor-humidity h4').each(function (index, item) {
+                        if(name=='humi' && $(item).text().replace('%','')*1>=under && $(item).text().replace('%','')*1 <= over){
+                            $(item).parent().removeClass('humidity-verylow');
+                            $(item).parent().css('background-color',result[i].COLOR)
+                            //console.log(result[i].COLOR)
+                        }
+                    })
+
+                    $('.sensor-info .sensor-temperature h4').each(function (index, item) {
+                        if(name=='temp' && $(item).text().replace('ºC','')*1>=under && $(item).text().replace('ºC','')*1 <= over){
+                            $(item).parent().removeClass('temperature-low');
+                            $(item).parent().css('background-color',result[i].COLOR)
+                            //console.log($(item).text().replace('ºC','')+" : "+result[i].COLOR+","+over+","+under)
+                        }
+                    })
+                    /*
+                    if($('.sensor-info .sensor-temperature h4').text().replace('ºC','')){
+
+                    }*/
+                }
+
+
+            }
+        })
+    }
+
+    //측정 기준을 가져온다.
+    function getRatingValue(){
+        $.ajax({
+            url : "../php/getRatingValue.php",
+            success : function(result){
+                console.log(result)
+
+                for(var i=0;i<result.length;i++){
+                    var name = result[i].VALUE_NAME;
+                    var step = result[i].STEP;
+                    var under = result[i].UNDER;
+                    var over = result[i].OVER;
+
+                    var val_name = name+step
+
+                    //console.log(val_name)
+                    $('#ratingForm input[name="'+val_name+'Under"]').val(under);
+                    $('#ratingForm input[name="'+val_name+'Over"]').val(over);
+                }
+
+            }
+        })
+    }
+
+    $(document).ready(function(){
+        $(".twentytwenty-container[data-orientation!='vertical']").twentytwenty({default_offset_pct: 0.5});
+        $(".twentytwenty-container[data-orientation='vertical']").twentytwenty({default_offset_pct: 0.5, orientation: 'vertical'});
+        $(".sensor-btn").click(function(){
+            $(this).find(".sensor-data").toggle();
+
+            $('.infoBox').hide();
+            $(this).next().show();
+        });
+
+        $(document).on('click',function(e) {
+            if(!$(e.target).hasClass("infoBox") && !$(e.target).hasClass("sensor-btn")) {
+                $('.infoBox').hide();
+            }
+        });
+
+        getRobotData()
+        getSensorState()
+
+        $('.sensor-info').on('click',function(){
+            const loc = $(this).data('loc');
+            location.href="soil-summary.html?locNo="+loc
+        })
+
+        setInterval(() => getRobotData(), 10000);
+    });
+</script>
+<!-- Custom js -->
+<script src="../assets/js/custom.js"></script>
+</body>
+</html>

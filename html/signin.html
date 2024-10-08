@@ -9,7 +9,7 @@
 		<!-- Favicon -->
 		<link rel="icon" href="" type="image/x-icon"/>
 		<!-- Title -->
-		<title>상암월드컵경기장</title>
+		<title>서울월드컵경기장</title>
 		<!-- Bootstrap css-->
 		<link href="../assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
 		<!-- Icons css-->
@@ -49,7 +49,7 @@
 
 			<!-- Row -->
 			<div class="row signpages text-center">
-				<h2 class="login-title"><span style="color: #aed5ff; font-family: 'NanumSquareEB';">상암</span>월드컵경기장</h2>
+				<h2 class="login-title"><span style="color: #aed5ff; font-family: 'NanumSquareEB';">서울</span>월드컵경기장</h2>
 				<h6 class="login-sub-title" style="color: #d9e3f3;">월드컵경기장 잔디 생육 관리 시스템</h6>
 				<div class="col-md-12">
 					<div class="card border-0">
@@ -66,17 +66,17 @@
 										<div class="card-body mt-2 mb-2">
 											<div class="tab-content">
 												<div class="tab-pane fade show active" id="user-login">
-													<form action="../php/login.php" method="POST">
+													<form action="../php/login.php" method="POST" id="login-form">
 														<h5 class="text-left mb-3 font-weight-bold" style="color: #aed5ff;">사용자 정보</h5>
 														<div class="form-group text-left mb-3">
-															<input class="form-control" placeholder="아이디" type="text" name="userId" required="required">
+															<input class="form-control" placeholder="아이디" type="text" id="userId" name="userId" required="required">
 														</div>
 														<div class="form-group text-left">
 															<input class="form-control" placeholder="비밀번호" type="password" name="password" required="required">
 														</div>
 														<div class="text-left mb-3">
 															<label class="ckbox">
-																<input type="checkbox">
+																<input type="checkbox" id="remember-me">
 																<span style="color: #8c9fb9;">아이디저장</span>
 															</label>
 														</div>
@@ -128,5 +128,25 @@
 		<!-- Custom js -->
 		<script src="../assets/js/custom.js"></script>
 
+		<script>
+			window.onload = function() {
+				// 페이지 로드시 로컬 스토리지에서 아이디를 불러옵니다.
+				let userId = localStorage.getItem('userId');
+				if (userId !== null) {
+					document.getElementById('userId').value = userId;
+				}
+
+				document.getElementById('login-form').addEventListener('submit', function(event) {
+					// 폼 제출 시, 아이디 저장 체크박스가 선택되어 있다면 아이디를 로컬 스토리지에 저장합니다.
+					if (document.getElementById('remember-me').checked) {
+						let userId = document.getElementById('userId').value;
+						localStorage.setItem('userId', userId);
+					} else {
+						// 아이디 저장 체크박스가 선택되어 있지 않다면, 아이디를 로컬 스토리지에서 삭제합니다.
+						localStorage.removeItem('userId');
+					}
+				});
+			};
+		</script>
 	</body>
 </html>

@@ -7,7 +7,7 @@
     $password = $_POST["password"];
     
     $connect_local = dbconn_local_mysql('ctlx');
-    mysqli_query($connect_local_mysql, "set names utf8");
+    mysqli_query($connect_local, "set names utf8");
     
     $qry = "SELECT COUNT(*) CNT,USER_CODE FROM USER_INFO WHERE USER_ID=? AND `PASSWORD`=PASSWORD(?)";
     
@@ -23,7 +23,7 @@
     
     $cnt = $row["CNT"];
     
-    if ($cnt>0 || ($userId=='admin' && $password=='1111')){
+    if ($cnt>0 /*|| ($userId=='admin' && $password=='1111')*/){
         $_SESSION["userId"]= $userId;
         $_SESSION["userCode"]=$row["USER_CODE"];
         if($row["USER_CODE"]==null){
@@ -34,5 +34,5 @@
         echo "<script>alert('아이디/비밀번호가 일치하지 않습니다.');location.href='../html/signin.html';</script>";
     }
 
-    dbclose_local_mysql($connect_local_mysql);
+    dbclose_local_mysql($connect_local);
 ?>

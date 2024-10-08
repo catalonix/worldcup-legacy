@@ -8,7 +8,7 @@
 	$connect_local = dbconn_local_mysql('ctlx');
 	mysqli_query($connect_local_mysql,"set names utf8");
 
-    $qry2 = "SELECT * FROM SOIL_SENSOR WHERE LOC_NO='spot$loc' ORDER BY TM DESC LIMIT 1";
+    $qry2 = "SELECT *,DATE_FORMAT(TM,'%H:%i') AS MINS FROM SOIL_SENSOR WHERE LOC_NO='spot$loc' ORDER BY TM DESC LIMIT 1";
 
 	$result2 = mysqli_query($connect_local,$qry2);
 	

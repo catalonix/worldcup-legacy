@@ -11,7 +11,7 @@
 	$userCode = $_POST["userCode"];
 	
 	$connect_local = dbconn_local_mysql('ctlx');
-	mysqli_query($connect_local_mysql, "set names utf8");
+	mysqli_query($connect_local, "set names utf8");
 	
 	$qry = "UPDATE USER_INFO SET PASSWORD=
 								 CASE ? WHEN \"\" THEN PASSWORD ELSE PASSWORD(?) END,
@@ -35,7 +35,7 @@
 	}else{
 		mysqli_stmt_execute($stmt);
 	}
-	dbclose_local_mysql($connect_local_mysql);
+	dbclose_local_mysql($connect_local);
 	
 	header("Location:../html/user-management.html");
 ?>

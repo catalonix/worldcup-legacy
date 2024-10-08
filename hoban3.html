@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>WORLDCUP_NDVI 이미지 새로고침</title>
+</head>
+<body>
+  <img src="./data/WORLDCUP_NDVI/image.jpg" object-fit="cover" width="1280" />
+  <script>
+    setInterval(() => {
+      const image = document.querySelector("img");
+      const latestImage = await fetch("./data/WORLDCUP_NDVI/latest_image.jpg");
+      const imageData = await latestImage.blob();
+
+      image.src = URL.createObjectURL(imageData);
+    }, 5000);
+  </script>
+</body>
+</html>

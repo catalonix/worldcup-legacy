@@ -1,0 +1,64 @@
+<!-- iframe-container.html -->
+<html>
+<head>
+<script src="../assets/plugins/jquery/jquery.min.js"></script>
+<style type="text/css">
+html {overflow:hidden;} 
+#area {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    overflow: hidden;
+}
+
+#ifrm {
+    width: 1380px;
+    height: 720px;
+    border: 0;
+    -ms-transform: scale(0.8);
+    -moz-transform: scale(0.8);
+    -o-transform: scale(0.8);
+    -webkit-transform: scale(0.8);
+    transform: scale(0.8);
+    
+    -ms-transform-origin: 0 0;
+    -moz-transform-origin: 0 0;
+    -o-transform-origin: 0 0;
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+}
+</style>
+	<script type="text/javascript">
+	var offTimer = setTimeout(function() {
+	    window.close(); // 현재 팝업 창을 닫습니다.
+	}, 15000); // 예: 5초 후 팝업 자동 닫힘
+
+	</script>
+</head>
+<body>
+	<div id="area">
+		<iframe src="about:blank" id="ifrm"></iframe>
+	</div>
+</body>
+<script type="text/javascript">
+$(document).ready(function() {
+    
+    var type = '<?=$_GET["type"]?>';
+    console.log(type)
+	
+    $.ajax({
+   	 url : "../php/getLiveUrl.php",
+   	 data : "type="+type,
+   	 dataType : "json",
+   	 success : function(result){
+   		 console.log(result)
+   		 $('#ifrm').attr('src',  result.state);
+   	 }
+    })
+    
+    if(type=='서'){
+   	 clearTimeout(offTimer)
+    }
+});
+</script>
+</html>

@@ -8,8 +8,10 @@
 			</button>
 		</div>
 		<div class="main-header-center">
-			<div class="responsive-logo">
-				<a href="monitoring.html"><img src="../assets/img/logo.png" class="mobile-logo" alt="logo"></a>
+			<div class="responsive-logo text-white font-weight-bold" style="line-height: 21px;font-size: 19px;">
+				<!--<a href="monitoring.html"><img src="../assets/img/logo.png" class="mobile-logo" alt="logo"></a>-->
+				<img src="../assets/img/logo-icon.png" class="header-brand-img icon-logo" alt="logo" height="24px" style="display: inline-block">
+            	서울월드컵경기장
 			</div>
 		</div>
 		<div class="main-header-right">
@@ -218,25 +220,49 @@ $(function(){
 			console.log(result)
 			var weather = result[0];
 			var air = result[1];
-			
-			$('#headHumi').text(weather.humi+'%');
-			$('#headTemp').text(weather.temp+'ºC');
-			$('#headWs').text(weather.wspeed+'m/s');
-			$('#headWd').text(weather.wdirk);
-			$('#headRain').text(weather.rain+"mm");
 
-			$('#mobileHumi').text(weather.humi+'%');
-			$('#mobileTemp').text(weather.temp+'ºC');
-			$('#mobileWs').text(weather.wspeed+'m/s');
-			$('#mobileWd').text(weather.wdirk);
-			$('#mobileRain').text(weather.rain+"mm");
+            /*$('#headHumi').text(weather.humi+'%');
+            $('#headTemp').text(weather.temp+'ºC');
+            $('#headWs').text(weather.wspeed+'m/s');
+            $('#headWd').text(weather.wdirk);*/
+            $('#headRain').text(weather.rain+"mm");
 
-			getPm10Grade(air.pm10_value,'#headPm10')
-			getPm25Grade(air.pm25_value,'#headPm25')
+            /*$('#mobileHumi').text(weather.humi+'%');
+            $('#mobileTemp').text(weather.temp+'ºC');
+            $('#mobileWs').text(weather.wspeed+'m/s');
+            $('#mobileWd').text(weather.wdirk);*/
+            $('#mobileRain').text(weather.rain+"mm");
+            /*
+            getPm10Grade(air.pm10_value,'#headPm10')
+            getPm25Grade(air.pm25_value,'#headPm25')
 
-			getPm10Grade(air.pm10_value,'#mobilePm10')
-			getPm25Grade(air.pm25_value,'#mobilePm25')
+            getPm10Grade(air.pm10_value,'#mobilePm10')
+            getPm25Grade(air.pm25_value,'#mobilePm25')
+             */
 		}
 	})
+
+    $.ajax({
+        url : "../php/getHeadWeather.php",
+        success : function(result){
+            console.log(result)
+
+            $('#headHumi').text(result.HUMI+'%');
+            $('#headTemp').text(result.TEMP+'ºC');
+            $('#headWs').text(result.WS+'m/s');
+            $('#headWd').text(Chg_wdirk(result.WD));
+
+            $('#mobileHumi').text(result.HUMI+'%');
+            $('#mobileTemp').text(result.TEMP+'ºC');
+            $('#mobileWs').text(result.WS+'m/s');
+            $('#mobileWd').text(Chg_wdirk(result.WD));
+
+            getPm10Grade(result.PM10,'#headPm10')
+            getPm25Grade(result.PM25,'#headPm25')
+
+            getPm10Grade(result.PM10,'#mobilePm10')
+            getPm25Grade(result.PM25,'#mobilePm25')
+        }
+    })
 })
 </script>

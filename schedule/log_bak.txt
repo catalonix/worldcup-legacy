@@ -1,0 +1,12 @@
+[2023-07-04 14:23:01]FAN99_ON ON
+[]
+[2023-07-04 14:25:02]FAN99_ON ON
+[]
+[2023-07-04 14:26:01]FAN99_ON ON
+[{"entity_id":"switch.fan99_on","state":"on","attributes":{"friendly_name":"FAN99_ON"},"last_changed":"2023-07-04T05:26:01.493613+00:00","last_updated":"2023-07-04T05:26:01.493613+00:00","context":{"id":"01H4FNTS0KBP1G4HZWFG0E9VZY","parent_id":null,"user_id":"7f5e392828744ca78544b9bb078963d7"}}]
+[2023-07-04 14:27:01]FAN99_ON OFF
+[]
+[2023-07-06 06:00:01]FAN99_ON ON
+[]
+[2023-07-06 06:30:02]FAN99_ON OFF
+[]

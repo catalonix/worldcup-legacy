@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="keywords" content="">
+    <!-- Favicon -->
+    <link rel="icon" href="" type="image/x-icon"/>
+    <!-- Title -->
+    <title>상암월드컵경기장</title>
+    <!-- Bootstrap css-->
+    <link href="../assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+    <!-- Icons css-->
+    <link href="../assets/plugins/web-fonts/icons.css" rel="stylesheet"/>
+    <link href="../assets/plugins/web-fonts/font-awesome/font-awesome.min.css" rel="stylesheet">
+    <link href="../assets/plugins/web-fonts/plugin.css" rel="stylesheet"/>
+    <!-- Style css-->
+    <link href="../assets/css/style.css" rel="stylesheet">
+    <link href="../assets/css/skins.css" rel="stylesheet">
+    <!-- Sidemenu css-->
+    <link href="../assets/css/sidemenu/sidemenu.css" rel="stylesheet">
+    <link href="../assets/css/sangam.css" rel="stylesheet">
+    <link href="../assets/css/twentytwenty.css" rel="stylesheet" type="text/css">
+    <style>
+        #ndviDate{
+            text-align: center;
+        }
+        /* Default styles */
+        .mobileBr {
+            display: none;
+        }
+
+        /* Mobile styles */
+        @media screen and (max-width: 600px) {
+            .mobileBr {
+                display: block;
+            }
+        }
+    </style>
+</head>
+
+<body class="main-body leftmenu">
+<!-- Loader -->
+<div id="global-loader">
+    <img src="../assets/img/loader.svg" class="loader-img" alt="Loader">
+</div>
+<!-- End Loader -->
+<!-- Page -->
+<div class="page">
+    <!-- Sidemenu -->
+    <?include "../include/sidebar.php";?>
+    <!-- End Sidemenu -->
+
+    <!-- Main Header-->
+    <?include "../include/header.php";?>
+    <!-- End Main Header-->
+    <!-- Main Content-->
+    <div class="main-content side-content pt-0">
+        <div class="container-fluid main-m-pt">
+            <div class="inner-body">
+                <!-- Page Header -->
+                <div class="page-header">
+                    <div>
+                        <h2 class="main-content-title text-white tx-24 mg-b-5 font-weight-bold">식생지수정보 상세</h2>
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item">Home</li>
+                            <li class="breadcrumb-item active" aria-current="page">식생지수정보 상세</li>
+                        </ol>
+                    </div>
+                </div>
+                <!-- End Page Header -->
+                <!--Row-->
+                <div class="row row-sm mt-4">
+                    <!-- col -->
+                    <!-- col end -->
+                    <!-- col -->
+                    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-4">
+                        <div class="card custom-card overflow-hidden">
+                            <div class="card-header border-bottom-0 pb-0">
+                                <div>
+                                    <div class="d-flex-sb">
+                                        <label class="main-content-label my-auto pt-2 tx-16">동측 카메라</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body pt-1">
+                                <div class="ndvi-value">
+                                    <div class="ndvi-now">
+                                        <h5>현재 식생지수</h5>
+                                        <div class="now-value">
+                                            <h4 id="ndvi1">0.611</h4>
+                                            <span class="situation-success">양호</span>
+                                        </div>
+                                    </div>
+                                    <div class="ndvi-now">
+                                        <h5 style="text-align: center;">최종 데이터 측정일시</h5>
+                                        <div class="now-value">
+                                            <h4 id="ndviDate">2023-06-23 11:00</h4>
+                                        </div>
+                                    </div>
+                                    <div class="ndvi-prediction">
+                                        <h5>예측 식생지수</h5>
+                                        <div class="prediction-value">
+                                            <h4 id="ndvi2">0.418</h4>
+                                            <span class="situation-success">양호</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-12 col-md-12 col-sm-12 p-0 mb-3">
+                                    <div class="twentytwenty-wrapper twentytwenty-horizontal">
+                                        <div class="twentytwenty-container">
+                                            <img id="ndviImg1" src="https://seoul.fieldon.io/data/C001/catalonix_show_daily_img.jpg" class="ndvi-img twentytwenty-before" width="100%">
+                                            <img id="ndviImg2" src="https://seoul.fieldon.io/data/C001/catalonix_show_ma5_img.jpg" class="ndvi-img twentytwenty-after" width="100%">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-4">
+                        <div class="card custom-card overflow-hidden">
+                            <div class="card-header border-bottom-0 pb-0">
+                                <div>
+                                    <div class="d-flex-sb">
+                                        <label class="main-content-label my-auto pt-2 tx-16">남측 카메라</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body pt-1">
+                                <div class="ndvi-value">
+                                    <div class="ndvi-now">
+                                        <h5>현재 식생지수</h5>
+                                        <div class="now-value">
+                                            <h4 id="ndvi3">0.611</h4>
+                                            <span class="situation-success">양호</span>
+                                        </div>
+                                    </div>
+                                    <div class="ndvi-now">
+                                        <h5 style="text-align: center;">최종 데이터 측정일시</h5>
+                                        <div class="now-value">
+                                            <h4 id="ndviDate2">2023-06-23 11:00</h4>
+                                        </div>
+                                    </div>
+                                    <div class="ndvi-prediction">
+                                        <h5>예측 식생지수</h5>
+                                        <div class="prediction-value">
+                                            <h4 id="ndvi4">0.418</h4>
+                                            <span class="situation-success">양호</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-12 col-md-12 col-sm-12 p-0 mb-3">
+                                    <div class="twentytwenty-wrapper twentytwenty-horizontal">
+                                        <div class="twentytwenty-container">
+                                            <img id="ndviImg3" src="https://seoul.fieldon.io/data/C002/catalonix_show_daily_img.jpg" class="ndvi-img twentytwenty-before" width="100%">
+                                            <img id="ndviImg4" src="https://seoul.fieldon.io/data/C002/catalonix_show_ma5_img.jpg" class="ndvi-img twentytwenty-after" width="100%">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-4">
+                        <div class="card custom-card overflow-hidden">
+                            <div class="card-header border-bottom-0 pb-0">
+                                <div>
+                                    <div class="d-flex-sb">
+                                        <label class="main-content-label my-auto pt-2 tx-16">서측 카메라</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body pt-1">
+                                <div class="ndvi-value">
+                                    <div class="ndvi-now">
+                                        <h5>현재 식생지수</h5>
+                                        <div class="now-value">
+                                            <h4 id="ndvi5">0.611</h4>
+                                            <span class="situation-success">양호</span>
+                                        </div>
+                                    </div>
+                                    <div class="ndvi-now">
+                                        <h5 style="text-align: center;">최종 데이터 측정일시</h5>
+                                        <div class="now-value">
+                                            <h4 id="ndviDate3">2023-06-23 11:00</h4>
+                                        </div>
+                                    </div>
+                                    <div class="ndvi-prediction">
+                                        <h5>예측 식생지수</h5>
+                                        <div class="prediction-value">
+                                            <h4 id="ndvi6">0.418</h4>
+                                            <span class="situation-success">양호</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-12 col-md-12 col-sm-12 p-0 mb-3">
+                                    <div class="twentytwenty-wrapper twentytwenty-horizontal">
+                                        <div class="twentytwenty-container">
+                                            <img id="ndviImg5" src="https://seoul.fieldon.io/data/C003/catalonix_show_daily_img.jpg" class="ndvi-img twentytwenty-before" width="100%">
+                                            <img id="ndviImg6" src="https://seoul.fieldon.io/data/C003/catalonix_show_ma5_img.jpg" class="ndvi-img twentytwenty-after" width="100%">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--
+                    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-5">
+                        <div class="card custom-card overflow-hidden">
+                            <div class="card-header border-bottom-0 pb-0">
+                                <div>
+                                    <div class="d-flex-sb">
+                                        <label class="main-content-label my-auto pt-2 tx-16">상태평가</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body pt-1">
+                                <div class="ndvi-chart" id="spiderChart" style="width: 100%;height: 300px;padding: 0px;">
+
+                                </div>
+                                <div class="ndvi-info">
+                                    <div class="state-info">
+                                        <h4>
+                                            <span>식생지수</span>
+                                        </h4>
+                                        <span class="situation-success">양호</span>
+                                    </div>
+                                    <div class="state-info">
+                                        <h4>
+                                            <span>토양수분</span>
+                                        </h4>
+                                        <span class="situation-success">양호</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    -->
+                    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-4">
+                        <div class="card custom-card overflow-hidden">
+                            <div class="card-header border-bottom-0 pb-0">
+                                <div>
+                                    <div class="d-flex-sb">
+                                        <label class="main-content-label my-auto pt-2 tx-16">지수변화</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body pt-1">
+                                <canvas id="chartZone" height="465px;"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- col end -->
+                    <!-- 2023.06.21 -->
+                    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-8">
+                        <div class="card custom-card overflow-hidden">
+                            <div class="card-header border-bottom-0 pb-0 mb-3">
+                                <div>
+                                    <div class="d-flex-sb">
+                                        <label class="main-content-label my-auto pt-2 tx-16">경기장 이미지</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body pt-1">
+                                <div class="stadium-img">
+                                    <img src="https://seoul.fieldon.io/data/C001/20230622_090004_raw_image.jpg" id="lastImg">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /2023.06.21 -->
+                </div>
+
+                <!-- Row end -->
+            </div>
+        </div>
+    </div>
+    <!-- End Main Content-->
+    <!-- Main Footer-->
+    <div class="main-footer text-center">
+        <div class="container">
+            <div class="row row-sm">
+                <div class="col-md-12">
+                    <span class="text-white">Copyright © 2023 <a style="color: #80b9ed;">상암월드컵경기장</a></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--End Footer-->
+</div>
+<!-- End Page -->
+
+<!-- Back-to-top -->
+<a href="#top" id="back-to-top"><i class="fe fe-arrow-up"></i></a>
+
+<!-- Jquery js-->
+<script src="../assets/plugins/jquery/jquery.min.js"></script>
+
+<!-- Bootstrap js-->
+<script src="../assets/plugins/bootstrap/js/popper.min.js"></script>
+<script src="../assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+
+<!-- Peity js-->
+<script src="../assets/plugins/peity/jquery.peity.min.js"></script>
+
+<!-- Select2 js-->
+<script src="../assets/plugins/select2/js/select2.min.js"></script>
+<!-- Internal Chart.Bundle js-->
+<script src="../assets/plugins/chart.js/Chart.bundle.min.js"></script>
+<!-- Internal Jquery.maskedinput js-->
+<script src="../assets/plugins/jquery.maskedinput/jquery.maskedinput.js"></script>
+<!-- Sidemenu js -->
+<script src="../assets/plugins/sidemenu/sidemenu.js"></script>
+<!-- Internal Dashboard js-->
+<script src="../assets/js/crypto-exchange.js"></script>
+<!-- Internal Form-elements js-->
+<script src="../assets/js/form-elements.js"></script>
+<!-- Sticky js -->
+<script src="../assets/js/sticky.js"></script>
+<!-- twentytwenty -->
+<script src="../assets/js/jquery.event.move.js"></script>
+<script src="../assets/js/jquery.twentytwenty.js"></script>
+<script>
+    $(function(){
+        $(".twentytwenty-container[data-orientation!='vertical']").twentytwenty({default_offset_pct: 0.5});
+        $(".twentytwenty-container[data-orientation='vertical']").twentytwenty({default_offset_pct: 0.5, orientation: 'vertical'});
+    });
+</script>
+<!-- Custom js -->
+<script src="../assets/js/custom.js"></script>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/highcharts-more.js"></script>
+<script>
+    function spiderChart(data){
+
+        console.log(data)
+
+        Highcharts.chart('spiderChart', {
+
+            chart: {
+                polar: true,
+                backgroundColor: 'rgba(255, 255, 255, 0)',
+                type: 'area'
+            },
+
+            accessibility: {
+                description: '.'
+            },
+
+            title: {
+                text: '.',
+                x: -80
+            },
+
+            pane: {
+                size: '100%'
+            },
+
+            credits : false,
+
+            xAxis: {
+                categories: [
+                    '<span class="spider1">온도<br>'/*+data.TEMP+*/+'</span>',
+                    '<span class="spider1">습도<br>'/*+data.HUMI+*/+'</span>',
+                    '<span class="spider1">PH<br>'/*+data.PH+*/+'</span>',
+                    '<span class="spider1">토양수분<br>'/*+data.SMO+*/+'</span>',
+                    '<span class="spider1">NDVI<br>'/*+data.NDVI+*/+'</span>'],
+                tickmarkPlacement: 'on',
+                lineWidth: 0
+            },
+
+            yAxis: {
+                gridLineInterpolation: 'polygon',
+                lineWidth: 0,
+                min: 0,
+                max: 100,
+                labels: {
+                    style: {
+                        color: 'white'
+                    }
+                }
+            },
+
+            tooltip: {
+                shared: true,
+                pointFormat: '<span style="color:{series.color};">{series.name}<b>{point.y:,.0f}</b><br/>',
+                backgroundColor:'black'
+            },
+
+            legend: {
+                align: 'right',
+                verticalAlign: 'middle',
+                layout: 'vertical'
+            },
+
+            series: [{
+                showInLegend: false,
+                name: 'Score:',
+                data: [data.TEMP, data.HUMI, data.PH, data.SMO, data.NDVI],
+                pointPlacement: 'on',
+                fillOpacity : 0.3,
+                color: '#1c62c3',
+                lineWidth:2
+            }],
+
+            responsive: {
+                rules: [{
+                    condition: {
+                        maxWidth: 500
+                    },
+                    chartOptions: {
+                        legend: {
+                            align: 'center',
+                            verticalAlign: 'bottom',
+                            layout: 'horizontal'
+                        },
+                        pane: {
+                            size: '85%'
+                        }
+                    }
+                }]
+            }
+
+        });
+    }
+
+    let myChart = null;
+
+    function drawChartC(result,c001,c002,c003){
+
+        let label = [];
+        let data = [];
+        let data1 = [];
+        let data2 = [];
+        let data3 = [];
+
+
+        //var ndviImg = "";
+
+        for(let i=0;i<result.length;i++){
+            label.push(result[i].TM);
+            data.push(((c001[i].NDVI*1+c002[i].NDVI*1+c003[i].NDVI*1)/3).toFixed(3));
+            data1.push(c001[i].NDVI);
+            data2.push(c002[i].NDVI);
+            data3.push(c003[i].NDVI);
+        }
+
+        let ctx = document.getElementById("chartZone").getContext('2d');
+
+        myChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: label,
+                datasets: [{
+                    label: 'NDVI 평균',
+                    data: data,
+                    borderWidth: 2,
+                    backgroundColor: 'transparent',
+                    borderColor: '#25B372',
+                    borderWidth: 3,
+                    //pointBackgroundColor: '#ffffff',
+                    pointRadius: 2
+                },
+                    {
+                        label: '동측 카메라',
+                        data: data1,
+                        borderWidth: 2,
+                        backgroundColor: 'transparent',
+                        borderColor: '#2478FF',
+                        borderWidth: 3,
+                        //pointBackgroundColor: '#ffffff',
+                        pointRadius: 2
+                    },
+                    {
+                        label: '남측 카메라',
+                        data: data2,
+                        borderWidth: 2,
+                        backgroundColor: 'transparent',
+                        borderColor: '#5F00FF',
+                        borderWidth: 3,
+                        //pointBackgroundColor: '#ffffff',
+                        pointRadius: 2
+                    },
+                    {
+                        label: '서측 카메라',
+                        data: data3,
+                        borderWidth: 2,
+                        backgroundColor: 'transparent',
+                        borderColor: '#00D8FF',
+                        borderWidth: 3,
+                        //pointBackgroundColor: '#ffffff',
+                        pointRadius: 2
+                    }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    xAxes: [{
+                        ticks: {
+                            fontColor: "#77778e",
+                        },
+                        display: true,
+                        gridLines: {
+                            color: 'rgba(119, 119, 142, 0.2)'
+                        }
+                    }],
+                    yAxes: [{
+                        ticks: {
+                            fontColor: "#77778e",
+                            min: 0, // 최소값
+                            max: 1, // 최대값
+                        },
+                        display: true,
+                        gridLines: {
+                            color: 'rgba(119, 119, 142, 0.2)'
+                        },
+                        scaleLabel: {
+                            display: false,
+                            labelString: 'Thousands',
+                            fontColor: 'rgba(119, 119, 142, 0.2)'
+                        },
+                    }]
+                },
+                legend: {
+                    labels: {
+                        fontColor: "#77778e"
+                    },
+                },
+            }
+        });
+    }
+
+
+    $(document).ready(function(){
+
+        let sensorNo = 'C001';
+
+        //$('#ndviImg1').attr('src',`https://seoul.fieldon.io/data/${sensorNo}/catalonix_show_daily_img.jpg`)
+        //$('#ndviImg2').attr('src',`https://seoul.fieldon.io/data/${sensorNo}/catalonix_show_ma5_img.jpg`)
+
+        if(myChart!=null){
+            myChart.destroy();
+        }
+
+        $.ajax({
+            url : "../php/getNdviSummary.php",
+            data : "sensorNo="+sensorNo,
+            method : "POST",
+            success : function(result){
+                console.log(result);
+
+                $.each(result.now,function(index,item){
+                    if(item.SENSOR_NO=='C001') {
+                        $('#ndvi1').text(item.NDVI_daily);
+                        $('#ndvi2').text(item.NDVI_ma5);
+                    }
+                    if(item.SENSOR_NO=='C002') {
+                        $('#ndvi3').text(item.NDVI_daily);
+                        $('#ndvi4').text(item.NDVI_ma5);
+                    }
+                    if(item.SENSOR_NO=='C003') {
+                        $('#ndvi5').text(item.NDVI_daily);
+                        $('#ndvi6').text(item.NDVI_ma5);
+                    }
+                })
+
+                result.c001.reverse()
+                result.c002.reverse()
+                result.c003.reverse()
+                result.list.reverse()
+
+                drawChartC(result.list,result.c001,result.c002,result.c003)
+
+                let last = result.last;
+                let last2 = result.last2;
+                let last3 = result.last3;
+                $('#ndviDate').html(last.substring(0,4)+'-'+last.substring(4,6)+"-"+last.substring(6,8)+" <br class='mobileBr'>"+last.substring(9,11)+":"+last.substring(11,13));
+                $('#ndviDate2').html(last2.substring(0,4)+'-'+last2.substring(4,6)+"-"+last2.substring(6,8)+" <br class='mobileBr'>"+last2.substring(9,11)+":"+last2.substring(11,13));
+                $('#ndviDate3').html(last3.substring(0,4)+'-'+last3.substring(4,6)+"-"+last3.substring(6,8)+" <br class='mobileBr'>"+last3.substring(9,11)+":"+last3.substring(11,13));
+
+                $('#lastImg').attr('src',`https://seoul.fieldon.io/data/${sensorNo}/${result.last}`)
+            }
+        })
+    });
+</script>
+<style>
+    .spider1{
+        font-size: 15px;
+        font-weight: bold;
+        color: blue;
+        fill: white;
+        text-align: center;
+    }
+    /* 2023.06.21 */
+    .stadium-img{ position: relative;overflow: hidden;width: 100%;height: 450px;}
+    .stadium-img > img{position: absolute;top: 70%;left: 50%;transform: translate(-50%, -50%);}
+    @media (max-width: 500px){
+        .stadium-img{ position: relative;overflow: hidden;width: 100%;height: 250px;}
+        .stadium-img > img{position: absolute;top: 85%;left: 50%;transform: translate(-50%, -50%);}
+    }
+</style>
+</body>
+</html>

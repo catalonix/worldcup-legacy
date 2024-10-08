@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="keywords" content="">
+    <!-- Favicon -->
+    <link rel="icon" href="" type="image/x-icon" />
+    <!-- Title -->
+    <title>상암월드컵경기장</title>
+    <!-- Bootstrap css-->
+    <link href="../assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Icons css-->
+    <link href="../assets/plugins/web-fonts/icons.css" rel="stylesheet" />
+    <link href="../assets/plugins/web-fonts/font-awesome/font-awesome.min.css" rel="stylesheet">
+    <link href="../assets/plugins/web-fonts/plugin.css" rel="stylesheet" />
+    <!-- Style css-->
+    <link href="../assets/css/style.css" rel="stylesheet">
+    <link href="../assets/css/skins.css" rel="stylesheet">
+    <!-- Sidemenu css-->
+    <link href="../assets/css/sidemenu/sidemenu.css" rel="stylesheet">
+    <link href="../assets/css/sangam.css" rel="stylesheet">
+    <link href="../assets/css/twentytwenty.css" rel="stylesheet" type="text/css">
+    <style>
+        @media screen and (max-width: 600px) {
+            .card-body {
+                padding-top: 0px;
+            }
+            .soli-data {
+                margin-bottom: 0px !important;
+            }
+            .pd-x-20 {
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+        }
+
+        @media screen and (min-width: 750px) {
+            .sensor-info h5 {
+                font-size: 18px !important;
+            }
+
+            .sensor-info h4 {
+                font-size: 20px !important;
+            }
+
+            .sensor-info h5 {
+                color: #aed5ff !important;
+            }
+
+            .sensor-temperature {
+                width: 100px !important;
+                margin: 5px;
+            }
+
+            .sensor-ec, .sensor-ph {
+                width: 100px !important;
+                margin: 5px;
+            }
+
+            .wind-direction {
+                padding: 2px 8px;
+                font-size: 14px;
+                margin-left: 0px;
+            }
+
+            .unit {
+                font-size: 12px;
+            }
+        }
+
+        @media screen and (max-width: 750px) {
+            .stadium-sensor{
+                display: flex;
+            }
+
+            .sensor-info h5 {
+                font-size: 11px !important;
+            }
+
+            .sensor-info h4 {
+                font-size: 13px !important;
+            }
+
+            .sensor-info h5 {
+                color: #aed5ff !important;
+            }
+
+            .sensor-temperature {
+                width: 70px !important;
+                margin: 3px;
+            }
+
+            .sensor-ec, .sensor-ph {
+                width: 70px !important;
+                margin: 3px;
+            }
+
+            .wind-direction {
+                padding: 2px 8px;
+                font-size: 14px;
+                margin-left: 0px;
+            }
+
+            .unit {
+                font-size: 8px;
+            }
+
+            .col-4 {
+                width: 100% !important;
+                flex : 0 0 100%;
+                max-width: 100%;
+            }
+
+            .sensor-info,.unit{
+                display: none;
+            }
+        }
+
+    </style>
+</head>
+
+<body class="main-body leftmenu">
+<!-- Loader -->
+<div id="global-loader">
+    <img src="../assets/img/loaderesult.svg" class="loader-img" alt="Loader">
+</div>
+<!-- End Loader -->
+<!-- Page -->
+<div class="page">
+    <!-- Sidemenu -->
+    <?include "../include/sidebar.php";?>
+    <!-- End Sidemenu -->
+
+    <!-- Main Header-->
+    <?include "../include/header.php";?>
+    <!-- End Main Header-->
+    <!-- Main Content-->
+    <div class="main-content side-content pt-0">
+        <div class="container-fluid main-m-pt">
+            <div class="inner-body">
+                <!-- Page Header -->
+                <div class="page-header">
+                    <div>
+                        <h2 class="main-content-title text-white tx-24 mg-b-5 font-weight-bold">기상센서 정보 상세</h2>
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item">Home</li>
+                            <li class="breadcrumb-item active" aria-current="page">기상센서 정보 상세</li>
+                        </ol>
+                    </div>
+                </div>
+                <!-- End Page Header -->
+                <!--Row-->
+                <div class="row row-sm mt-4">
+                    <!-- col -->
+                    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                        <div class="card custom-card overflow-hidden">
+                            <div class="card-header border-bottom-0 pb-0">
+                                <div>
+                                    <div class="stadium-header">
+                                        <label class="main-content-label my-auto pt-2 tx-16">경기장 장비현황
+                                            <h5 class="card-data">측정일시 : <span id="tmFc">2023.01.09 10:23</span></h5>
+                                        </label>
+                                        <div class="card-header-right">
+                                            <div class="stadium-legend">
+                                                <div class="legend-normal">
+                                                    <div></div>
+                                                    <span>정상작동</span>
+                                                </div>
+                                                <div class="legend-weird">
+                                                    <div></div>
+                                                    <span>이상</span>
+                                                </div>
+                                                <div class="legend-none">
+                                                    <div></div>
+                                                    <span>데이터없음</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body pt-1">
+                                <div class="stadium-img stadium-map">
+                                    <img src="../assets/img/stadium.png" alt="stadium">
+                                    <div class="equipment-location">
+                                        <div class="sensor-1">
+                                            <div class="equipment-btn-box">
+                                                <div class="condition-icon condition-normal">
+                                                    <img src="../assets/img/sensor-icon.png" onclick="showMobile('W001')">
+                                                </div>
+                                                <div class="equipment-title">
+                                                    <a href="javascript:showMobile('W001');" data-sensor="W001">동북기상센서</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="sensor-2">
+                                            <div class="equipment-btn-box">
+                                                <div class="condition-icon condition-normal">
+                                                    <img src="../assets/img/sensor-icon.png" onclick="showMobile('W004')">
+                                                </div>
+                                                <div class="equipment-title">
+                                                    <a href="javascript:showMobile('W004');" data-sensor="W004">서북기상센서</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="sensor-3">
+                                            <div class="equipment-btn-box">
+                                                <div class="condition-icon condition-normal">
+                                                    <img src="../assets/img/sensor-icon.png" onclick="showMobile('W003')">
+                                                </div>
+                                                <div class="equipment-title">
+                                                    <a href="javascript:showMobile('W003');" data-sensor="W003">동남기상센서</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="sensor-4">
+                                            <div class="equipment-btn-box">
+                                                <div class="condition-icon condition-normal">
+                                                    <img src="../assets/img/sensor-icon.png" onclick="showMobile('W002')">
+                                                </div>
+                                                <div class="equipment-title">
+                                                    <a href="javascript:showMobile('W002');" data-sensor="W002">서남기상센서</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="stadium-sensor sensor-top">
+                                        <div class="sensor-row row">
+                                            <div class="sensor-info col-4" data-sensor="W001" >
+                                                <div class="sensor-info-row mb-2">
+                                                    <div class="sensor-temperature temp">
+                                                        <h5>온도</h5>
+                                                        <h4>31.4 <span class="unit">ºC</span></h4>
+                                                    </div>
+                                                    <div class="sensor-temperature humi">
+                                                        <h5>습도</h5>
+                                                        <h4>54.2 <span class="unit">%</span></h4>
+                                                    </div>
+                                                    <div class="sensor-temperature wd">
+                                                        <h5>풍향</h5>
+                                                        <h4><span class="wind-direction" >북북동</span></h4>
+                                                    </div>
+                                                    <div class="sensor-temperature ws">
+                                                        <h5>풍속</h5>
+                                                        <h4>0<span class="unit">m/s</span></h4>
+                                                    </div>
+                                                </div>
+                                                <div class="sensor-info-row">
+                                                    <div class="sensor-ec pm10">
+                                                        <h5>PM10</h5>
+                                                        <h4>34.8
+                                                            <span class="pm-good pm-state">좋음</span>
+                                                        </h4>
+                                                    </div>
+                                                    <div class="sensor-ph pm25">
+                                                        <h5>PM25</h5>
+                                                        <h4>100
+                                                            <span class="pm-good pm-state">좋음</span></h4>
+                                                    </div>
+                                                    <div class="sensor-ph co2">
+                                                        <h5>CO2</h5>
+                                                        <h4>1000<span class="unit"> PPM</span></h4>
+                                                    </div>
+                                                    <div class="sensor-ph light">
+                                                        <h5>광명</h5>
+                                                        <h4>10000</h4>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="sensor-info col-4 col-xs-12" data-sensor="WAVG" style="position: relative;top: 130px;">
+                                                <div style="
+                                                    color: white;
+                                                    padding-left: 5px;
+                                                    font-weight: bold;
+                                                ">데이터 평균</div>
+                                                <div class="sensor-info-row mb-2" style="">
+                                                    <div class="sensor-temperature temp">
+                                                        <h5>온도</h5>
+                                                        <h4>6553.5<span class="unit"> ºC</span></h4>
+                                                    </div>
+                                                    <div class="sensor-temperature humi">
+                                                        <h5>습도</h5>
+                                                        <h4>10<span class="unit"> %</span></h4>
+                                                    </div>
+                                                    <div class="sensor-temperature wd">
+                                                        <h5>풍향</h5>
+                                                        <h4>18</h4>
+                                                    </div>
+                                                    <div class="sensor-temperature ws">
+                                                        <h5>풍속</h5>
+                                                        <h4>0<span class="unit"> m/s</span></h4>
+                                                    </div>
+                                                </div>
+                                                <div class="sensor-info-row">
+                                                    <div class="sensor-ec pm10">
+                                                        <h5>PM10</h5>
+                                                        <h4>3.8<span class="unit"> ㎍/㎥</span></h4>
+                                                    </div>
+                                                    <div class="sensor-ph pm25">
+                                                        <h5>PM25</h5>
+                                                        <h4>2.7<span class="unit"> ㎍/㎥</span></h4>
+                                                    </div>
+                                                    <div class="sensor-ph co2">
+                                                        <h5>CO2</h5>
+                                                        <h4>500<span class="unit"> ppm</span></h4>
+                                                    </div>
+                                                    <div class="sensor-ph light">
+                                                        <h5>광명</h5>
+                                                        <h4>1962.1</h4>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="sensor-info col-4 col-xs-12" data-sensor="W003" >
+                                                <div class="sensor-info-row mb-2">
+                                                    <div class="sensor-temperature temp">
+                                                        <h5>온도</h5>
+                                                        <h4>31.4 <span class="unit">ºC</span></h4>
+                                                    </div>
+                                                    <div class="sensor-temperature humi">
+                                                        <h5>습도</h5>
+                                                        <h4>54.2 <span class="unit">%</span></h4>
+                                                    </div>
+                                                    <div class="sensor-temperature wd">
+                                                        <h5>풍향</h5>
+                                                        <h4><span class="wind-direction" >북북동</span></h4>
+                                                    </div>
+                                                    <div class="sensor-temperature ws">
+                                                        <h5>풍속</h5>
+                                                        <h4>0<span class="unit">m/s</span></h4>
+                                                    </div>
+                                                </div>
+                                                <div class="sensor-info-row">
+                                                    <div class="sensor-ec pm10">
+                                                        <h5>PM10</h5>
+                                                        <h4>34.8
+                                                            <span class="pm-good pm-state">좋음</span>
+                                                        </h4>
+                                                    </div>
+                                                    <div class="sensor-ph pm25">
+                                                        <h5>PM25</h5>
+                                                        <h4>100
+                                                            <span class="pm-good pm-state">좋음</span></h4>
+                                                    </div>
+                                                    <div class="sensor-ph co2">
+                                                        <h5>CO2</h5>
+                                                        <h4>1000<span class="unit"> PPM</span></h4>
+                                                    </div>
+                                                    <div class="sensor-ph light">
+                                                        <h5>광명</h5>
+                                                        <h4>10000</h4>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="sensor-row">
+
+                                        </div>
+                                    </div>
+                                    <div class="stadium-sensor sensor-bottom">
+                                        <div class="sensor-row row">
+                                            <div class="sensor-info col-4 col-xs-12" data-sensor="W004" >
+                                                <div class="sensor-info-row mb-2">
+                                                    <div class="sensor-temperature temp">
+                                                        <h5>온도</h5>
+                                                        <h4>31.4 <span class="unit">ºC</span></h4>
+                                                    </div>
+                                                    <div class="sensor-temperature humi">
+                                                        <h5>습도</h5>
+                                                        <h4>54.2 <span class="unit">%</span></h4>
+                                                    </div>
+                                                    <div class="sensor-temperature wd">
+                                                        <h5>풍향</h5>
+                                                        <h4><span class="wind-direction" >북북동</span></h4>
+                                                    </div>
+                                                    <div class="sensor-temperature ws">
+                                                        <h5>풍속</h5>
+                                                        <h4>0<span class="unit">m/s</span></h4>
+                                                    </div>
+                                                </div>
+                                                <div class="sensor-info-row">
+                                                    <div class="sensor-ec pm10">
+                                                        <h5>PM10</h5>
+                                                        <h4>34.8
+                                                            <span class="pm-good pm-state">좋음</span>
+                                                        </h4>
+                                                    </div>
+                                                    <div class="sensor-ph pm25">
+                                                        <h5>PM25</h5>
+                                                        <h4>100
+                                                            <span class="pm-good pm-state">좋음</span></h4>
+                                                    </div>
+                                                    <div class="sensor-ph co2">
+                                                        <h5>CO2</h5>
+                                                        <h4>1000<span class="unit"> PPM</span></h4>
+                                                    </div>
+                                                    <div class="sensor-ph light">
+                                                        <h5>광명</h5>
+                                                        <h4>10000</h4>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="sensor-info col-4 col-xs-12" data-sensor="W002" >
+                                                <div class="sensor-info-row mb-2">
+                                                    <div class="sensor-temperature temp">
+                                                        <h5>온도</h5>
+                                                        <h4>31.4 <span class="unit">ºC</span></h4>
+                                                    </div>
+                                                    <div class="sensor-temperature humi">
+                                                        <h5>습도</h5>
+                                                        <h4>54.2 <span class="unit">%</span></h4>
+                                                    </div>
+                                                    <div class="sensor-temperature wd">
+                                                        <h5>풍향</h5>
+                                                        <h4><span class="wind-direction" >북북동</span></h4>
+                                                    </div>
+                                                    <div class="sensor-temperature ws">
+                                                        <h5>풍속</h5>
+                                                        <h4>0<span class="unit">m/s</span></h4>
+                                                    </div>
+                                                </div>
+                                                <div class="sensor-info-row">
+                                                    <div class="sensor-ec pm10">
+                                                        <h5>PM10</h5>
+                                                        <h4>34.8
+                                                            <span class="pm-good pm-state">좋음</span>
+                                                        </h4>
+                                                    </div>
+                                                    <div class="sensor-ph pm25">
+                                                        <h5>PM25</h5>
+                                                        <h4>100
+                                                            <span class="pm-good pm-state">좋음</span></h4>
+                                                    </div>
+                                                    <div class="sensor-ph co2">
+                                                        <h5>CO2</h5>
+                                                        <h4>1000<span class="unit"> PPM</span></h4>
+                                                    </div>
+                                                    <div class="sensor-ph light">
+                                                        <h5>광명</h5>
+                                                        <h4>10000</h4>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="sensor-row">
+
+                                        </div>
+                                    </div>
+                                    <div class="stadium-watering">
+                                        <div class="stadium-watering-row flex-bottom">
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- col end -->
+                </div>
+                <!-- Row end -->
+                <!--Row-->
+            </div>
+        </div>
+    </div>
+    <!-- End Main Content-->
+    <!-- Main Footer-->
+    <div class="main-footer text-center">
+        <div class="container">
+            <div class="row row-sm">
+                <div class="col-md-12">
+                    <span class="text-white">Copyright © 2023 <a style="color: #80b9ed;">상암월드컵경기장</a></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--End Footer-->
+</div>
+<!-- End Page -->
+
+<!-- Back-to-top -->
+<a href="#top" id="back-to-top"><i class="fe fe-arrow-up"></i></a>
+
+<!-- Jquery js-->
+<script src="../assets/plugins/jquery/jquery.min.js"></script>
+
+<!-- Bootstrap js-->
+<script src="../assets/plugins/bootstrap/js/popperesult.min.js"></script>
+<script src="../assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+
+<!-- Peity js-->
+<script src="../assets/plugins/peity/jquery.peity.min.js"></script>
+
+<!-- Select2 js-->
+<script src="../assets/plugins/select2/js/select2.min.js"></script>
+<!-- Internal Chart.Bundle js-->
+<script src="../assets/plugins/chart.js/Chart.bundle.min.js"></script>
+<!-- Internal Jquery.maskedinput js-->
+<script src="../assets/plugins/jquery.maskedinput/jquery.maskedinput.js"></script>
+<!-- Sidemenu js -->
+<script src="../assets/plugins/sidemenu/sidemenu.js"></script>
+<!-- Internal Dashboard js-->
+<script src="../assets/js/crypto-exchange.js"></script>
+<!-- Internal Form-elements js-->
+<script src="../assets/js/form-elements.js"></script>
+<!-- Sticky js -->
+<script src="../assets/js/sticky.js"></script>
+<!-- twentytwenty -->
+<script src="../assets/js/jquery.event.move.js"></script>
+<script src="../assets/js/jquery.twentytwenty.js"></script>
+<script>
+
+    function Chg_wdirk($wdir){
+        //16방
+        $wdirk = "";
+
+        $wdir = $wdir*1;
+
+        if (0 <= $wdir && $wdir <= 11.25){
+            $wdirk = "북";
+        }else if (11.25 < $wdir && $wdir <= 33.75){
+            $wdirk = "북북동";
+        }else if (33.75 < $wdir && $wdir <= 56.25){
+            $wdirk = "북동";
+        }else if (56.25 < $wdir && $wdir <= 78.75){
+            $wdirk = "동북동";
+        }else if (78.75 < $wdir && $wdir <= 101.25){
+            $wdirk = "동";
+        }else if (101.25 < $wdir && $wdir <= 123.75){
+            $wdirk = "동남동";
+        }else if (123.75 < $wdir && $wdir <= 146.25){
+            $wdirk = "남동";
+        }else if (146.25 < $wdir && $wdir <= 168.75){
+            $wdirk = "남남동";
+        }else if (168.75 < $wdir && $wdir <= 191.25){
+            $wdirk = "남";
+        }else if (191.25 < $wdir && $wdir <= 213.75){
+            $wdirk = "남남서";
+        }else if (213.75 < $wdir && $wdir <= 236.25){
+            $wdirk = "남서";
+        }else if (236.25 < $wdir && $wdir <= 258.75){
+            $wdirk = "서남서";
+        }else if (258.75 < $wdir && $wdir <= 281.25){
+            $wdirk = "서";
+        }else if (281.25 < $wdir && $wdir <= 303.75){
+            $wdirk = "서북서";
+        }else if (303.75 < $wdir && $wdir <= 326.25){
+            $wdirk = "북서";
+        }else if (326.25 < $wdir && $wdir <= 348.75){
+            $wdirk = "북북서";
+        }else if (348.75 < $wdir){
+            $wdirk = "북";
+        }else{
+            $wdirk = '-';
+        }
+
+        return $wdirk;
+
+    }
+    function getPm10Grade(value,id){
+
+        value = value*1
+
+        if(value<=30){
+            $(id).text("좋음");
+            $(id).attr('class','pm-good pm-state ml-1')
+        }else if(value<=80){
+            $(id).text("보통");
+            $(id).attr('class','pm-usually pm-state ml-1')
+        }else if(value<=150){
+            $(id).text("나쁨");
+            $(id).attr('class','pm-bad pm-state ml-1')
+        }else{
+            $(id).text("매우나쁨");
+            $(id).attr('class','pm-very-bad pm-state ml-1')
+        }
+    }
+
+    function getPm25Grade(value,id){
+
+        value = value*1
+
+        if(value<=15){
+            $(id).text("좋음");
+            $(id).attr('class','pm-good pm-state ml-1')
+        }else if(value<=35){
+            $(id).text("보통");
+            $(id).attr('class','pm-usually pm-state ml-1')
+        }else if(value<=75){
+            $(id).text("나쁨");
+            $(id).attr('class','pm-bad pm-state ml-1')
+        }else{
+            $(id).text("매우나쁨");
+            $(id).attr('class','pm-very-bad pm-state ml-1')
+        }
+    }
+
+    $(document).ready(function(){
+
+        $.ajax({
+            url : "../php/getWeatherLast.php",
+            success : function(result){
+                let weather = result.weather;
+                let tmFc = "";
+
+                $.each(weather,function(index,item){
+                    $('[data-sensor="'+item.SENSOR_CODE+'"] .temp h4').html(item.TEMP+"<span class=\"unit\"> ºC</span>")
+                    $('[data-sensor="'+item.SENSOR_CODE+'"] .humi h4').html(item.HUMI+"<span class=\"unit\"> %</span>")
+                    $('[data-sensor="'+item.SENSOR_CODE+'"] .wd h4').html(Chg_wdirk(item.WD))
+                    $('[data-sensor="'+item.SENSOR_CODE+'"] .ws h4').html(item.WS+"<span class=\"unit\"> m/s</span>")
+                    $('[data-sensor="'+item.SENSOR_CODE+'"] .pm10 h4').html(item.PM10+"<span id='pm10"+item.SENSOR_CODE+"' class=\"pm-good pm-state\">좋음</span>")
+                    $('[data-sensor="'+item.SENSOR_CODE+'"] .pm25 h4').html(item.PM25+"<span id='pm25"+item.SENSOR_CODE+"' class=\"pm-good pm-state\">좋음</span>")
+                    $('[data-sensor="'+item.SENSOR_CODE+'"] .co2 h4').html(item.CO2+"<span class=\"unit\"> ppm</span>")
+                    $('[data-sensor="'+item.SENSOR_CODE+'"] .light h4').html(item.LIGHT)
+
+                    getPm10Grade(item.PM10,"#pm10"+item.SENSOR_CODE)
+                    getPm10Grade(item.PM25,"#pm25"+item.SENSOR_CODE)
+
+                    tmFc = item.TM+" "
+                })
+
+                $('#tmFc').html(tmFc)
+            }
+        })
+
+        $.ajax({
+            url : "../php/getHeadWeather.php",
+            success : function(result){
+                console.log(result)
+
+                $('[data-sensor="WAVG"] .temp h4').html(result.TEMP+"<span class=\"unit\"> ºC</span>")
+                $('[data-sensor="WAVG"] .humi h4').html(result.HUMI+"<span class=\"unit\"> %</span>")
+                $('[data-sensor="WAVG"] .wd h4').html(Chg_wdirk(result.WD))
+                $('[data-sensor="WAVG"] .ws h4').html(result.WS+"<span class=\"unit\"> m/s</span>")
+                $('[data-sensor="WAVG"] .pm10 h4').html(result.PM10+"<span id='pm10avg' class=\"pm-good pm-state\">좋음</span>")
+                $('[data-sensor="WAVG"] .pm25 h4').html(result.PM25+"<span id='pm25avg' class=\"pm-good pm-state\">좋음</span>")
+                $('[data-sensor="WAVG"] .co2 h4').html(result.CO2+"<span class=\"unit\"> ppm</span>")
+                $('[data-sensor="WAVG"] .light h4').html(result.LIGHT)
+
+                getPm10Grade(result.PM10,"#pm10avg")
+                getPm10Grade(result.PM25,"#pm25avg")
+            }
+        })
+
+    });
+
+    function showMobile(code){
+
+        if(window.innerWidth<700) {
+
+            if($('.sensor-info[data-sensor="' + code + '"]').css('display')!="none"){
+                $('.sensor-info[data-sensor="' + code + '"]').hide()
+            }else{
+                $('.sensor-info[data-sensor="' + code + '"]').parent().parent().find('.sensor-info').hide();
+                $('.sensor-info[data-sensor="' + code + '"]').show();
+            }
+
+        }
+    }
+</script>
+<!-- Custom js -->
+<script src="../assets/js/custom.js"></script>
+</body>
+</html>

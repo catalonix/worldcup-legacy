@@ -9,7 +9,7 @@
 		<!-- Favicon -->
 		<link rel="icon" href="" type="image/x-icon"/>
 		<!-- Title -->
-		<title>상암월드컵경기장</title>
+		<title>서울월드컵경기장</title>
 		<!-- Bootstrap css-->
 		<link href="../assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
 		<!-- Icons css-->
@@ -138,7 +138,15 @@
 													</div>
 													<div class="col-md-10">
 														<select class="form-control" name="workType">
+															<option value="예지">예지</option>
 															<option value="관수">관수</option>
+															<option value="버티컷">버티컷</option>
+															<option value="코어링">코어링</option>
+															<option value="배토">배토</option>
+															<option value="예방시약">예방시약</option>
+															<option value="액비시비">액비시비</option>
+															<option value="알비시비">알비시비</option>
+															<option value="기타">기타</option>
 														</select>
 													</div>
 												</div>
@@ -168,7 +176,7 @@
 													<div class="col-md-2">
 														<label class="form-label pt-2">작업일자</label>
 													</div>
-													<div class="col-md-10">
+													<div class="col-md-4">
 														<div class="input-group">
 															<div class="input-group-prepend">
 																<div class="input-group-text">
@@ -176,6 +184,16 @@
 																</div>
 															</div>
 															<input class="form-control fc-datepicker" placeholder="시작일" type="text" name="workDate">
+														</div>
+													</div>
+													<div class="col-md-3 col-6">
+														<div class="input-group">
+															<input class="form-control" placeholder="시작시간" type="text" name="workStart">
+														</div>
+													</div>
+													<div class="col-md-3 col-6">
+														<div class="input-group">
+															<input class="form-control" placeholder="종료시간" type="text" name="workEnd">
 														</div>
 													</div>
 												</div>
@@ -311,8 +329,10 @@
 							$('#modifyForm [name="workType"]').val(result.WORK_TYPE)
 							$('#modifyForm [name="userId"]').val(result.USER_ID)
 							$('#modifyForm [name="workDate"]').val(result.WORK_DATE)
+							$('#modifyForm [name="workStart"]').val(result.WORK_START)
+							$('#modifyForm [name="workEnd"]').val(result.WORK_END)
 							
-							var workList = result.WORK_LIST.split(';')
+							let workList = result.WORK_LIST.split(';')
 							
 							$.each(workList,function(index,item){
 								

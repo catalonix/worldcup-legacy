@@ -1,0 +1,1048 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="keywords" content="">
+    <!-- Favicon -->
+    <link rel="icon" href="" type="image/x-icon"/>
+    <!-- Title -->
+    <title>서울월드컵경기장</title>
+    <!-- Bootstrap css-->
+    <link href="../assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+    <!-- Icons css-->
+    <link href="../assets/plugins/web-fonts/icons.css" rel="stylesheet"/>
+    <link href="../assets/plugins/web-fonts/font-awesome/font-awesome.min.css" rel="stylesheet">
+    <link href="../assets/plugins/web-fonts/plugin.css" rel="stylesheet"/>
+    <!-- Style css-->
+    <link href="../assets/css/style.css" rel="stylesheet">
+    <link href="../assets/css/skins.css" rel="stylesheet">
+    <!-- Sidemenu css-->
+    <link href="../assets/css/sidemenu/sidemenu.css" rel="stylesheet">
+    <link href="../assets/css/sangam.css" rel="stylesheet">
+    <link href="../assets/css/twentytwenty.css" rel="stylesheet" type="text/css">
+    <!-- Select2 css -->
+    <link href="../assets/plugins/select2/css/select2.min.css" rel="stylesheet">
+    <!--Bootstrap-datepicker css-->
+    <link rel="stylesheet" href="../assets/plugins/bootstrap-datepicker/bootstrap-datepicker.css">
+    <link href="../assets/plugins/spectrum-colorpicker/spectrum.css" rel="stylesheet">
+    <!-- Internal Datetimepicker-slider css -->
+    <link href="../assets/plugins/amazeui-datetimepicker/css/amazeui.datetimepicker.css" rel="stylesheet">
+    <!-- Internal DataTables css-->
+    <link href="../assets/plugins/datatable/dataTables.bootstrap4.min.css" rel="stylesheet" />
+    <link href="../assets/plugins/datatable/responsivebootstrap4.min.css" rel="stylesheet" />
+    <link href="../assets/plugins/datatable/fileexport/buttons.bootstrap4.min.css" rel="stylesheet" />
+    <style>
+        #selectZone .ckbox{
+            margin-right: 8px;
+        }
+        @media (max-width: 568px) {
+            #selectZone .ckbox {
+                margin-right: 3px;
+            }
+        }
+    </style>
+</head>
+
+<body class="main-body leftmenu">
+<!-- Loader -->
+<div id="global-loader">
+    <img src="../assets/img/loader.svg" class="loader-img" alt="Loader">
+</div>
+<!-- End Loader -->
+<!-- Page -->
+<div class="page">
+    <!-- Sidemenu -->
+    <?include "../include/sidebar.php";?>
+    <!-- End Sidemenu -->
+
+    <!-- Main Header-->
+    <?include "../include/header.php";?>
+    <!-- End Main Header-->
+    <!-- Mobile-header -->
+
+    <!-- //Mobile-header -->
+    <!-- Main Content-->
+    <div class="main-content side-content pt-0">
+        <div class="container-fluid main-m-pt">
+            <div class="inner-body">
+                <!-- Page Header -->
+                <div class="page-header">
+                    <div>
+                        <h2 class="main-content-title text-white tx-24 mg-b-5 font-weight-bold">관측상세 정보</h2>
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item">Home</li>
+                            <li class="breadcrumb-item active" aria-current="page">관측상세 정보</li>
+                        </ol>
+                    </div>
+                </div>
+                <!-- End Page Header -->
+                <!--Row-->
+                <div class="row row-sm mt-4">
+                    <!-- col -->
+                    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                        <div class="card custom-card overflow-hidden">
+                            <div class="card-header border-bottom-0 pb-0">
+                                <div>
+                                    <div class="d-flex-sb border-bottom">
+                                        <label class="main-content-label my-auto pt-2 pb-2 tx-16">상세검색</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="row row-sm">
+                                    <div class="col-sm-12 col-lg-3 col-xl-2 margin-responsive" id="type">
+                                        <select class="form-control" id="selectSensor">
+                                            <option value="W004">기상센서</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-6 col-sm-6 col-lg-4 col-xl-2 margin-responsive">
+                                        <div>
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <div class="input-group-text">
+                                                        <i class="fe fe-calendar lh--9 op-6"></i>
+                                                    </div>
+                                                </div>
+                                                <input class="form-control fc-datepicker" placeholder="시작일" type="text" id="startDate">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 col-sm-6 col-lg-4 col-xl-2 margin-responsive">
+                                        <div>
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <div class="input-group-text">
+                                                        <i class="fe fe-calendar lh--9 op-6"></i>
+                                                    </div>
+                                                </div>
+                                                <input class="form-control fc-datepicker" placeholder="종료일" type="text" id="endDate">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-sm-12 col-lg-12 col-xl-6 observation-submit">
+                                        <button class="btn ripple btn-bg pd-x-20" type="button" value="" id="searchBtn">
+                                            <i class="fe fe-search mr-2" style="vertical-align: inherit;"></i>조회하기</button>
+                                        <div class="time-btn">
+                                            <button class="btn ripple btn-bg2 pd-x-20" type="submit" value="">-1</button>
+                                            <button class="btn ripple btn-bg2 pd-x-20 ml-1" type="submit" value="">-3</button>
+                                            <button class="btn ripple btn-bg2 pd-x-20 ml-1" type="submit" value="">-7</button>
+                                            <button class="btn ripple btn-bg2 pd-x-20 ml-1" type="submit" value="">-30</button>
+                                            <button class="btn ripple btn-bg2 pd-x-20 ml-1" type="submit" value="">초기화</button>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-sm-12 col-lg-12 col-xl-6 observation-submit" id="selectZone">
+                                        <div style="display: flex;flex-direction: row;color: white;padding: 5px;margin-top: 5px; border: 1px solid #8c9fb9">
+                                            <label class="ckbox">
+                                                <input type="checkbox" name="sensorCode[]" value="W003" checked="checked">
+                                                <span>동남</span>
+                                            </label>
+                                            <label class="ckbox">
+                                                <input type="checkbox" name="sensorCode[]" value="W004" checked="checked">
+                                                <span>서북</span>
+                                            </label>
+                                            <label class="ckbox">
+                                                <input type="checkbox" name="sensorCode[]" value="W002" checked="checked">
+                                                <span>서남</span>
+                                            </label>
+                                            <label class="ckbox">
+                                                <input type="checkbox" name="sensorCode[]" value="W001" checked="checked">
+                                                <span>동북</span>
+                                            </label>
+                                        </div>
+                                        <div style="display: flex;flex-direction: row;color: white;padding: 5px;margin-top: 5px;margin-left: 5px; border: 1px solid #8c9fb9">
+                                            <label class="ckbox">
+                                                <input type="checkbox" name="dataType[]" value="temp" checked="checked">
+                                                <span>온도</span>
+                                            </label>
+                                            <label class="ckbox">
+                                                <input type="checkbox" name="dataType[]" value="humi" >
+                                                <span>습도</span>
+                                            </label>
+                                            <label class="ckbox">
+                                                <input type="checkbox" name="dataType[]" value="ws" >
+                                                <span>풍속</span>
+                                            </label>
+                                            <label class="ckbox">
+                                                <input type="checkbox" name="dataType[]" value="co2" >
+                                                <span>CO2</span>
+                                            </label>
+                                            <label class="ckbox">
+                                                <input type="checkbox" name="dataType[]" value="pm10" >
+                                                <span>PM10</span>
+                                            </label>
+                                            <label class="ckbox">
+                                                <input type="checkbox" name="dataType[]" value="pm25" >
+                                                <span>PM25</span>
+                                            </label>
+                                            <label class="ckbox">
+                                                <input type="checkbox" name="dataType[]" value="light" >
+                                                <span>광량</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                        <div class="card custom-card overflow-hidden">
+                            <div class="card-header border-bottom-0 pb-0">
+                                <div>
+                                    <div class="chart-header border-bottom">
+                                        <label class="main-content-label my-auto pt-2 pb-4 tx-16">관측정보</label>
+                                        <ul class="nav nav-tabs nav-tabs-solid nav-justified border-0">
+                                            <li class="nav-item mr-2"><a href="#solid-justified-tab2-1" class="tab-link active" data-toggle="tab"><i class="ti-bar-chart mr-2"></i>차트 보기</a></li>
+                                            <li style="display: none" class="nav-item"><a href="#solid-justified-tab2-2" class="tab-link" data-toggle="tab"><i class="ti-agenda mr-2"></i>상세테이블</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="chart-info">
+                                    <div class="chart-title">
+                                        <h5 id="sensorName">NDVI 카메라1</h5>
+                                        <span>선택하신 장비에 대한 관측 데이터 그래프 입니다.</span>
+                                    </div>
+                                    <button class="btn ripple btn-bg3" type="button" value="5" id="export">
+                                        <i class="ti-import" style="vertical-align: inherit;"></i>
+                                    </button>
+                                </div>
+                                <div class="tab-content mb-3">
+                                    <div class="tab-pane fade show active" id="solid-justified-tab2-1" style="height: 350px">
+                                        <canvas id="chartZone" height="330"></canvas>
+                                    </div>
+                                    <div class="tab-pane fade" id="solid-justified-tab2-2">
+                                        <div class="table-responsive">
+                                            <table class="table text-nowrap text-md-nowrap table-bordered mg-b-0 text-center" style="width: 100%" id="dataTable">
+                                                <thead id="dataHead">
+                                                <tr class="text-center">
+                                                    <th>구분</th>
+                                                    <th>수집시간</th>
+                                                    <th>센서명</th>
+                                                    <th>온도(ºC)</th>
+                                                    <th>습도(%)</th>
+                                                    <th>풍향</th>
+                                                    <th>풍속(m/s)</th>
+                                                    <th>광량</th>
+                                                    <th>이산화탄소(ppm)</th>
+                                                    <th>미세먼지(㎍/㎥)</th>
+                                                    <th>초미세먼지(㎍/㎥)</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- col end -->
+                </div>
+                <!-- Row end -->
+            </div>
+        </div>
+    </div>
+    <!-- End Main Content-->
+    <!-- modal content -->
+
+    <!-- /modal content -->
+    <!-- Main Footer-->
+    <div class="main-footer text-center">
+        <div class="container">
+            <div class="row row-sm">
+                <div class="col-md-12">
+                    <span class="text-white">Copyright © 2023 <a style="color: #80b9ed;">서울월드컵경기장</a></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--End Footer-->
+</div>
+<!-- End Page -->
+
+<!-- Back-to-top -->
+<a href="#top" id="back-to-top"><i class="fe fe-arrow-up"></i></a>
+
+<!-- Jquery js-->
+<script src="../assets/plugins/jquery/jquery.min.js"></script>
+
+<!-- Bootstrap js-->
+<script src="../assets/plugins/bootstrap/js/popper.min.js"></script>
+<script src="../assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+
+<!-- Peity js-->
+<script src="../assets/plugins/peity/jquery.peity.min.js"></script>
+<!-- Internal Jquery-Ui js-->
+<script src="../assets/plugins/jquery-ui/ui/widgets/datepicker.js"></script>
+<!-- Select2 js-->
+<script src="../assets/plugins/select2/js/select2.min.js"></script>
+<!-- Internal Chart.Bundle js-->
+<script src="../assets/plugins/chart.js/Chart.bundle.min.js"></script>
+<!-- Internal Jquery.maskedinput js-->
+<script src="../assets/plugins/jquery.maskedinput/jquery.maskedinput.js"></script>
+<!-- Sidemenu js -->
+<script src="../assets/plugins/sidemenu/sidemenu.js"></script>
+
+<!-- Internal Specturm-colorpicker js-->
+<script src="../assets/plugins/spectrum-colorpicker/spectrum.js"></script>
+<!-- Select2 js-->
+<script src="../assets/plugins/select2/js/select2.min.js"></script>
+<script src="../assets/js/select2.js"></script>
+<!--Bootstrap-datepicker js-->
+<script src="../assets/plugins/bootstrap-datepicker/bootstrap-datepicker.js"></script>
+<!-- Internal jquery-simple-datetimepicker js -->
+<script src="../assets/plugins/amazeui-datetimepicker/js/amazeui.datetimepicker.min.js"></script>
+
+<!-- Internal Data Table js -->
+<script src="../assets/plugins/datatable/jquery.dataTables.min.js"></script>
+<script src="../assets/plugins/datatable/dataTables.bootstrap4.min.js"></script>
+<script src="../assets/plugins/datatable/dataTables.responsive.min.js"></script>
+<script src="../assets/plugins/datatable/fileexport/dataTables.buttons.min.js"></script>
+<script src="../assets/plugins/datatable/fileexport/buttons.bootstrap4.min.js"></script>
+<script src="../assets/js/table-data.js"></script>
+<!-- Internal Dashboard js-->
+<script src="../assets/js/crypto-exchange.js"></script>
+<!-- Internal Form-elements js-->
+<script src="../assets/js/form-elements.js"></script>
+<!-- Sticky js -->
+<script src="../assets/js/sticky.js"></script>
+<!-- twentytwenty -->
+<script src="../assets/js/jquery.event.move.js"></script>
+<script src="../assets/js/jquery.twentytwenty.js"></script>
+<!-- Custom js -->
+<script src="../assets/js/custom.js"></script>
+
+<script src="https://cdn.datatables.net/buttons/2.0.1/js/dataTables.buttons.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.0.1/js/buttons.html5.min.js"></script>
+
+<script src="../assets/js/palette.js"></script>
+
+<script>
+    $(document).ready(function(){
+
+        $(".twentytwenty-container[data-orientation!='vertical']").twentytwenty({default_offset_pct: 0.5});
+        $(".twentytwenty-container[data-orientation='vertical']").twentytwenty({default_offset_pct: 0.5, orientation: 'vertical'});
+
+        $("#sensorBtn-1").click(function(){
+            $("#sensorDate-1").toggle();
+            $("#infoBox").toggle();
+        });
+
+        $('.time-btn button:eq(0)').on('click',function(){
+            let date = $('.hasDatepicker:eq(0)').datepicker('getDate');
+            let tempStartDate = new Date(date);
+            let default_end = new Date(tempStartDate.getFullYear(), tempStartDate.getMonth(), tempStartDate.getDate()-1); //this parses date to overcome new year date weirdness
+            $('.hasDatepicker:eq(0)').datepicker('setDate', default_end); // Set as default
+        })
+
+        $('.time-btn button:eq(1)').on('click',function(){
+            let date = $('.hasDatepicker:eq(0)').datepicker('getDate');
+            let tempStartDate = new Date(date);
+            let default_end = new Date(tempStartDate.getFullYear(), tempStartDate.getMonth(), tempStartDate.getDate()-3); //this parses date to overcome new year date weirdness
+            $('.hasDatepicker:eq(0)').datepicker('setDate', default_end); // Set as default
+        })
+
+        $('.time-btn button:eq(2)').on('click',function(){
+            let date = $('.hasDatepicker:eq(0)').datepicker('getDate');
+            let tempStartDate = new Date(date);
+            let default_end = new Date(tempStartDate.getFullYear(), tempStartDate.getMonth(), tempStartDate.getDate()-7); //this parses date to overcome new year date weirdness
+            $('.hasDatepicker:eq(0)').datepicker('setDate', default_end); // Set as default
+        })
+
+        $('.time-btn button:eq(3)').on('click',function(){
+            let date = $('.hasDatepicker:eq(0)').datepicker('getDate');
+            let tempStartDate = new Date(date);
+            let default_end = new Date(tempStartDate.getFullYear(), tempStartDate.getMonth(), tempStartDate.getDate()-30); //this parses date to overcome new year date weirdness
+            $('.hasDatepicker:eq(0)').datepicker('setDate', default_end); // Set as default
+        })
+
+        $('.time-btn button:eq(4)').on('click',function(){
+            $('#startDate').val(formattedDate)
+            $('#endDate').val(new Date().toISOString().substring(0,10))
+        })
+
+        $('#searchBtn').on('click',function(){
+            $('#sensorName').text($('#selectSensor option:selected').text())
+            getObservation();
+        })
+
+        $('#selectSensor').on('change',function(){
+            if($(this).val()=='W004'){
+                $('#selectZone').css('display','flex')
+            }else{
+                $('#selectZone').hide();
+            }
+        })
+
+        let dataTable = null;
+        let myChart = null;
+
+        function getObservation(){
+
+            let param = {
+                startDate : $('#startDate').val(),
+                endDate : $('#endDate').val(),
+                sensorCode : $('#selectSensor').val()
+            }
+
+            if(dataTable!=null){
+                dataTable.clear();
+                dataTable.destroy();
+                //$('#dataTable').empty();
+                //$('#dataHead').empty();
+            }
+
+            if(myChart!=null){
+                myChart.destroy();
+            }
+
+            $.ajax({
+                url : "../php/getObservation.php",
+                method : "GET",
+                data : param,
+                async : false,
+                success : function(result){
+                    console.log(result);
+                    let dataHead = null;
+                    let thead = "";
+
+                    //기상센서
+                    if($('#selectSensor').val().substring(0,1)=='W'){
+                        dataHead = [{"data" : "SENSOR_CODE"},{"data" : "TM"},{"data" : "SENSOR_NAME"},{"data" : "TEMP"},{"data" : "HUMI"},{"data" : "WD"},{"data" : "WS"},{"data" : "LIGHT"},{"data" : "CO2"},{"data" : "PM10"},{"data" : "PM25"}];
+                        thead = `
+							<tr class="text-center">
+									<th>구분</th>
+									<th>수집시간</th>
+									<th>센서명</th>
+									<th>온도(ºC)</th>
+									<th>습도(%)</th>
+									<th>풍향</th>
+									<th>풍속(m/s)</th>
+									<th>광량</th>
+									<th>이산화탄소(ppm)</th>
+									<th>미세먼지(㎍/㎥)</th>
+									<th>초미세먼지(㎍/㎥)</th>
+							</tr>`
+
+                        drawChartW(result.reverse())
+                    }
+
+                    //로봇센서
+                    if($('#selectSensor').val().substring(0,1)=='R'){
+                        dataHead = [{"data" : "TwoHourInterval"},{"data" : "STP"},{"data" : "SMO"},{"data" : "SEC"}]
+                        thead = `
+								<tr class="text-center">
+										<th>수집시간</th>
+										<th>토양온도(ºC)</th>
+										<th>토양습도(%)</th>
+										<th>토양양분(ºC)</th>
+								</tr>`
+
+                        drawChartR(result.reverse())
+                    }
+
+                    //카메라
+                    if($('#selectSensor').val().substring(0,1)=='C'){
+                        dataHead = [{"data" : "SENSOR_NO"},{"data" : "TM"},{"data" : "SENSOR_NAME"},{"data" : "NDVI"}]
+                        thead = `
+								<tr class="text-center">
+										<th>구분</th>
+										<th>수집시간</th>
+										<th>센서명</th>
+										<th>NDVI</th>
+								</tr>`
+
+                        for(let i=0;i<result.length;i++){
+                            result[i].NDVI = (result[i].NDVI*1).toFixed(3);
+                        }
+
+                        drawChartC(result.reverse())
+                    }
+
+                    $('#dataHead').html(thead);
+
+                    result.reverse()
+
+                    for(let i=0;i<result.length;i++){
+                        result[i].TM = result[i].TM.replace('T',' ')
+                    }
+
+                    dataTable = $('#dataTable').DataTable({
+                        "language": {
+                            //url: "../global_assets/js/plugins/tables/datatables/localization_kor.min.json",
+                            searchPlaceholder: '검색...',
+                            sSearch: '',
+                            lengthMenu: '_MENU_ 출력수',
+                        },
+                        //"dom": 'Blfrtip',
+                        "data": result,
+                        "columns": dataHead,
+                        "deferRender": true,
+                        //"aaSorting": ["USER_ID"],
+                        "scrollX": true,
+                        "autoWidth": false,
+                        "responsive": true,
+                        "buttons": [
+                            {
+                                extend: 'csv',
+                                charset: 'UTF-8',
+                                bom: true,
+                                filename: function () {
+                                    console.log('asdf')
+                                    return $('#startDate').val().replace(/\-/g,'').replace(' ',' to')+"_"+$('#endDate').val().replace(/\-/g,'');
+                                }
+                            }
+                        ]
+                    })
+                }
+            })
+        }
+
+        $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+            // 활성화된 탭의 Datatable.js 초기화
+            $('#dataTable').DataTable().columns.adjust();
+        });
+
+        function drawChartC(result){
+
+            let label = [];
+            let data = [];
+            let data1 = [];
+            let data2 = [];
+            let data3 = [];
+            //let ndviImg = "";
+
+            for(let i=0;i<result.length;i++){
+                //data.push(result[i].NDVI);
+                //data.push(((c001[i].NDVI*1+c002[i].NDVI*1+c003[i].NDVI*1)/3).toFixed(3));
+                if(result[i].SENSOR_NO=='C001'){
+                    data1.push(result[i].NDVI);
+                    label.push(result[i].TM.split(' '));
+                }
+                if(result[i].SENSOR_NO=='C002'){
+                    data2.push(result[i].NDVI);
+                }
+                if(result[i].SENSOR_NO=='C003'){
+                    data3.push(result[i].NDVI);
+                }
+
+            }
+
+            for(let i=0;i<data1.length;i++){
+                data.push(((data1[i]*1+data2[i]*1+data3[i]*1)/3).toFixed(3));
+            }
+
+            console.log(data)
+
+            let ctx = document.getElementById("chartZone").getContext('2d');
+
+            myChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: label,
+                    datasets: [{
+                        label: 'NDVI 평균',
+                        data: data,
+                        borderWidth: 2,
+                        backgroundColor: 'transparent',
+                        borderColor: '#25B372',
+                        borderWidth: 3,
+                        //pointBackgroundColor: '#ffffff',
+                        pointRadius: 2
+                    },
+                        {
+                            label: '동측 카메라',
+                            data: data1,
+                            borderWidth: 2,
+                            backgroundColor: 'transparent',
+                            borderColor: '#2478FF',
+                            borderWidth: 3,
+                            //pointBackgroundColor: '#ffffff',
+                            pointRadius: 2
+                        },
+                        {
+                            label: '남측 카메라',
+                            data: data2,
+                            borderWidth: 2,
+                            backgroundColor: 'transparent',
+                            borderColor: '#5F00FF',
+                            borderWidth: 3,
+                            //pointBackgroundColor: '#ffffff',
+                            pointRadius: 2
+                        },
+                        {
+                            label: '서측 카메라',
+                            data: data3,
+                            borderWidth: 2,
+                            backgroundColor: 'transparent',
+                            borderColor: '#00D8FF',
+                            borderWidth: 3,
+                            //pointBackgroundColor: '#ffffff',
+                            pointRadius: 2
+                        }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+
+                    scales: {
+                        xAxes: [{
+                            ticks: {
+                                fontColor: "#77778e",
+                                maxTicksLimit: 14,
+                                maxRotation: 0,
+                            },
+                            display: true,
+                            gridLines: {
+                                color: 'rgba(119, 119, 142, 0.2)'
+                            }
+                        }],
+                        yAxes: [{
+                            ticks: {
+                                fontColor: "#77778e",
+                                min: 0, // 최소값
+                                max: 1, // 최대값
+                            },
+                            display: true,
+                            gridLines: {
+                                color: 'rgba(119, 119, 142, 0.2)'
+                            },
+                            scaleLabel: {
+                                display: false,
+                                labelString: 'Thousands',
+                                fontColor: 'rgba(119, 119, 142, 0.2)'
+                            }
+                        }]
+                    },
+                    legend: {
+                        labels: {
+                            fontColor: "#77778e"
+                        },
+                    },
+                }
+            });
+        }
+
+        function drawChartR(result){
+
+            let label = [];
+            let smo = [];
+            let stp = [];
+            let sec = [];
+            //let ndviImg = "";
+
+            for(let i=0;i<result.length;i++){
+                label.push(result[i].TwoHourInterval);
+                smo.push(result[i].SMO);
+                stp.push(result[i].STP);
+                sec.push(result[i].SEC);
+            }
+
+            let ctx = document.getElementById("chartZone").getContext('2d');
+            myChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: label,
+                    datasets: [{
+                        label: '토양습도',
+                        data: smo,
+                        borderWidth: 2,
+                        backgroundColor: 'transparent',
+                        borderColor: '#C11B0E',
+                        borderWidth: 3,
+                        //pointBackgroundColor: '#ffffff',
+                        pointRadius: 2
+                    },{
+                        label: '토양온도',
+                        data: stp,
+                        borderWidth: 2,
+                        backgroundColor: 'transparent',
+                        borderColor: '#6495ED',
+                        borderWidth: 3,
+                        pointRadius: 2
+                    },{
+                        label: '토양양분',
+                        data: sec,
+                        borderWidth: 2,
+                        backgroundColor: 'transparent',
+                        borderColor: '#8B4E37',
+                        borderWidth: 3,
+                        pointRadius: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+
+                    scales: {
+                        xAxes: [{
+                            ticks: {
+                                fontColor: "#77778e",
+                            },
+                            display: true,
+                            gridLines: {
+                                color: 'rgba(119, 119, 142, 0.2)'
+                            }
+                        }],
+                        yAxes: [{
+                            ticks: {
+                                fontColor: "#77778e",
+                            },
+                            display: true,
+                            gridLines: {
+                                color: 'rgba(119, 119, 142, 0.2)'
+                            },
+                            scaleLabel: {
+                                display: false,
+                                labelString: 'Thousands',
+                                fontColor: 'rgba(119, 119, 142, 0.2)'
+                            }
+                        }]
+                    },
+                    legend: {
+                        labels: {
+                            fontColor: "#77778e"
+                        },
+                    },
+                }
+            });
+        }
+
+        function createDataSet(result,code,dataType){
+
+            let data = [];
+            let humi = [];
+            let ws = [];
+            let light = [];
+            let pm10 = [];
+            let pm25 = [];
+            let co2 = [];
+
+            let sensorName = "";
+
+            for(let i=0;i<result.length;i++){
+                if(result[i].SENSOR_CODE==code) {
+                    if(result[i].TEMP * 1 <200) {
+                        data.push({datetime: result[i].TM, value: result[i].TEMP * 1});
+                    }
+                    humi.push({datetime: result[i].TM, value: result[i].HUMI * 1});
+                    ws.push({datetime: result[i].TM, value: result[i].WS * 1});
+                    light.push({datetime: result[i].TM, value: result[i].LIGHT * 1});
+                    pm10.push({datetime: result[i].TM, value: result[i].PM10 * 1});
+                    pm25.push({datetime: result[i].TM, value: result[i].PM25 * 1});
+                    co2.push({datetime: result[i].TM, value: result[i].CO2 * 1})
+                    sensorName = result[i].SENSOR_NAME.replace('기상센서','');
+
+                    if(result[i].WS!=0){
+                        console.log("풍속감지")
+                    }
+                }
+            }
+            /*
+            let wData = {
+                data : data,
+                humi : humi,
+                ws : ws,
+                light : light,
+                pm10 : pm10,
+                pm25 : pm25,
+                co2 : co2
+            }*/
+            let datasets = [];
+
+            let red = palette.red;
+            let blue = palette.blue;
+            let green = palette.green;
+
+            let gray = palette.gray;
+            let orange =  palette.orange;
+            let violet =  palette.violet;
+            let grape =  palette.grape;
+            let cyan = palette.cyan;
+
+            let idx = code.substring(3,4);
+
+            if(dataType.includes('temp')){
+                datasets.push({
+                    label: '온도('+sensorName+')',
+                    data: data.map(item => {
+                        return {
+                            x: item.datetime,
+                            y: item.value // replace 'value' with actual property for y-axis
+                        };
+                    }),
+                    borderWidth: 2,
+                    backgroundColor: 'transparent',
+                    borderColor: red[idx],
+                    borderWidth: 3,
+                    //pointBackgroundColor: '#ffffff',
+                    pointRadius: 2
+                })
+
+            }
+            if(dataType.includes('humi')){
+                datasets.push(
+                    {
+                        label: '습도('+sensorName+')',
+                        data: humi.map(item => {
+                            return {
+                                x: item.datetime,
+                                y: item.value // replace 'value' with actual property for y-axis
+                            };
+                        }),
+                        borderWidth: 2,
+                        backgroundColor: 'transparent',
+                        borderColor: blue[idx],
+                        borderWidth: 3,
+                        pointRadius: 2
+                    }
+                )
+            }
+            if(dataType.includes('co2')){
+                datasets.push(
+                    {
+                        label: '이산화탄소/10('+sensorName+')',
+                        data: co2.map(item => {
+                            return {
+                                x: item.datetime,
+                                y: item.value/10 // replace 'value' with actual property for y-axis
+                            };
+                        }),
+                        borderWidth: 2,
+                        backgroundColor: 'transparent',
+                        borderColor: cyan[idx],
+                        borderWidth: 3,
+                        pointRadius: 2,
+                        //yAxisID: 'C'
+                    }
+                )
+            }
+            if(dataType.includes('light')){
+                datasets.push(
+                    {
+                        label: '광량('+sensorName+')',
+                        data: light.map(item => {
+                            return {
+                                x: item.datetime,
+                                y: item.value // replace 'value' with actual property for y-axis
+                            };
+                        }),
+                        borderWidth: 2,
+                        backgroundColor: 'transparent',
+                        borderColor: orange[idx],
+                        borderWidth: 3,
+                        pointRadius: 2,
+                        yAxisID: 'B'
+                    }
+                )
+            }
+            if(dataType.includes('pm10')){
+                datasets.push(
+                    {
+                        label: '미세먼지('+sensorName+')',
+                        data: pm10.map(item => {
+                            return {
+                                x: item.datetime,
+                                y: item.value // replace 'value' with actual property for y-axis
+                            };
+                        }),
+                        borderWidth: 2,
+                        backgroundColor: 'transparent',
+                        borderColor: violet[idx*2],
+                        borderWidth: 3,
+                        pointRadius: 2
+                    }
+                )
+            }
+            if(dataType.includes('pm25')){
+                datasets.push(
+                    {
+                        label: '초미세먼지('+sensorName+')',
+                        data: pm25.map(item => {
+                            return {
+                                x: item.datetime,
+                                y: item.value // replace 'value' with actual property for y-axis
+                            };
+                        }),
+                        borderWidth: 2,
+                        backgroundColor: 'transparent',
+                        borderColor: grape[idx*2],
+                        borderWidth: 3,
+                        pointRadius: 2
+                    }
+                )
+            }
+
+            console.log(gray[idx])
+
+            if(dataType.includes('ws')){
+                datasets.push(
+                    {
+                        label: '풍속('+sensorName+')',
+                        data: ws.map(item => {
+                            return {
+                                x: item.datetime,
+                                y: item.value // replace 'value' with actual property for y-axis
+                            };
+                        }),
+                        borderWidth: 2,
+                        backgroundColor: 'transparent',
+                        borderColor: green[idx],
+                        borderWidth: 3,
+                        pointRadius: 2
+                    }
+                )
+            }
+
+            return datasets;
+        }
+        function drawChartW(result){
+
+            for(let i=0;i<result.length;i++){
+                result[i].TM = result[i].TM.replace(' ','T')
+            }
+
+            let fullDataSet = [];
+            let sensorCodeList = Array.from(document.querySelectorAll('input[name="sensorCode[]"]:checked')).map(checkbox => checkbox.value);
+            let dataType = Array.from(document.querySelectorAll('input[name="dataType[]"]:checked')).map(checkbox => checkbox.value);
+
+            if(sensorCodeList.length==0 || dataType.length==0){
+                alert('요소가 선택되지 않았습니다.')
+                return;
+            }
+
+            let w001 = createDataSet(result,'W001',dataType)
+            let w002 = createDataSet(result,'W002',dataType)
+            let w003 = createDataSet(result,'W003',dataType)
+            let w004 = createDataSet(result,'W004',dataType)
+
+            if(sensorCodeList.includes("W001")){
+                fullDataSet = fullDataSet.concat(w001);
+            }
+
+            if(sensorCodeList.includes("W002")){
+                fullDataSet = fullDataSet.concat(w002);
+            }
+
+            if(sensorCodeList.includes("W003")){
+                fullDataSet = fullDataSet.concat(w003);
+            }
+
+            if(sensorCodeList.includes("W004")){
+                fullDataSet = fullDataSet.concat(w004);
+            }
+
+            let ctx = document.getElementById("chartZone").getContext('2d');
+            myChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    datasets: fullDataSet
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+
+                    scales: {
+                        xAxes: [{
+                            ticks: {
+                                fontColor: "#77778e",
+                            },
+                            type: 'time',
+                            time: {
+                                tooltipFormat: 'YYYY-MM-DD HH:mm', // 툴팁에 표시되는 날짜 형식 설정
+                                unit: 'day',
+                                displayFormats: {
+                                    day: 'YYYY-MM-DD' // 날짜 표시 형식을 'yyyy-mm-dd'로 설정
+                                }
+                            },
+                            display: true,
+                            gridLines: {
+                                color: 'rgba(119, 119, 142, 0.2)'
+                            }
+                        }],
+                        yAxes: [
+                            {
+                                id: 'A',
+                                ticks: {
+                                    fontColor: "#77778e",
+                                },
+                                display: true,
+                                gridLines: {
+                                    color: 'rgba(119, 119, 142, 0.2)'
+                                },
+                                scaleLabel: {
+                                    display: false,
+                                    labelString: 'Thousands',
+                                    fontColor: 'rgba(119, 119, 142, 0.2)'
+                                },
+                                max:100,
+                                position: 'left'
+                            },
+                            {
+                                id: 'B',
+                                ticks: {
+                                    fontColor: "#77778e",
+                                },
+                                display: true,
+                                gridLines: {
+                                    color: 'rgba(119, 119, 142, 0.2)'
+                                },
+                                scaleLabel: {
+                                    display: false,
+                                    labelString: 'Thousands',
+                                    fontColor: 'rgba(119, 119, 142, 0.2)'
+                                },
+                                position: 'right',
+                                ticks: {
+                                    max: 7000,
+                                    min: 0
+                                }
+                            },
+                        ]
+                    },
+                    legend: {
+                        labels: {
+                            fontColor: "#77778e"
+                        },
+                    },
+                }
+            });
+        }
+
+
+        $('#export').on('click',function(){
+            dataTable.buttons(0,0).trigger()
+        })
+
+        if('<?=$_GET["sensorCode"]?>'!=''){
+            let sensor = '<?=$_GET["sensorCode"]?>'
+            let dataType = '<?=$_GET["dataType"]?>'
+            $('#selectSensor').val("W004").trigger('change')
+            $('input[name="sensorCode[]"]').removeAttr('checked')
+            $('input[name="dataType[]"]').removeAttr('checked')
+            $('input[name="sensorCode[]"][value="'+sensor+'"]').attr('checked','checked')
+            $('input[name="dataType[]"][value="'+dataType+'"]').attr('checked','checked')
+        }
+
+        // 현재 날짜를 생성합니다.
+        let currentDate = new Date();
+        currentDate.setDate(currentDate.getDate() - 7);
+        let year = currentDate.getFullYear();
+        let month = (currentDate.getMonth() + 1).toString().padStart(2, '0'); // 월은 0부터 시작하므로 1을 더하고 앞에 0을 추가합니다.
+        let day = currentDate.getDate().toString().padStart(2, '0'); // 일을 가져오고 앞에 0을 추가합니다.
+        let formattedDate = year + '-' + month + '-' + day;
+
+        $('#startDate').val(formattedDate)
+
+        $('#searchBtn').click();
+
+    });
+</script>
+</body>
+</html>

@@ -9,7 +9,7 @@
 		<!-- Favicon -->
 		<link rel="icon" href="" type="image/x-icon"/>
 		<!-- Title -->
-		<title>상암월드컵경기장</title>
+		<title>서울월드컵경기장</title>
 		<!-- Bootstrap css-->
 		<link href="../assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
 		<!-- Icons css-->
@@ -65,10 +65,10 @@
 						<!-- Page Header -->
 						<div class="page-header">
 							<div>
-								<h2 class="main-content-title text-white tx-24 mg-b-5 font-weight-bold">통합모니터링 요약(장비)</h2>
+								<h2 class="main-content-title text-white tx-24 mg-b-5 font-weight-bold">잔디생육환경 데이터</h2>
 								<ol class="breadcrumb">
 									<li class="breadcrumb-item">Home</li>
-									<li class="breadcrumb-item active" aria-current="page">통합모니터링 요약(장비)</li>
+									<li class="breadcrumb-item active" aria-current="page">잔디생육환경 데이터</li>
 								</ol>
 							</div>
 						</div>
@@ -76,7 +76,7 @@
 						<!--Row-->
 						<div class="row row-sm mt-4">
 							<!-- col -->
-							<div class="col-sm-12 col-md-12 col-lg-12 col-xl-6">
+							<div class="col-sm-12 col-md-12 col-lg-12 col-xl-4">
 								<div class="card custom-card overflow-hidden">
 									<div class="card-header border-bottom-0 pb-0 mb-2">
 										<div>
@@ -124,7 +124,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="col-sm-12 col-md-12 col-lg-12 col-xl-6">
+							<div class="col-sm-12 col-md-12 col-lg-12 col-xl-4">
 								<div class="card custom-card overflow-hidden">
 									<div class="card-header border-bottom-0 pb-0 mb-2">
 										<div>
@@ -138,10 +138,10 @@
 									</div>
 									<div class="card-body">
 										<div class="card-content card-content-list-height">
-											<div class="card-condition-list" id="W004">
+											<div class="card-condition-list" id="W001">
 												<div class="condition-list-title">
 													<span class="condition-normal"></span>
-													<h4>SE기상센서</h4>
+													<h4>동남기상센서</h4>
 												</div>
 												<p class="progress-step">작동중</p>
 												<div class="condition-text-box situation-success">
@@ -151,27 +151,27 @@
 											<div class="card-condition-list" id="W002">
 												<div class="condition-list-title">
 													<span class="condition-weird"></span>
-													<h4>NW기상센서</h4>
+													<h4>서북기상센서</h4>
 												</div>
 												<p class="progress-step">수리중</p>
 												<div class="condition-text-box situation-danger">
 													<span>OFFLINE</span>
 												</div>
 											</div>
-											<div class="card-condition-list" id="W001">
+											<div class="card-condition-list" id="W003">
 												<div class="condition-list-title">
 													<span class="condition-normal"></span>
-													<h4>SW기상센서</h4>
+													<h4>서남기상센서</h4>
 												</div>
 												<p class="progress-step">작동중</p>
 												<div class="condition-text-box situation-success">
 													<span>정상</span>
 												</div>
 											</div>
-											<div class="card-condition-list" id="W003">
+											<div class="card-condition-list" id="W004">
 												<div class="condition-list-title">
 													<span class="condition-none"></span>
-													<h4>NE기상센서</h4>
+													<h4>동북기상센서</h4>
 												</div>
 												<p class="progress-step">수집중</p>
 												<div class="condition-text-box situation-success">
@@ -182,7 +182,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="col-sm-12 col-md-12 col-lg-12 col-xl-6">
+							<div class="col-sm-12 col-md-12 col-lg-12 col-xl-4">
 								<div class="card custom-card overflow-hidden">
 									<div class="card-header border-bottom-0 pb-0 mb-2">
 										<div>
@@ -241,12 +241,12 @@
 									</div>
 								</div>
 							</div>
-							<div class="col-sm-12 col-md-12 col-lg-12 col-xl-6" id="stateTable">
+							<div class="col-sm-12 col-md-12 col-lg-12 col-xl-6" id="stateTable" style="display: none">
 								<div class="card custom-card overflow-hidden">
 									<div class="card-header border-bottom-0 pb-0 mb-2">
 										<div>
 											<div class="d-flex-sb">
-												<label class="main-content-label my-auto pt-2 tx-16">송풍기</label>
+												<label class="main-content-label my-auto pt-2 tx-16">쿨링팬</label>
 												<div class="title-icon-box">
 													<img src="../assets/img/airblower-icon.png">
 												</div>
@@ -255,10 +255,10 @@
 									</div>
 									<div class="card-body">
 										<div class="card-content card-content-list-height">
-											<div class="card-condition-list" data-fanid="FAN01">
+											<div class="card-condition-list" data-fanid="FAN10">
 												<div class="condition-list-title">
 													<span class="condition-normal"></span>
-													<h4>송풍기-1</h4>
+													<h4>쿨링팬-1</h4>
 												</div>
 												<p class="progress-step">ON / 5분간격</p>
 												<div class="condition-text-box situation-success">
@@ -268,7 +268,7 @@
 											<div class="card-condition-list" data-fanid="FAN02">
 												<div class="condition-list-title">
 													<span class="condition-weird"></span>
-													<h4>송풍기-2</h4>
+													<h4>쿨링팬-2</h4>
 												</div>
 												<p class="progress-step">OFF / -</p>
 												<div class="condition-text-box situation-danger">
@@ -278,7 +278,7 @@
 											<div class="card-condition-list" data-fanid="FAN03">
 												<div class="condition-list-title">
 													<span class="condition-normal"></span>
-													<h4>송풍기-3</h4>
+													<h4>쿨링팬-3</h4>
 												</div>
 												<p class="progress-step">ON / 10분간격</p>
 												<div class="condition-text-box situation-success">
@@ -288,7 +288,7 @@
 											<div class="card-condition-list" data-fanid="FAN04">
 												<div class="condition-list-title">
 													<span class="condition-normal"></span>
-													<h4>송풍기-4</h4>
+													<h4>쿨링팬-4</h4>
 												</div>
 												<p class="progress-step">ON / 5분간격</p>
 												<div class="condition-text-box situation-success">
@@ -298,7 +298,7 @@
 											<div class="card-condition-list" data-fanid="FAN05">
 												<div class="condition-list-title">
 													<span class="condition-normal"></span>
-													<h4>송풍기-5</h4>
+													<h4>쿨링팬-5</h4>
 												</div>
 												<p class="progress-step">ON / 5분간격</p>
 												<div class="condition-text-box situation-success">
@@ -308,7 +308,7 @@
 											<div class="card-condition-list" data-fanid="FAN06">
 												<div class="condition-list-title">
 													<span class="condition-normal"></span>
-													<h4>송풍기-6</h4>
+													<h4>쿨링팬-6</h4>
 												</div>
 												<p class="progress-step">ON / 5분간격</p>
 												<div class="condition-text-box situation-success">
@@ -318,7 +318,7 @@
 											<div class="card-condition-list" data-fanid="FAN07">
 												<div class="condition-list-title">
 													<span class="condition-normal"></span>
-													<h4>송풍기-7</h4>
+													<h4>쿨링팬-7</h4>
 												</div>
 												<p class="progress-step">ON / 5분간격</p>
 												<div class="condition-text-box situation-success">
@@ -328,7 +328,7 @@
 											<div class="card-condition-list" data-fanid="FAN08">
 												<div class="condition-list-title">
 													<span class="condition-normal"></span>
-													<h4>송풍기-8</h4>
+													<h4>쿨링팬-8</h4>
 												</div>
 												<p class="progress-step">ON / 5분간격</p>
 												<div class="condition-text-box situation-success">
@@ -430,19 +430,6 @@
 		<!-- Custom js -->
 		<script src="../assets/js/custom.js"></script>
 		<script>
-			var modal = document.querySelector(".modal");
-			var trigger = document.querySelector(".trigger");
-			var closeButton = document.querySelector(".close-button");
-	
-			function toggleModal() {
-				modal.classList.toggle("show-modal");
-			}
-	
-			function windowOnClick(event) {
-				if (event.target === modal) {
-					toggleModal();
-				}
-			}
 			
 			function getRobotAvg(){
 								
@@ -569,7 +556,7 @@
 				    async : false,
 				    success: function (res) {
 				        console.log(res)
-				        var fanId = res.attributes.friendly_name;
+				        var fanId = res.attributes.friendly_name.replace("_STATUS","");
 				        
 				        if(res.state=='on'){
 				        	$('#stateTable [data-fanid="'+fanId+'"] .progress-step').text("ON");
@@ -589,29 +576,36 @@
 			
 			getRobotAvg();
 			getSensorState();
-			
-			getFanState("switch.fan01");
-			getFanState("switch.fan02");
-			getFanState("switch.fan03");
-			getFanState("switch.fan04");
-			getFanState("switch.fan05");
-			getFanState("switch.fan06");
-			getFanState("switch.fan07");
-			getFanState("switch.fan08");
-			getFanState("switch.fan09");
-			getFanState("switch.fan10");
 
-			trigger.addEventListener("click", toggleModal);
-			closeButton.addEventListener("click", toggleModal);
-			window.addEventListener("click", windowOnClick);
-			
+			/*
+			getFanState("binary_sensor.fan10");
+			getFanState("binary_sensor.fan02");
+			getFanState("binary_sensor.fan03");
+			getFanState("binary_sensor.fan04");
+			getFanState("binary_sensor.fan05");
+			getFanState("binary_sensor.fan06");
+			getFanState("binary_sensor.fan07");
+			getFanState("binary_sensor.fan08");
+			*/
+
 			$(document).ready(function(){
 				$(".twentytwenty-container[data-orientation!='vertical']").twentytwenty({default_offset_pct: 0.5});
 				$(".twentytwenty-container[data-orientation='vertical']").twentytwenty({default_offset_pct: 0.5, orientation: 'vertical'});
-				$("#sensorBtn-1").click(function(){
-					$("#sensorDate-1").toggle();
-					$("#infoBox").toggle();
-				});
+
+				$('.card-condition-list').on('click',function(){
+					if($(this).data('fanid')){
+						location.href = "./remote-operation.html";
+					}else if($(this).attr('id')){
+						if($(this).attr('id').indexOf('C')!=-1){
+							location.href = "./ndvi-summary.html?sensorNo="+$(this).attr('id');
+						}else if($(this).attr('id').indexOf('W')!=-1){
+							location.href = "./weather-summary.html?sensorCode="+$(this).attr('id');
+						}
+					}
+				})
+
+				$('.with-sub').parent().addClass('active')
+				$('.with-sub span').css('color','white')
 			});
 		</script>
 	</body>

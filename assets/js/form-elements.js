@@ -2,7 +2,7 @@ $(function() {
 	'use strict'
 	
 	// Toggle Switches
-	$('.main-toggle').on('click', function() {
+	$(document).on('click','.main-toggle', function() {
 		$(this).toggleClass('on');
 	})
 	
@@ -49,13 +49,23 @@ $(function() {
 			selectOtherMonths: true
 		});
 	}
+
+	if($('.fc-datepicker2').length>0){
+		$('.fc-datepicker2').datepicker({
+			showOtherMonths: true,
+			selectOtherMonths: true,
+			minDate: 0
+		});
+	}
 	
 	// Datepicker no of months
-	$('#datepickerNoOfMonths').datepicker({
-		showOtherMonths: true,
-		selectOtherMonths: true,
-		numberOfMonths: 2
-	});
+	if($('#datepickerNoOfMonths').length>0) {
+		$('#datepickerNoOfMonths').datepicker({
+			showOtherMonths: true,
+			selectOtherMonths: true,
+			numberOfMonths: 2
+		});
+	}
 	
 	// Rangeslider1
 	/*$('.rangeslider1').ionRangeSlider();
@@ -115,35 +125,43 @@ $(function() {
 	
 	
 	//Date picker
-	$('#datepicker-date').bootstrapdatepicker({
-		format: "dd-mm-yyyy",
-		viewMode: "date",
-		multidate: true,
-		multidateSeparator: "-",
-	})
+	if($('#datepicker-date').length>0) {
+		$('#datepicker-date').bootstrapdatepicker({
+			format: "dd-mm-yyyy",
+			viewMode: "date",
+			multidate: true,
+			multidateSeparator: "-",
+		})
+	}
 	
 	//Month picker
-	$('#datepicker-month').bootstrapdatepicker({
-		format: "MM",
-		viewMode: "months",
-		minViewMode: "months",
-		multidate: true,
-		multidateSeparator: "-",
-	})
+	if($('#datepicker-month').length>0) {
+		$('#datepicker-month').bootstrapdatepicker({
+			format: "MM",
+			viewMode: "months",
+			minViewMode: "months",
+			multidate: true,
+			multidateSeparator: "-",
+		})
+	}
 	
 	//Year picker
-	$('#datepicker-year').bootstrapdatepicker({
-		format: "yyyy",
-		viewMode: "year",
-		minViewMode: "years",
-		multidate: true,
-		multidateSeparator: "-",
-	})
+	if($('#datepicker-year').length>0) {
+		$('#datepicker-year').bootstrapdatepicker({
+			format: "yyyy",
+			viewMode: "year",
+			minViewMode: "years",
+			multidate: true,
+			multidateSeparator: "-",
+		})
+	}
 // AmazeUI Datetimepicker
-	$('#datetimepicker').datetimepicker({
-		format: 'yyyy-mm-dd hh:ii:ss',
-		autoclose: true
-	});
+	if($('#datetimepicker').length>0) {
+		$('#datetimepicker').datetimepicker({
+			format: 'yyyy-mm-dd hh:ii:ss',
+			autoclose: true
+		});
+	}
 	
 	
 	

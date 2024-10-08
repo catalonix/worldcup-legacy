@@ -1,447 +1,1413 @@
 <!DOCTYPE html>
 <html lang="ko">
-	<head>
-		<meta charset="utf-8">
-		<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
-		<meta name="description" content="">
-		<meta name="author" content="">
-		<meta name="keywords" content="">
-		<!-- Favicon -->
-		<link rel="icon" href="" type="image/x-icon"/>
-		<!-- Title -->
-		<title>상암월드컵경기장</title>
-		<!-- Bootstrap css-->
-		<link href="../assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
-		<!-- Icons css-->
-		<link href="../assets/plugins/web-fonts/icons.css" rel="stylesheet"/>
-		<link href="../assets/plugins/web-fonts/font-awesome/font-awesome.min.css" rel="stylesheet">
-		<link href="../assets/plugins/web-fonts/plugin.css" rel="stylesheet"/>
-		<!-- Style css-->
-		<link href="../assets/css/style.css" rel="stylesheet">
-		<link href="../assets/css/skins.css" rel="stylesheet">
-		<!-- Sidemenu css-->
-		<link href="../assets/css/sidemenu/sidemenu.css" rel="stylesheet">
-		<link href="../assets/css/sangam.css" rel="stylesheet">
-		<link href="../assets/css/twentytwenty.css" rel="stylesheet" type="text/css">
-		<style type="text/css">
-			.spider1{
-				font-size: 15px;
-				font-weight: bold;
-				color: blue;
-				fill: white;
-				text-align: center;
-			}
-		</style>
-	</head>
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="keywords" content="">
+    <!-- Favicon -->
+    <link rel="icon" href="" type="image/x-icon"/>
+    <!-- Title -->
+    <title>서울월드컵경기장</title>
+    <!-- Bootstrap css-->
+    <link href="../assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+    <!-- Icons css-->
+    <link href="../assets/plugins/web-fonts/icons.css" rel="stylesheet"/>
+    <link href="../assets/plugins/web-fonts/font-awesome/font-awesome.min.css" rel="stylesheet">
+    <link href="../assets/plugins/web-fonts/plugin.css" rel="stylesheet"/>
+    <!-- Style css-->
+    <link href="../assets/css/style.css" rel="stylesheet">
+    <link href="../assets/css/skins.css" rel="stylesheet">
+    <!-- Sidemenu css-->
+    <link href="../assets/css/sidemenu/sidemenu.css" rel="stylesheet">
+    <link href="../assets/css/sangam.css" rel="stylesheet">
+    <link href="../assets/css/twentytwenty.css" rel="stylesheet" type="text/css">
 
-	<body class="main-body leftmenu">
-		<!-- Loader -->
-		<div id="global-loader">
-			<img src="../assets/img/loader.svg" class="loader-img" alt="Loader">
-		</div>
-		<!-- End Loader -->
-		<!-- Page -->
-		<div class="page">
-			<!-- Sidemenu -->
-			<?include "../include/sidebar.php";?>
-			<!-- End Sidemenu -->
+    <style>
+        #ndviDate{
+            text-align: center;
+        }
+        /* Default styles */
+        .mobileBr {
+            display: none;
+        }
 
-			<!-- Main Header-->
-			<?include "../include/header.php";?>
-			<!-- End Main Header-->
-			<!-- Main Content-->
-			<div class="main-content side-content pt-0">
-				<div class="container-fluid main-m-pt">
-					<div class="inner-body">
-						<!-- Page Header -->
-						<div class="page-header">
-							<div>
-								<h2 class="main-content-title text-white tx-24 mg-b-5 font-weight-bold">식생지수 정보</h2>
-								<ol class="breadcrumb">
-									<li class="breadcrumb-item">Home</li>
-									<li class="breadcrumb-item active" aria-current="page">요약분석 정보</li>
-									<li class="breadcrumb-item active" aria-current="page">식생지수 정보</li>
-								</ol>
-							</div>
-						</div>
-						<!-- End Page Header -->
-						<!--Row-->
-						<div class="row row-sm mt-4">
-							<!-- col -->
-							<div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
-								<div class="card custom-card overflow-hidden">
-									<div class="card-header border-bottom-0 pb-0">
-										<div>
-											<div class="d-flex-sb border-bottom">
-												<label class="main-content-label my-auto pt-2 pb-2 tx-16">상세검색</label>
-											</div>
-										</div>
-									</div>
-									<div class="card-body">
-										<div class="row row-sm">
-											<div class="col-sm-12 col-lg-3 col-xl-2 margin-responsive">
-												<select class="form-control" id="sensorNo">
-													<option value="C001">동측 카메라</option>
-													<option value="C002">남측 카메라</option>
-													<option value="C003">서측 카메라</option>
-												</select>
-											</div>
-											<div class="col-12 col-sm-12 col-lg-12 col-xl-6 observation-submit">
-												<button class="btn ripple btn-bg pd-x-20" type="button" value="" id="searchBtn">
-													<i class="fe fe-search mr-2" style="vertical-align: inherit;"></i>조회하기
-												</button>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<!-- col end -->
-							<!-- col -->
-							<div class="col-sm-12 col-md-12 col-lg-12 col-xl-7">
-								<div class="card custom-card overflow-hidden">
-									<div class="card-header border-bottom-0 pb-0">
-										<div>
-											<div class="d-flex-sb">
-												<label class="main-content-label my-auto pt-2 tx-16">식생지수</label>
-											</div>
-										</div>
-									</div>
-									<div class="card-body pt-1">
-										<div class="ndvi-value">
-											<div class="ndvi-now">
-												<h5>현재 식생지수</h5>
-												<div class="now-value">
-													<h4 id="ndvi1">0.611</h4>
-													<span class="situation-success">양호</span>
-												</div>
-											</div>
-											<div class="ndvi-prediction">
-												<h5>예측 식생지수</h5>
-												<div class="prediction-value">
-													<h4 id="ndvi2">0.418</h4>
-													<span class="situation-success">양호</span>
-												</div>
-											</div>
-										</div>
-										<div class="col-xl-12 col-md-12 col-sm-12 p-0 mb-3">
-											<div class="twentytwenty-wrapper twentytwenty-horizontal">
-												<div class="twentytwenty-container">
-													<img id="ndviImg1" src="https://seoul.fieldon.io/data/C001/catalonix_show_daily_img.jpg" class="ndvi-img twentytwenty-before" width="100%">
-													<img id="ndviImg2" src="https://seoul.fieldon.io/data/C001/catalonix_show_ma5_img.jpg" class="ndvi-img twentytwenty-after" width="100%">
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							
-							<!--
-							<div class="col-sm-12 col-md-12 col-lg-12 col-xl-5">
-								<div class="card custom-card overflow-hidden">
-									<div class="card-header border-bottom-0 pb-0">
-										<div>
-											<div class="d-flex-sb">
-												<label class="main-content-label my-auto pt-2 tx-16">상태평가</label>
-											</div>
-										</div>
-									</div>
-									<div class="card-body pt-1">
-										<div class="ndvi-chart" id="spiderChart" style="width: 100%;height: 300px;padding: 0px;">
+        /* Mobile styles */
+        @media screen and (max-width: 600px) {
+            .mobileBr {
+                display: block;
+            }
+            #ndviDate,#ndviDate2,#ndviDate3{
+                text-align: center;
+            }
+            .nav-tabs .tab-link {
+                width: 100% !important;
+            }
+            .card-body {
+                padding: 10px;
+            }
+        }
 
-										</div>
-										<div class="ndvi-info">
-											<div class="state-info">
-												<h4>
-													<span>식생지수</span>
-												</h4>
-												<span class="situation-success">양호</span>
-											</div>
-											<div class="state-info">
-												<h4>
-													<span>토양수분</span>
-												</h4>
-												<span class="situation-success">양호</span>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							-->
-							<div class="col-sm-12 col-md-12 col-lg-12 col-xl-5">
-								<div class="card custom-card overflow-hidden">
-									<div class="card-header border-bottom-0 pb-0">
-										<div>
-											<div class="d-flex-sb">
-												<label class="main-content-label my-auto pt-2 tx-16">지수변화</label>
-											</div>
-										</div>
-									</div>
-									<div class="card-body pt-1">
-										<canvas id="chartZone" height="500px;"></canvas>
-									</div>
-								</div>
-							</div>
-							<!-- col end -->
-						</div>
-						
-						<!-- Row end -->
-					</div>
-				</div>
-			</div>
-			<!-- End Main Content-->
-			<!-- Main Footer-->
-			<div class="main-footer text-center">
-				<div class="container">
-					<div class="row row-sm">
-						<div class="col-md-12">
-							<span class="text-white">Copyright © 2023 <a style="color: #80b9ed;">상암월드컵경기장</a></span>
-						</div>
-					</div>
-				</div>
-			</div>
-			<!--End Footer-->
-		</div>
-		<!-- End Page -->
+        .nav-tabs .tab-link {
+            width: 60px;
+        }
 
-		<!-- Back-to-top -->
-		<a href="#top" id="back-to-top"><i class="fe fe-arrow-up"></i></a>
+        .btn:hover{
+            color: white;
+        }
+    </style>
+</head>
 
-		<!-- Jquery js-->
-		<script src="../assets/plugins/jquery/jquery.min.js"></script>
+<body class="main-body leftmenu">
+<!-- Loader -->
+<div id="global-loader">
+    <img src="../assets/img/loader.svg" class="loader-img" alt="Loader">
+</div>
+<!-- End Loader -->
+<!-- Page -->
+<div class="page">
+    <!-- Sidemenu -->
+    <?include "../include/sidebar.php";?>
+    <!-- End Sidemenu -->
 
-		<!-- Bootstrap js-->
-		<script src="../assets/plugins/bootstrap/js/popper.min.js"></script>
-		<script src="../assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <!-- Main Header-->
+    <?include "../include/header.php";?>
+    <!-- End Main Header-->
+    <!-- Main Content-->
+    <div class="main-content side-content pt-0">
+        <div class="container-fluid main-m-pt">
+            <div class="inner-body">
+                <!-- Page Header -->
+                <div class="page-header">
+                    <div>
+                        <h2 class="main-content-title text-white tx-24 mg-b-5 font-weight-bold">식생지수정보</h2>
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item">Home</li>
+                            <li class="breadcrumb-item active" aria-current="page">식생지수정보</li>
+                        </ol>
+                    </div>
+                </div>
+                <!-- End Page Header -->
+                <!--Row-->
+                <div class="row row-sm mt-4">
+                    <!-- col -->
+                    <!-- col end -->
+                    <!-- col -->
+                    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-4">
+                        <div class="card custom-card overflow-hidden">
+                            <div class="card-header border-bottom-0 pb-0">
+                                <div>
+                                    <div class="d-flex-sb">
+                                        <label class="main-content-label my-auto pt-2 tx-16">동측 카메라</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body pt-1">
+                                <div class="ndvi-value">
+                                    <div class="ndvi-now">
+                                        <h5>현재 식생지수</h5>
+                                        <div class="now-value">
+                                            <h4 id="ndvi1">0.611</h4>
+                                            <span class="situation-success">양호</span>
+                                        </div>
+                                    </div>
+                                    <div class="ndvi-now">
+                                        <h5 style="text-align: center;">최종 데이터 측정일시</h5>
+                                        <div class="now-value">
+                                            <h4 id="ndviDate">2023-06-23 11:00</h4>
+                                        </div>
+                                    </div>
+                                    <div class="ndvi-prediction">
+                                        <h5>예측 식생지수</h5>
+                                        <div class="prediction-value">
+                                            <h4 id="ndvi2">0.418</h4>
+                                            <span class="situation-success">양호</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-12 col-md-12 col-sm-12 p-0 mb-3">
+                                    <div class="twentytwenty-wrapper twentytwenty-horizontal">
+                                        <div class="twentytwenty-container">
+                                            <img id="ndviImg1" src="https://seoul.fieldon.io/data13/C001/catalonix_show_daily_img.jpg " class="ndvi-img twentytwenty-before" width="100%">
+                                            <img id="ndviImg2" src="https://seoul.fieldon.io/data13/C001/catalonix_show_ma5_img.jpg" class="ndvi-img twentytwenty-after" width="100%">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-		<!-- Peity js-->
-		<script src="../assets/plugins/peity/jquery.peity.min.js"></script>
+                    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-4">
+                        <div class="card custom-card overflow-hidden">
+                            <div class="card-header border-bottom-0 pb-0">
+                                <div>
+                                    <div class="d-flex-sb">
+                                        <label class="main-content-label my-auto pt-2 tx-16">남측 카메라</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body pt-1">
+                                <div class="ndvi-value">
+                                    <div class="ndvi-now">
+                                        <h5>현재 식생지수</h5>
+                                        <div class="now-value">
+                                            <h4 id="ndvi3">0.611</h4>
+                                            <span class="situation-success">양호</span>
+                                        </div>
+                                    </div>
+                                    <div class="ndvi-now">
+                                        <h5 style="text-align: center;">최종 데이터 측정일시</h5>
+                                        <div class="now-value">
+                                            <h4 id="ndviDate2">2023-06-23 11:00</h4>
+                                        </div>
+                                    </div>
+                                    <div class="ndvi-prediction">
+                                        <h5>예측 식생지수</h5>
+                                        <div class="prediction-value">
+                                            <h4 id="ndvi4">0.418</h4>
+                                            <span class="situation-success">양호</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-12 col-md-12 col-sm-12 p-0 mb-3">
+                                    <div class="twentytwenty-wrapper twentytwenty-horizontal">
+                                        <div class="twentytwenty-container">
+                                            <img id="ndviImg3" src="https://seoul.fieldon.io/data13/C002/catalonix_show_daily_img.jpg" class="ndvi-img twentytwenty-before" width="100%">
+                                            <img id="ndviImg4" src="https://seoul.fieldon.io/data13/C002/catalonix_show_ma5_img.jpg" class="ndvi-img twentytwenty-after" width="100%">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-		<!-- Select2 js-->
-		<script src="../assets/plugins/select2/js/select2.min.js"></script>
-		<!-- Internal Chart.Bundle js-->
-		<script src="../assets/plugins/chart.js/Chart.bundle.min.js"></script>
-		<!-- Internal Jquery.maskedinput js-->
-		<script src="../assets/plugins/jquery.maskedinput/jquery.maskedinput.js"></script>
-		<!-- Sidemenu js -->
-		<script src="../assets/plugins/sidemenu/sidemenu.js"></script>
-		<!-- Internal Dashboard js-->
-		<script src="../assets/js/crypto-exchange.js"></script>
-		<!-- Internal Form-elements js-->
-		<script src="../assets/js/form-elements.js"></script>
-		<!-- Sticky js -->
-		<script src="../assets/js/sticky.js"></script>
-		<!-- twentytwenty -->
-		<script src="../assets/js/jquery.event.move.js"></script>
-		<script src="../assets/js/jquery.twentytwenty.js"></script>
-		<script>
-			$(function(){
-				$(".twentytwenty-container[data-orientation!='vertical']").twentytwenty({default_offset_pct: 0.5});
-				$(".twentytwenty-container[data-orientation='vertical']").twentytwenty({default_offset_pct: 0.5, orientation: 'vertical'});
-			});
-		</script>
-		<!-- Custom js -->
-		<script src="../assets/js/custom.js"></script>
-		<script src="https://code.highcharts.com/highcharts.js"></script>
-		<script src="https://code.highcharts.com/highcharts-more.js"></script>
-		<script>
-			function spiderChart(data){
-				
-				console.log(data)
-				
-				Highcharts.chart('spiderChart', {
-	
-				    chart: {
-				        polar: true,
-				        backgroundColor: 'rgba(255, 255, 255, 0)',
-				        type: 'area'
-				    },
-	
-				    accessibility: {
-				        description: '.'
-				    },
-	
-				    title: {
-				        text: '.',
-				        x: -80
-				    },
-	
-				    pane: {
-				        size: '100%'
-				    },
-				    
-				    credits : false,
-	
-				    xAxis: {
-				        categories: [
-				        	'<span class="spider1">온도<br>'/*+data.TEMP+*/+'</span>', 
-				        	'<span class="spider1">습도<br>'/*+data.HUMI+*/+'</span>', 
-				        	'<span class="spider1">PH<br>'/*+data.PH+*/+'</span>', 
-				        	'<span class="spider1">토양수분<br>'/*+data.SMO+*/+'</span>',
-				        	'<span class="spider1">NDVI<br>'/*+data.NDVI+*/+'</span>'],
-				        tickmarkPlacement: 'on',
-				        lineWidth: 0
-				    },
-	
-				    yAxis: {
-				        gridLineInterpolation: 'polygon',
-				        lineWidth: 0,
-				        min: 0,
-				        max: 100,
-				        labels: {
-				          style: {
-				            color: 'white'
-				          }
-				        }
-				    },
-	
-				    tooltip: {
-				        shared: true,
-				        pointFormat: '<span style="color:{series.color};">{series.name}<b>{point.y:,.0f}</b><br/>',
-				        backgroundColor:'black'
-				    },
-	
-				    legend: {
-				        align: 'right',
-				        verticalAlign: 'middle',
-				        layout: 'vertical'
-				    },
-	
-				    series: [{
-				    	showInLegend: false,
-				        name: 'Score:',
-				        data: [data.TEMP, data.HUMI, data.PH, data.SMO, data.NDVI],
-				        pointPlacement: 'on',
-				        fillOpacity : 0.3,
-				        color: '#1c62c3',
-				        lineWidth:2
-				    }],
-	
-				    responsive: {
-				        rules: [{
-				            condition: {
-				                maxWidth: 500
-				            },
-				            chartOptions: {
-				                legend: {
-				                    align: 'center',
-				                    verticalAlign: 'bottom',
-				                    layout: 'horizontal'
-				                },
-				                pane: {
-				                    size: '85%'
-				                }
-				            }
-				        }]
-				    }
-	
-				});
-			}
-			
-			function drawChartC(result){
-				
-				var label = [];
-				var data = [];
-				//var ndviImg = "";
-				
-				for(var i=0;i<result.length;i++){
-					label.push(result[i].TM);
-					data.push(result[i].NDVI);
-				}
-				
-				var ctx = document.getElementById("chartZone").getContext('2d');
-				
-				myChart = new Chart(ctx, {
-					type: 'line',
-					data: {
-						labels: label,
-						datasets: [{
-							label: 'NDVI',
-							data: data,
-							borderWidth: 2,
-							backgroundColor: 'transparent',
-							borderColor: '#25B372',
-							borderWidth: 3,
-							//pointBackgroundColor: '#ffffff',
-							pointRadius: 2
-						}]
-					},
-					options: {
-						responsive: true,
-						maintainAspectRatio: false,
+                    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-4">
+                        <div class="card custom-card overflow-hidden">
+                            <div class="card-header border-bottom-0 pb-0">
+                                <div>
+                                    <div class="d-flex-sb">
+                                        <label class="main-content-label my-auto pt-2 tx-16">서측 카메라</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body pt-1">
+                                <div class="ndvi-value">
+                                    <div class="ndvi-now">
+                                        <h5>현재 식생지수</h5>
+                                        <div class="now-value">
+                                            <h4 id="ndvi5">0.611</h4>
+                                            <span class="situation-success">양호</span>
+                                        </div>
+                                    </div>
+                                    <div class="ndvi-now">
+                                        <h5 style="text-align: center;">최종 데이터 측정일시</h5>
+                                        <div class="now-value">
+                                            <h4 id="ndviDate3">2023-06-23 11:00</h4>
+                                        </div>
+                                    </div>
+                                    <div class="ndvi-prediction">
+                                        <h5>예측 식생지수</h5>
+                                        <div class="prediction-value">
+                                            <h4 id="ndvi6">0.418</h4>
+                                            <span class="situation-success">양호</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-12 col-md-12 col-sm-12 p-0 mb-3">
+                                    <div class="twentytwenty-wrapper twentytwenty-horizontal">
+                                        <div class="twentytwenty-container">
+                                            <img id="ndviImg5" src="https://seoul.fieldon.io/data13/C003/catalonix_show_daily_img.jpg" class="ndvi-img twentytwenty-before" width="100%">
+                                            <img id="ndviImg6" src="https://seoul.fieldon.io/data13/C003/catalonix_show_ma5_img.jpg" class="ndvi-img twentytwenty-after" width="100%">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-4">
+                        <div class="card custom-card overflow-hidden">
+                            <div class="card-header border-bottom-0 pb-0">
+                                <div>
+                                    <div class="d-flex-sb">
+                                        <label class="main-content-label my-auto pt-2 tx-16">지수변화</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body pt-1">
+                                <canvas id="chartZone" height="795px;"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- col end -->
+                    <!-- 2023.06.21 -->
+                    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-8" id="cSlide">
+                        <div class="card custom-card overflow-hidden">
+                            <div class="card-header border-bottom-0 pb-0 mb-1">
+                                <div>
+                                    <div class="d-flex-sb">
+                                        <label class="main-content-label my-auto pt-2 tx-16">NDVI 이미지</label>
+                                        <label class="main-content-label my-auto pt-2 tx-16">
+                                            <ul class="nav nav-tabs nav-tabs-solid nav-justified border-0">
+                                                <li class="nav-item mr-2"><input class="form-control fc-datepicker" placeholder="시작일" type="text" id="startDate2"></li>
+                                                <li class="nav-item mr-2"><input class="form-control fc-datepicker" placeholder="종료일" type="text" id="endDate2"></li>
+                                                <li class="nav-item mr-2"><button id="searchNDVI" class="tab-link">검색</button></li>
+                                                <li class="btn btn-bg4 nav-item mr-2" style="padding-bottom: 0px;" id="playBtn2"><i class="ti-control-pause" style="font-size: 22px;"></i></li>
+                                                <li class="nav-item mr-2 cTab"><a href="#tab4" class="tab-link" data-toggle="tab">동</a></li>
+                                                <li class="nav-item mr-2 cTab"><a href="#tab5" class="tab-link active" data-toggle="tab">남</a></li>
+                                                <li class="nav-item cTab"><a href="#tab6" class="tab-link" data-toggle="tab">서</a></li>
+                                            </ul>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body pt-1">
+                                <div class="tab-content">
+                                    <div class="tab-pane fade" id="tab4">
+                                        <div id="C001" class="slide stadium-img" style="height: 770px;">
 
-						scales: {
-							xAxes: [{
-								ticks: {
-									fontColor: "#77778e",
-								 },
-								display: true,
-								gridLines: {
-									color: 'rgba(119, 119, 142, 0.2)'
-								}
-							}],
-							yAxes: [{
-								ticks: {
-									fontColor: "#77778e",
-								 },
-								display: true,
-								gridLines: {
-									color: 'rgba(119, 119, 142, 0.2)'
-								},
-								scaleLabel: {
-									display: false,
-									labelString: 'Thousands',
-									fontColor: 'rgba(119, 119, 142, 0.2)'
-								}
-							}]
-						},
-						legend: {
-							labels: {
-								fontColor: "#77778e"
-							},
-						},
-					}
-				});
-			}
-		
-		
-			$(document).ready(function(){
-				$("#sensorBtn-1").click(function(){
-					$("#sensorDate-1").toggle();
-					$("#infoBox").toggle();
-				});
-				
-				$('#searchBtn').on('click',function(){
-					var chartdata = {};
-					
-					chartdata.TEMP = Math.floor(Math.random() * 100);
-					chartdata.HUMI = Math.floor(Math.random() * 100);
-					chartdata.PH = Math.floor(Math.random() * 100);
-					chartdata.SMO = Math.floor(Math.random() * 100);
-					chartdata.NDVI = Math.floor(Math.random() * 100);
-					
-					//spiderChart(chartdata);
-					
-					var sensorNo = $('#sensorNo').val();
-					
-					$('#ndviImg1').attr('src',`https://seoul.fieldon.io/data/${sensorNo}/catalonix_show_daily_img.jpg`)
-					$('#ndviImg2').attr('src',`https://seoul.fieldon.io/data/${sensorNo}/catalonix_show_ma5_img.jpg`)
-					
-					$.ajax({
-						url : "../php/getNdviSummary.php",
-						data : "sensorNo="+sensorNo,
-						method : "POST",
-						success : function(result){
-						    console.log(result);
-						    $('#ndvi1').text(result.now.NDVI_daily);
-						    $('#ndvi2').text(result.now.NDVI_ma5);
-						    
-						    drawChartC(result.list)
-						}
-					})
-				})
-				
-				$('#searchBtn').click();
-			});
-		</script>
-	</body>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade show active" id="tab5">
+                                        <div id="C002" class="slide stadium-img" style="height: 770px;">
+
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="tab6">
+                                        <div id="C003" class="slide stadium-img" style="height: 770px;">
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /2023.06.21 -->
+                    <!-- 2023.06.21 -->
+                    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12" id="rSlide">
+                        <div class="card custom-card overflow-hidden">
+                            <div class="card-header border-bottom-0 pb-0 mb-1">
+                                <div>
+                                    <div class="d-flex-sb">
+                                        <label class="main-content-label my-auto pt-2 tx-16">경기장 이미지 <span id="captureDate">(촬영일시 : 2023-08-10 07:00)</span></label>
+                                        <label class="main-content-label my-auto pt-2 tx-16">
+                                            <ul class="nav nav-tabs nav-tabs-solid nav-justified border-0">
+                                                <li class="nav-item mr-2"><input class="form-control fc-datepicker" placeholder="시작일" type="text" id="startDate"></li>
+                                                <li class="nav-item mr-2"><input class="form-control fc-datepicker" placeholder="종료일" type="text" id="endDate"></li>
+                                                <li class="nav-item mr-2"><button id="searchRGB" class="tab-link">검색</button></li>
+                                                <li class="btn btn-bg4 nav-item mr-2" style="padding-bottom: 0px;" id="playBtn"><i class="ti-control-pause" style="font-size: 22px;"></i></li>
+                                                <li class="btn btn-bg2 nav-item mr-2" style="padding-bottom: 0px;" id="liveBtn"><!--<i class="ti-video-clapper" style="font-size: 22px;"></i>-->LIVE</li>
+                                                <li class="btn btn-bg2 pd-x-15 mr-2" style="font-size: 16px;" id="captureImg"><i class="fe fe-camera sidemenu-icon"></i> 촬영</li>
+                                                <li class="nav-item mr-2"><a href="#tab1" class="tab-link" data-toggle="tab">동</a></li>
+                                                <li class="nav-item mr-2"><a href="#tab2" class="tab-link active" data-toggle="tab">남</a></li>
+                                                <li class="nav-item"><a href="#tab3" class="tab-link" data-toggle="tab">서</a></li>
+                                            </ul>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body pt-1">
+                                <div class="tab-content">
+                                    <div class="tab-pane fade" id="tab1">
+                                        <div id="R001" class="carousel slide stadium-img" data-ride="carousel">
+
+                                            <!-- Indicators -->
+                                            <ul class="carousel-indicators">
+                                                <li data-target="#R001" data-slide-to="0" class="active"></li>
+                                            </ul>
+
+                                            <!-- The slideshow -->
+                                            <div class="carousel-inner">
+                                                <div class="carousel-item active">
+                                                    <img src="https://seoul.fieldon.io/data/R001/catalonix_show_rgb.jpg">
+                                                </div>
+                                            </div>
+
+                                            <!-- Left and right controls -->
+                                            <a class="carousel-control-prev" href="#R001" data-slide="prev">
+                                                <span class="carousel-control-prev-icon"></span>
+                                            </a>
+                                            <a class="carousel-control-next" href="#R001" data-slide="next">
+                                                <span class="carousel-control-next-icon"></span>
+                                            </a>
+
+                                        </div>
+                                        <!--
+                                        <div class="stadium-img">
+                                            <img src="https://seoul.fieldon.io/data/R001/catalonix_show_rgb.jpg" id="R001">
+                                        </div>
+                                        -->
+                                    </div>
+                                    <div class="tab-pane fade show active" id="tab2">
+                                        <div id="R002" class="carousel slide stadium-img" data-ride="carousel">
+
+                                            <!-- Indicators -->
+                                            <ul class="carousel-indicators">
+                                                <li data-target="#R002" data-slide-to="0" class="active"></li>
+                                            </ul>
+
+                                            <!-- The slideshow -->
+                                            <div class="carousel-inner">
+                                                <div class="carousel-item active">
+                                                    <img src="https://seoul.fieldon.io/data/R002/catalonix_show_rgb.jpg">
+                                                </div>
+                                            </div>
+
+                                            <!-- Left and right controls -->
+                                            <a class="carousel-control-prev" href="#R002" data-slide="prev">
+                                                <span class="carousel-control-prev-icon"></span>
+                                            </a>
+                                            <a class="carousel-control-next" href="#R002" data-slide="next">
+                                                <span class="carousel-control-next-icon"></span>
+                                            </a>
+
+                                        </div>
+                                        <!--
+                                        <div class="stadium-img">
+                                            <img src="https://seoul.fieldon.io/data/R002/catalonix_show_rgb.jpg" id="R002">
+                                        </div>
+                                        -->
+                                    </div>
+                                    <div class="tab-pane fade" id="tab3">
+                                        <div id="R003" class="carousel slide stadium-img" data-ride="carousel">
+
+                                            <!-- Indicators -->
+                                            <ul class="carousel-indicators">
+                                                <li data-target="#R003" data-slide-to="0" class="active"></li>
+                                            </ul>
+
+                                            <!-- The slideshow -->
+                                            <div class="carousel-inner">
+                                                <div class="carousel-item active">
+                                                    <img src="https://seoul.fieldon.io/data/R003/catalonix_show_rgb.jpg">
+                                                </div>
+                                            </div>
+
+                                            <!-- Left and right controls -->
+                                            <a class="carousel-control-prev" href="#R003" data-slide="prev">
+                                                <span class="carousel-control-prev-icon"></span>
+                                            </a>
+                                            <a class="carousel-control-next" href="#R003" data-slide="next">
+                                                <span class="carousel-control-next-icon"></span>
+                                            </a>
+
+                                        </div>
+                                        <!--<div class="stadium-img">
+                                            <img src="https://seoul.fieldon.io/data/R003/catalonix_show_rgb.jpg" id="R003">
+                                        </div>-->
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /2023.06.21 -->
+                </div>
+
+                <!-- Row end -->
+            </div>
+        </div>
+    </div>
+    <!-- End Main Content-->
+    <!-- Main Footer-->
+    <div class="main-footer text-center">
+        <div class="container">
+            <div class="row row-sm">
+                <div class="col-md-12">
+                    <span class="text-white">Copyright © 2023 <a style="color: #80b9ed;">서울월드컵경기장</a></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--End Footer-->
+</div>
+<!-- End Page -->
+
+<!-- Back-to-top -->
+<a href="#top" id="back-to-top"><i class="fe fe-arrow-up"></i></a>
+
+<!-- Jquery js-->
+<script src="../assets/plugins/jquery/jquery.min.js"></script>
+
+<script src="../assets/plugins/jquery-ui/ui/widgets/datepicker.js"></script>
+<script src="../assets/plugins/bootstrap-datepicker/bootstrap-datepicker.js"></script>
+
+<!-- Bootstrap js-->
+<script src="../assets/plugins/bootstrap/js/popper.min.js"></script>
+<script src="../assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+
+<!-- Peity js-->
+<script src="../assets/plugins/peity/jquery.peity.min.js"></script>
+
+<!-- Select2 js-->
+<script src="../assets/plugins/select2/js/select2.min.js"></script>
+<!-- Internal Chart.Bundle js-->
+<script src="../assets/plugins/chart.js/Chart.bundle.min.js"></script>
+<!-- Internal Jquery.maskedinput js-->
+<script src="../assets/plugins/jquery.maskedinput/jquery.maskedinput.js"></script>
+<!-- Sidemenu js -->
+<script src="../assets/plugins/sidemenu/sidemenu.js"></script>
+<!-- Internal Dashboard js-->
+<script src="../assets/js/crypto-exchange.js"></script>
+<!-- Internal Form-elements js-->
+<script src="../assets/js/form-elements.js"></script>
+<!-- Sticky js -->
+<script src="../assets/js/sticky.js"></script>
+<!-- twentytwenty -->
+<script src="../assets/js/jquery.event.move.js"></script>
+<script src="../assets/js/jquery.twentytwenty.js"></script>
+
+<!-- Custom js -->
+<script src="../assets/js/custom.js"></script>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/highcharts-more.js"></script>
+<script>
+    function spiderChart(data){
+
+        console.log(data)
+
+        Highcharts.chart('spiderChart', {
+
+            chart: {
+                polar: true,
+                backgroundColor: 'rgba(255, 255, 255, 0)',
+                type: 'area'
+            },
+
+            accessibility: {
+                description: '.'
+            },
+
+            title: {
+                text: '.',
+                x: -80
+            },
+
+            pane: {
+                size: '100%'
+            },
+
+            credits : false,
+
+            xAxis: {
+                categories: [
+                    '<span class="spider1">온도<br>'/*+data.TEMP+*/+'</span>',
+                    '<span class="spider1">습도<br>'/*+data.HUMI+*/+'</span>',
+                    '<span class="spider1">PH<br>'/*+data.PH+*/+'</span>',
+                    '<span class="spider1">토양수분<br>'/*+data.SMO+*/+'</span>',
+                    '<span class="spider1">NDVI<br>'/*+data.NDVI+*/+'</span>'],
+                tickmarkPlacement: 'on',
+                lineWidth: 0
+            },
+
+            yAxis: {
+                gridLineInterpolation: 'polygon',
+                lineWidth: 0,
+                min: 0,
+                max: 100,
+                labels: {
+                    style: {
+                        color: 'white'
+                    }
+                }
+            },
+
+            tooltip: {
+                shared: true,
+                pointFormat: '<span style="color:{series.color};">{series.name}<b>{point.y:,.0f}</b><br/>',
+                backgroundColor:'black'
+            },
+
+            legend: {
+                align: 'right',
+                verticalAlign: 'middle',
+                layout: 'vertical'
+            },
+
+            series: [{
+                showInLegend: false,
+                name: 'Score:',
+                data: [data.TEMP, data.HUMI, data.PH, data.SMO, data.NDVI],
+                pointPlacement: 'on',
+                fillOpacity : 0.3,
+                color: '#1c62c3',
+                lineWidth:2
+            }],
+
+            responsive: {
+                rules: [{
+                    condition: {
+                        maxWidth: 500
+                    },
+                    chartOptions: {
+                        legend: {
+                            align: 'center',
+                            verticalAlign: 'bottom',
+                            layout: 'horizontal'
+                        },
+                        pane: {
+                            size: '85%'
+                        }
+                    }
+                }]
+            }
+
+        });
+    }
+
+    function twen(target){
+        setTimeout(function(){
+            $(target+' .twentytwenty-container[data-orientation!="vertical"]').twentytwenty({default_offset_pct: 0.5});
+        },500)
+        console.log("호출")
+    }
+
+    function isValidDateFormat(dateString) {
+        // 정규 표현식을 사용하여 yyyy-mm-dd 형식과 일치하는지 확인
+        const regex = /^\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$/;
+
+        if (regex.test(dateString)) {
+            // 유효한 월과 일을 가진 날짜인지 확인
+            const date = new Date(dateString);
+            const dateComponents = dateString.split("-");
+            return date && date.getMonth() + 1 === parseInt(dateComponents[1]) && date.getDate() === parseInt(dateComponents[2]);
+        }
+
+        return false;
+    }
+
+    let myChart = null;
+
+    function drawChartC(result,c001,c002,c003){
+
+        let label = [];
+        let data = [];
+        let data1 = [];
+        let data2 = [];
+        let data3 = [];
+
+
+        //var ndviImg = "";
+
+        for(let i=0;i<result.length;i++){
+            label.push(result[i].TM);
+            data.push(((c001[i].NDVI*1+c002[i].NDVI*1+c003[i].NDVI*1)/3).toFixed(3));
+            data1.push(c001[i].NDVI);
+            data2.push(c002[i].NDVI);
+            data3.push(c003[i].NDVI);
+        }
+
+        let ctx = document.getElementById("chartZone").getContext('2d');
+
+        myChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: label,
+                datasets: [{
+                    label: 'NDVI 평균',
+                    data: data,
+                    borderWidth: 2,
+                    backgroundColor: 'transparent',
+                    borderColor: '#25B372',
+                    borderWidth: 3,
+                    //pointBackgroundColor: '#ffffff',
+                    pointRadius: 2
+                },
+                    {
+                        label: '동측 카메라',
+                        data: data1,
+                        borderWidth: 2,
+                        backgroundColor: 'transparent',
+                        borderColor: '#2478FF',
+                        borderWidth: 3,
+                        //pointBackgroundColor: '#ffffff',
+                        pointRadius: 2
+                    },
+                    {
+                        label: '남측 카메라',
+                        data: data2,
+                        borderWidth: 2,
+                        backgroundColor: 'transparent',
+                        borderColor: '#5F00FF',
+                        borderWidth: 3,
+                        //pointBackgroundColor: '#ffffff',
+                        pointRadius: 2
+                    },
+                    {
+                        label: '서측 카메라',
+                        data: data3,
+                        borderWidth: 2,
+                        backgroundColor: 'transparent',
+                        borderColor: '#00D8FF',
+                        borderWidth: 3,
+                        //pointBackgroundColor: '#ffffff',
+                        pointRadius: 2
+                    }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    xAxes: [{
+                        ticks: {
+                            fontColor: "#77778e",
+                        },
+                        display: true,
+                        gridLines: {
+                            color: 'rgba(119, 119, 142, 0.2)'
+                        }
+                    }],
+                    yAxes: [{
+                        ticks: {
+                            fontColor: "#77778e",
+                            min: 0, // 최소값
+                            max: 1, // 최대값
+                        },
+                        display: true,
+                        gridLines: {
+                            color: 'rgba(119, 119, 142, 0.2)'
+                        },
+                        scaleLabel: {
+                            display: false,
+                            labelString: 'Thousands',
+                            fontColor: 'rgba(119, 119, 142, 0.2)'
+                        },
+                    }]
+                },
+                legend: {
+                    labels: {
+                        fontColor: "#77778e"
+                    },
+                },
+            }
+        });
+    }
+
+    function getRGBList(){
+
+        let startDate = $("#startDate").val();
+        let endDate = $("#endDate").val();
+
+        if(!isValidDateFormat(startDate) || !isValidDateFormat(endDate)){
+            alert("검색 날짜 형식이 유효하지 않습니다.")
+            return;
+        }
+
+        if(startDate>endDate){
+            alert("검색 종료일이 시작일과 같거나 이후여야 합니다.")
+            return;
+        }
+
+        let param = {
+            startDate : startDate,
+            endDate : endDate
+        }
+
+        $.ajax({
+            url : "../php/getRGBList.php",
+            data : param,
+            success : function(result){
+                let r001 = result.r001;
+                let r002 = result.r002;
+                let r003 = result.r003;
+
+                if(r001.length==0 && r002.length==0 && r003.length==0){
+                    //alert("해당 날짜에는 촬영된 사진이 없습니다.")
+                    return;
+                }
+
+                if(r001.length>0) {
+                    $('#R001 .carousel-indicators').empty();
+                    $('#R001 .carousel-inner').empty();
+                }
+                if(r002.length>0) {
+                    $('#R002 .carousel-indicators').empty();
+                    $('#R002 .carousel-inner').empty();
+                }
+                if(r003.length>0) {
+                    $('#R003 .carousel-indicators').empty();
+                    $('#R003 .carousel-inner').empty();
+                }
+
+                $.each(r001,function(index,item){
+                    $('#R001 .carousel-indicators').append(`<li data-target="#R001" data-slide-to="${index}" class=""></li>`)
+                    $('#R001 .carousel-inner').append(
+                        `<div class="carousel-item" data-interval="1000">
+                            <img src="https://seoul.fieldon.io/data/R001/${item.IMG_PATH}">
+			    <!-- <div class="carousel-caption"><p>${item.TM}</p></div> -->
+                         </div>
+                    `)
+                })
+                $.each(r002,function(index,item){
+                    $('#R002 .carousel-indicators').append(`<li data-target="#R002" data-slide-to="${index}" class=""></li>`)
+                    $('#R002 .carousel-inner').append(
+                        `<div class="carousel-item" data-interval="1000">
+                            <img src="https://seoul.fieldon.io/data/R002/${item.IMG_PATH}">
+			    <!-- <div class="carousel-caption"><p>${item.TM}</p></div> -->
+                         </div>
+                    `)
+                })
+                $.each(r003,function(index,item){
+                    $('#R003 .carousel-indicators').append(`<li data-target="#R003" data-slide-to="${index}" class=""></li>`)
+                    $('#R003 .carousel-inner').append(
+                        `<div class="carousel-item" data-interval="1000">
+                            <img src="https://seoul.fieldon.io/data/R003/${item.IMG_PATH}">
+			    <!-- <div class="carousel-caption"><p>${item.TM}</p></div> -->
+                         </div>
+                    `)
+                })
+
+
+                $('#R001 li:eq(0)').addClass('active')
+                $('#R001 .carousel-item:eq(0)').addClass('active')
+                $('#R002 li:eq(0)').addClass('active')
+                $('#R002 .carousel-item:eq(0)').addClass('active')
+                $('#R003 li:eq(0)').addClass('active')
+                $('#R003 .carousel-item:eq(0)').addClass('active')
+                //$('#R001').carousel();
+                /*$('.carousel').carousel({
+                    interval : 1000
+                })*/
+                //$('#R002').carousel();
+                //$('#R003').carousel();
+            }
+        })
+    }
+
+    let currentIndex1 = 0;
+    let slideCount1 = 0;
+    let currentIndex2 = 0;
+    let slideCount2 = 0;
+    let currentIndex3 = 0;
+    let slideCount3 = 0;
+
+    let inter1 = "";
+    let inter2 = "";
+    let inter3 = "";
+
+    let cycleOn = true;
+    let cycleOn2 = true;
+
+    function slideNdvi(target){
+
+        // 다음 슬라이드로 이동합니다. 마지막 슬라이드에 도달하면 처음으로 돌아갑니다.
+        if(target=='#C001' && cycleOn2) {
+            $(target+'>.twentytwenty-wrapper').hide();
+            $(target+'>.twentytwenty-wrapper:eq('+currentIndex1+')').show();
+            //console.log(target+' .twentytwenty-wrapper:eq('+currentIndex1+')')
+            currentIndex1 = (currentIndex1 + 1) % slideCount1;
+        }
+
+        if(target=='#C002' && cycleOn2) {
+            $(target+'>.twentytwenty-wrapper').hide();
+            $(target+'>.twentytwenty-wrapper:eq('+currentIndex2+')').show();
+            //console.log(target+' .twentytwenty-wrapper:eq('+currentIndex2+')')
+            currentIndex2 = (currentIndex2 + 1) % slideCount2;
+        }
+
+        if(target=='#C003' && cycleOn2) {
+            $(target+'>.twentytwenty-wrapper').hide();
+            $(target+'>.twentytwenty-wrapper:eq('+currentIndex3+')').show();
+            //console.log(target+' .twentytwenty-wrapper:eq('+currentIndex3+')')
+            currentIndex3 = (currentIndex3 + 1) % slideCount3;
+        }
+    }
+
+    function slideNdviNext(target){
+
+        // 다음 슬라이드로 이동합니다. 마지막 슬라이드에 도달하면 처음으로 돌아갑니다.
+        if(target=='#C001') {
+            $(target+'>.twentytwenty-wrapper').hide();
+            $(target+'>.twentytwenty-wrapper:eq('+currentIndex1+')').show();
+            //console.log(target+' .twentytwenty-wrapper:eq('+currentIndex1+')')
+            currentIndex1 = (currentIndex1 + 1) % slideCount1;
+        }
+
+        if(target=='#C002') {
+            $(target+'>.twentytwenty-wrapper').hide();
+            $(target+'>.twentytwenty-wrapper:eq('+currentIndex2+')').show();
+            //console.log(target+' .twentytwenty-wrapper:eq('+currentIndex2+')')
+            currentIndex2 = (currentIndex2 + 1) % slideCount2;
+        }
+
+        if(target=='#C003') {
+            $(target+'>.twentytwenty-wrapper').hide();
+            $(target+'>.twentytwenty-wrapper:eq('+currentIndex3+')').show();
+            //console.log(target+' .twentytwenty-wrapper:eq('+currentIndex3+')')
+            currentIndex3 = (currentIndex3 + 1) % slideCount3;
+        }
+    }
+
+    function slideNdvi2(target){
+
+        // 다음 슬라이드로 이동합니다. 마지막 슬라이드에 도달하면 처음으로 돌아갑니다.
+        if(target=='#C001' && cycleOn2 && currentIndex1!=0) {
+            $(target+'>.twentytwenty-wrapper').hide();
+            $(target+'>.twentytwenty-wrapper:eq('+currentIndex1+')').show();
+            currentIndex1 = (currentIndex1 - 1) % slideCount1;
+        }
+
+        if(target=='#C002' && cycleOn2 && currentIndex2!=0) {
+            $(target+'>.twentytwenty-wrapper').hide();
+            $(target+'>.twentytwenty-wrapper:eq('+currentIndex2+')').show();
+            currentIndex2 = (currentIndex2 - 1) % slideCount2;
+        }
+
+        if(target=='#C003' && cycleOn2 && currentIndex3!=0) {
+            $(target+'>.twentytwenty-wrapper').hide();
+            $(target+'>.twentytwenty-wrapper:eq('+currentIndex3+')').show();
+            currentIndex3 = (currentIndex3 - 1) % slideCount3;
+        }
+    }
+
+
+    function getNDVIList(){
+
+        let startDate = $("#startDate2").val();
+        let endDate = $("#endDate2").val();
+
+        if(!isValidDateFormat(startDate) || !isValidDateFormat(endDate)){
+            alert("검색 날짜 형식이 유효하지 않습니다.")
+            return;
+        }
+
+        if(startDate>endDate){
+            alert("검색 종료일이 시작일과 같거나 이후여야 합니다.")
+            return;
+        }
+
+        let param = {
+            startDate : startDate,
+            endDate : endDate
+        }
+
+        $.ajax({
+            url : "../php/getNDVIList2.php",
+            data : param,
+            success : function(result){
+                let r001 = result.c001
+                let r002 = result.c002
+                let r003 = result.c003
+
+                if(r001.length==0 && r002.length==0 && r003.length==0){
+                    //alert("해당 날짜에는 촬영된 사진이 없습니다.")
+                    return;
+                }
+
+                let active = "C001"
+
+                if($("#C003").parent().hasClass("show")){
+                    active = "C003"
+                }else if($("#C002").parent().hasClass("show")){
+                    active = "C002"
+                }
+
+                console.log(active)
+
+                if(r001.length>0) {
+                    $('#C001').empty();
+                    $('#C001').empty();
+                }
+                if(r002.length>0) {
+                    $('#C002').empty();
+                    $('#C002').empty();
+                }
+                if(r003.length>0) {
+                    $('#C003').empty();
+                    $('#C003').empty();
+                }
+
+                if(active=='C001') {
+                    /*$("#C001").append(`
+                        <a class="carousel-control-prev" onclick = "return false;" style="z-index: 3">
+                            <span class="carousel-control-prev-icon" style="cursor: pointer"></span>
+                        </a>
+                    `)*/
+
+                    $.each(r001, function (index, item) {
+
+                        if (r001.length == index + 1) {
+                            $('#C001').append(
+                                `<div class="twentytwenty-container">
+                                <img src="https://seoul.fieldon.io/data13/C001/${item.NOW_IMG_PATH} " class=" twentytwenty-before" >
+                                <img src="https://seoul.fieldon.io/data13/C001/${item.PREDICT_IMG_PATH}" class=" twentytwenty-after" onload="twen('#C001')">
+                                <div class="carousel-caption"><p>${item.TM.substring(0, 10)}</p></div>
+                            </div>`
+                            )
+                        } else {
+                            $('#C001').append(
+                                `<div class="twentytwenty-container">
+                                <img src="https://seoul.fieldon.io/data13/C001/${item.NOW_IMG_PATH} " class=" twentytwenty-before" >
+                                <img src="https://seoul.fieldon.io/data13/C001/${item.PREDICT_IMG_PATH}" class=" twentytwenty-after">
+                                <div class="carousel-caption"><p>${item.TM.substring(0, 10)}</p></div>
+                            </div>`
+                            )
+                        }
+
+                    })
+
+                    slideCount1 = $('#C001>.twentytwenty-container').length;
+
+                    // 3초마다 실행되는 함수
+                    clearInterval(inter1)
+                    inter1 = setInterval(() => slideNdvi("#C001"), 3000); // 3000ms = 3초
+
+                    $("#C001").append(`
+                        <a class="carousel-control-next" onclick = "return false;" style="z-index: 5">
+                            <span class="carousel-control-next-icon" style="cursor: pointer"></span>
+                        </a>
+                    `)
+                }
+
+                if(active=='C002') {
+
+                    /*$("#C002").append(`
+                        <a class="carousel-control-prev" style="z-index: 5">
+                            <span class="carousel-control-prev-icon" style="cursor: pointer"></span>
+                        </a>
+                    `)*/
+
+                    $.each(r002, function (index, item) {
+                        if (r002.length == index + 1) {
+                            $('#C002').append(
+                                `<div class="twentytwenty-container">
+                            <img src="https://seoul.fieldon.io/data13/C002/${item.NOW_IMG_PATH} " class=" twentytwenty-before" >
+                            <img src="https://seoul.fieldon.io/data13/C002/${item.PREDICT_IMG_PATH}" class=" twentytwenty-after" onload="twen('#C002')">
+                            <div class="carousel-caption"><p>${item.TM.substring(0, 10)}</p></div>
+                        </div>`
+                            )
+                        } else {
+                            $('#C002').append(
+                                `<div class="twentytwenty-container">
+                            <img src="https://seoul.fieldon.io/data13/C002/${item.NOW_IMG_PATH} " class=" twentytwenty-before" >
+                            <img src="https://seoul.fieldon.io/data13/C002/${item.PREDICT_IMG_PATH}" class=" twentytwenty-after">
+                            <div class="carousel-caption"><p>${item.TM.substring(0, 10)}</p></div>
+                        </div>`
+                            )
+                        }
+                    })
+
+                    slideCount2 = $('#C002>.twentytwenty-container').length;
+
+                    // 3초마다 실행되는 함수
+                    clearInterval(inter2)
+                    inter2 = setInterval(() => slideNdvi("#C002"), 3000); // 3000ms = 3초
+
+                    $("#C002").append(`
+                        <a class="carousel-control-next" style="z-index: 5">
+                            <span class="carousel-control-next-icon" style="cursor: pointer"></span>
+                        </a>
+                    `)
+                }
+
+                if(active=='C003') {
+
+                    /*$("#C003").append(`
+                        <a class="carousel-control-prev" style="z-index: 5">
+                            <span class="carousel-control-prev-icon" style="cursor: pointer"></span>
+                        </a>
+                    `)*/
+
+                    $.each(r003, function (index, item) {
+                        if (r002.length == index + 1) {
+                            $('#C003').append(
+                                `<div class="twentytwenty-container">
+                            <img src="https://seoul.fieldon.io/data13/C003/${item.NOW_IMG_PATH} " class=" twentytwenty-before" >
+                            <img src="https://seoul.fieldon.io/data13/C003/${item.PREDICT_IMG_PATH}" class=" twentytwenty-after" onload="twen('#C003')">
+                            <div class="carousel-caption"><p>${item.TM.substring(0, 10)}</p></div>
+                        </div>`
+                            )
+                        } else {
+                            $('#C003').append(
+                                `<div class="twentytwenty-container">
+                            <img src="https://seoul.fieldon.io/data13/C003/${item.NOW_IMG_PATH} " class=" twentytwenty-before" >
+                            <img src="https://seoul.fieldon.io/data13/C003/${item.PREDICT_IMG_PATH}" class=" twentytwenty-after" >
+                            <div class="carousel-caption"><p>${item.TM.substring(0, 10)}</p></div>
+                        </div>`
+                            )
+                        }
+                    })
+
+                    slideCount3 = $('#C003>.twentytwenty-container').length;
+
+                    // 3초마다 실행되는 함수
+                    clearInterval(inter3)
+                    inter3 = setInterval(() => slideNdvi("#C003"), 3000); // 3000ms = 3초
+
+                    $("#C003").append(`
+                        <a class="carousel-control-next" style="z-index: 5">
+                            <span class="carousel-control-next-icon" style="cursor: pointer"></span>
+                        </a>
+                    `)
+                }
+            }
+        })
+    }
+
+
+
+
+    $(document).ready(function(){
+
+        let sensorNo = 'C001';
+
+        //$('#ndviImg1').attr('src',`https://seoul.fieldon.io/data/${sensorNo}/catalonix_show_daily_img.jpg`)
+        //$('#ndviImg2').attr('src',`https://seoul.fieldon.io/data/${sensorNo}/catalonix_show_ma5_img.jpg`)
+
+        if(myChart!=null){
+            myChart.destroy();
+        }
+
+        $.ajax({
+            url : "../php/getNdviSummary.php",
+            data : "sensorNo="+sensorNo,
+            method : "POST",
+            success : function(result){
+                console.log(result);
+
+                $.each(result.now,function(index,item){
+                    if(item.SENSOR_NO=='C001') {
+                        $('#ndvi1').text(item.NDVI_daily);
+                        $('#ndvi2').text(item.NDVI_ma5);
+                    }
+                    if(item.SENSOR_NO=='C002') {
+                        $('#ndvi3').text(item.NDVI_daily);
+                        $('#ndvi4').text(item.NDVI_ma5);
+                    }
+                    if(item.SENSOR_NO=='C003') {
+                        $('#ndvi5').text(item.NDVI_daily);
+                        $('#ndvi6').text(item.NDVI_ma5);
+                    }
+                })
+
+                result.c001.reverse()
+                result.c002.reverse()
+                result.c003.reverse()
+                result.list.reverse()
+
+                drawChartC(result.list,result.c001,result.c002,result.c003)
+
+                let last = result.last;
+                let last2 = result.last2;
+                let last3 = result.last3;
+                $('#ndviDate').html(last.substring(0,4)+'-'+last.substring(4,6)+"-"+last.substring(6,8)+" <br class='mobileBr'>"+last.substring(9,11)+":"+last.substring(11,13));
+                $('#ndviDate2').html(last2.substring(0,4)+'-'+last2.substring(4,6)+"-"+last2.substring(6,8)+" <br class='mobileBr'>"+last2.substring(9,11)+":"+last2.substring(11,13));
+                $('#ndviDate3').html(last3.substring(0,4)+'-'+last3.substring(4,6)+"-"+last3.substring(6,8)+" <br class='mobileBr'>"+last3.substring(9,11)+":"+last3.substring(11,13));
+
+                //$('#lastImg').attr('src',`https://seoul.fieldon.io/data/${sensorNo}/${result.last}`)
+            }
+        })
+
+        $.ajax({
+            url : "../php/getObservation13.php",
+            success : function(result){
+
+                let last;
+                let last2;
+                let last3;
+
+                $.each(result,function(index,item){
+                    if(item.SENSOR_NO=='C001') {
+                        $('#ndvi1').text(item.NDVI_daily.substring(0,5));
+                        $('#ndvi2').text(item.NDVI_ma5.substring(0,5));
+
+                        last = item.TM;
+                    }
+                    if(item.SENSOR_NO=='C002') {
+                        $('#ndvi3').text(item.NDVI_daily.substring(0,5));
+                        $('#ndvi4').text(item.NDVI_ma5.substring(0,5));
+
+                        last2 = item.TM;
+                    }
+                    if(item.SENSOR_NO=='C003') {
+                        $('#ndvi5').text(item.NDVI_daily.substring(0,5));
+                        $('#ndvi6').text(item.NDVI_ma5.substring(0,5));
+
+                        last3 = item.TM;
+                    }
+
+
+                })
+
+                /*$('#ndviDate').html(last.substring(0,10)+" <br class='mobileBr'>"+last.substring(11,16));
+                $('#ndviDate2').html(last2.substring(0,10)+" <br class='mobileBr'>"+last2.substring(11,16));
+                $('#ndviDate3').html(last3.substring(0,10)+" <br class='mobileBr'>"+last3.substring(11,16));*/
+            }
+        })
+
+        let param = {
+            url : "https://seoul-api.fieldon.io/api/states/camera.r003",
+            auth : "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiIzYjhiYWY3NmFjYjE0ZjM1YTgwYmU4YTZjODRjNDI2YiIsImlhdCI6MTY3MDU3OTQwMCwiZXhwIjoxOTg1OTM5NDAwfQ.OuC-DCFJ4pXOPap_zh2j0zVGqC04X9TEQTnRPzsu1uQ"
+        }
+
+        $.ajax({
+            type: "POST",
+            url: "../php/curl.php",
+            data : param,
+            dataType : "json",
+            success: function (res) {
+                $('#captureDate').html("(촬영일시 : "+getKstTime(res.last_updated)+")")
+            }
+        });
+
+        function reloadImage(imgId) {
+            /*const image = document.getElementById(imgId);
+            const currentSrc = image.src;
+
+            // 이미지의 src 속성을 잠시 변경했다가 원래대로 되돌립니다.
+            // 이렇게 하면 브라우저가 이미지를 다시 불러올 것입니다.
+            image.src = '';
+            image.src = currentSrc;*/
+            $('#'+imgId+' .carousel-indicators').empty();
+            $('#'+imgId+' .carousel-inner').empty();
+
+            $('#'+imgId+' .carousel-indicators').html(`<li data-target="#${imgId}" data-slide-to="0" class="active"></li>`)
+            $('#'+imgId+' .carousel-inner').html(`<div class="carousel-item active"><img src="https://seoul.fieldon.io/data/${imgId}/catalonix_show_rgb.jpg"></div>`)
+        }
+
+        function getKstTime(utcDates){
+
+            let utcDate = new Date(utcDates);
+            // 9시간을 밀리초로 변환 (1시간 = 60분 = 3600초 = 3600000 밀리초)
+            /*let nineHours = 24 * 60 * 60 * 1000;
+
+            // 주어진 UTC 시간에 9시간을 더하기
+            utcDate.setTime(utcDate.getTime() + nineHours);*/
+
+            // 한국 시간(KST)으로 변환하기
+            let kstDate = new Date(utcDate.getTime() + (utcDate.getTimezoneOffset() + 540) * 60000);
+
+            // 결과 출력 형식에 맞추기
+            let resultDate = kstDate.toISOString().split("T")[0] + " " + kstDate.toTimeString().split(" ")[0];
+
+            return resultDate;
+        }
+
+        $(document).on('click','#captureImg',function(e){
+            e.preventDefault();
+            let chk = confirm("실시간 이미지를 촬영 하시겠습니까?");
+
+            if(chk){
+                $.ajax({
+                    url : "../php/curl_camera_capture.php",
+                    dataType : "json",
+                    success : function(result){
+                        reloadImage("R001")
+                        reloadImage("R002")
+                        reloadImage("R003")
+
+
+                        let parsedData = result.map(item => JSON.parse(item)[0]);  // 각 문자열을 JSON으로 파싱하고 첫 번째 항목을 반환
+
+                        parsedData.forEach(item => {
+                            console.log(item.entity_id);  // 예: script.r003_still_shot
+                            console.log(item.state);     // 예: on
+                            // 필요한 다른 데이터도 이렇게 추출...
+                            $('#captureDate').html("(촬영일시 : "+getKstTime(item.last_updated)+")")
+                        });
+                    }
+                })
+            }
+        })
+
+        $(document).on('click','#searchRGB',function(){
+            getRGBList();
+        })
+
+        $(document).on('click','#searchNDVI',function(){
+            getNDVIList();
+        })
+
+        $(document).on('click','.cTab',function(){
+            //getNDVIList();
+            setTimeout(function(){
+                getNDVIList();
+            },400)
+        })
+        /*
+        $('#C002').on('slid.bs.carousel', function () {
+            $('#C002 .carousel-item.active .twentytwenty-container[data-orientation!="vertical"]').twentytwenty({default_offset_pct: 0.5});
+        });
+
+        $('#C003').on('slid.bs.carousel', function () {
+            $('#C003 .carousel-item.active .twentytwenty-container[data-orientation!="vertical"]').twentytwenty({default_offset_pct: 0.5});
+        });*/
+
+        $('#startDate,#endDate,#startDate2,#endDate2').datepicker("setDate", new Date());
+        $('#startDate2').datepicker("setDate", -1);
+        $('#searchNDVI').click();
+
+
+        $(document).on('click','#playBtn',function(e){
+            e.preventDefault();
+
+            if($(this).find('i').hasClass("ti-control-play")){
+                $('#rSlide .carousel').carousel('cycle')
+                $(this).find('i').attr('class','ti-control-pause')
+                $(this).addClass("btn-bg4")
+                $(this).removeClass("btn-bg")
+                cycleOn = true;
+            }else{
+                $('#rSlide .carousel').carousel('pause')
+                $(this).find('i').attr('class','ti-control-play')
+                $(this).removeClass("btn-bg4")
+                $(this).addClass("btn-bg")
+                cycleOn = false;
+            }
+        })
+
+        $(document).on('click','#playBtn2',function(e){
+            e.preventDefault();
+
+            if($(this).find('i').hasClass("ti-control-play")){
+                $(this).find('i').attr('class','ti-control-pause')
+                $(this).addClass("btn-bg4")
+                $(this).removeClass("btn-bg")
+                cycleOn2 = true;
+            }else{
+                $(this).find('i').attr('class','ti-control-play')
+                $(this).removeClass("btn-bg4")
+                $(this).addClass("btn-bg")
+                cycleOn2 = false;
+            }
+        })
+
+        $(document).on('mouseover','#cSlide .carousel-item',function(){
+            if(cycleOn2==true){
+                $('#cSlide .carousel').carousel('cycle')
+            }
+        })
+
+        $(document).on('mouseover','#rSlide .carousel-item',function(){
+            if(cycleOn==true){
+                $('#rSlide .carousel').carousel('cycle')
+            }
+        })
+
+        $(document).on('click','#C001 .carousel-control-next-icon',function(event){
+            slideNdviNext("#C001")
+        })
+
+        $(document).on('click','#C002 .carousel-control-next-icon',function(event){
+            slideNdviNext("#C002")
+        })
+
+        $(document).on('click','#C003 .carousel-control-next-icon',function(event){
+            slideNdviNext("#C003")
+        })
+
+        $(document).on('click','#C001 .carousel-control-prev-icon',function(event){
+            slideNdvi2("#C001")
+        })
+
+        $(document).on('click','#C002 .carousel-control-prev-icon',function(event){
+            slideNdvi2("#C002")
+        })
+
+        $(document).on('click','#C003 .carousel-control-prev-icon',function(event){
+            slideNdvi2("#C003")
+        })
+
+        $(".twentytwenty-container[data-orientation!='vertical']").twentytwenty({default_offset_pct: 0.5});
+        $(".twentytwenty-container[data-orientation='vertical']").twentytwenty({default_offset_pct: 0.5, orientation: 'vertical'});
+        
+        
+     	// 팝업을 열고 자동으로 닫는 함수
+        function openAndAutoClosePopup() {
+     		
+     		var active = $('#rSlide .tab-link.active').text();
+        	
+     		
+            // 팝업 창을 엽니다
+            if(window.innerWidth>1000){
+            	var myPopup = window.open('http://43.201.3.57/worldcup/html/iframe.html?type='+active, 'Popup', 'width=1280,height=800');
+            }else{
+            	var myPopup = window.open('http://43.201.3.57/worldcup/html/miframe.html?type='+active, 'Popup', 'width=1280,height=800');
+            }
+            
+        }
+     	
+     	$('#liveBtn').on('click',function(e){
+     		e.preventDefault();
+     		openAndAutoClosePopup();
+     	})
+        
+     	
+    });
+</script>
+<style>
+    .spider1{
+        font-size: 15px;
+        font-weight: bold;
+        color: blue;
+        fill: white;
+        text-align: center;
+    }
+
+    /* 2023.06.21 */
+    /*.stadium-img{ position: relative;overflow: hidden;width: 100%;height: 450px;}
+    .stadium-img > img{position: absolute;top: 70%;left: 50%;transform: translate(-50%, -50%);}
+    @media (max-width: 500px){
+        .stadium-img{ position: relative;overflow: hidden;width: 100%;height: 250px;}
+        .stadium-img > img{position: absolute;top: 85%;left: 50%;transform: translate(-50%, -50%);}
+    }*/
+
+
+    /* 2023.06.21 */
+    .stadium-img{ position: relative;overflow: hidden;width: 100%;height: auto;}
+    .stadium-img > img{position: static;height: 770px;}
+    /*@media (max-width: 500px){
+        .stadium-img{ position: relative;overflow: hidden;width: 100%;height: 250px;}
+        .stadium-img > img{position: absolute;top: 85%;left: 50%;transform: translate(-50%, -50%);}
+    }*/
+    @media (max-width: 500px){
+        .stadium-img{
+            height: auto;
+        }
+        .stadium-img > img{
+            height: auto;
+            position: static;
+        }
+
+        #playBtn,#playBtn2,#liveBtn{
+            padding: 0px;
+            height: 20px;
+            min-height: 28px
+        }
+
+        #captureImg{
+            font-size: 16px;
+            min-height: 28px;
+            height: 28px;
+            line-height: 28px;
+            padding-top: 0px;
+            padding-right: 5px;
+            padding-left: 5px;
+        }
+    }
+
+    #startDate,#endDate,#startDate2,#endDate2{
+        width: 105px;
+    }
+
+    .btn-bg4 {
+        color: #fff;
+        background: #F15F5F;
+    }
+
+    .carousel-item{
+        text-align: center;
+    }
+
+    #C001 .twentytwenty-horizontal,#C002 .twentytwenty-horizontal,#C003 .twentytwenty-horizontal{
+        height: 770px;
+    }
+
+    .twentytwenty-container .carousel-caption{
+        z-index: 25;
+    }
+
+</style>
+</body>
 </html>
